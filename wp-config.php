@@ -15,17 +15,25 @@
  */
 
 // ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', 'anbig');
+switch ($_SERVER['SERVER_NAME']) {
 
-/** MySQL database username */
-define('DB_USER', 'root');
+	case "anbig.local.com":
+		define('DB_NAME', 'anbig');
+		define('WP_SITEURL',  'http://anbig.local.com' );
+    	define('WP_HOME', 'http://anbig.local.com' );
+		define('DB_USER', 'root');
+		define('DB_PASSWORD', 'root');
+		define('DB_HOST', 'localhost');
 
-/** MySQL database password */
-define('DB_PASSWORD', 'root');
+	case "anbig.nowwhat.hk":
+		define('DB_NAME', 'nowwhat_anbig');
+		define('WP_SITEURL',  'http://anbig.nowwhat.hk' );
+    	define('WP_HOME', 'http://anbig.nowwhat.hk' );
+		define('DB_USER', 'nowwhat');
+		define('DB_PASSWORD', '20273214');
+		define('DB_HOST', 'localhost');
+}
 
-/** MySQL hostname */
-define('DB_HOST', 'localhost');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
