@@ -1,4 +1,3 @@
-<h1><?=$post->post_title?></h1>
 <div class="container">
 	<div class="row">
 <?

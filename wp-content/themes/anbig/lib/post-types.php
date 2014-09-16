@@ -93,5 +93,35 @@ function video_register() {
   register_post_type( 'video' , $args );
 }
 
+// Image
+add_action('init', 'image_register');
+function image_register() {
+  $labels = array(
+      'name' => _x('Image', 'post type general name'),
+      'singular_name' => _x('Image', 'post type singular name'),
+      'add_new' => _x('Add Image', 'rep'),
+      'add_new_item' => __('Add New Image'),
+      'edit_item' => __('Edit Image'),
+      'new_item' => __('New Image'),
+      'view_item' => __('View Image'),
+      'search_items' => __('Search Image'),
+      'not_found' =>  __('Nothing found'),
+      'not_found_in_trash' => __('Nothing found in Trash'),
+      'parent_item_colon' => ''
+  );
+  $args = array(
+      'labels' => $labels,
+      'public' => true,
+      'publicly_queryable' => true,
+      'show_ui' => true,
+      'query_var' => true,
+      'rewrite' => true,
+      'capability_type' => 'post',
+      'hierarchical' => true,
+      'menu_position' => 6,
+      'supports'      => array( 'title', 'thumbnail', 'editor'),
+  );
+  register_post_type( 'image' , $args );
+}
 
 ?>
