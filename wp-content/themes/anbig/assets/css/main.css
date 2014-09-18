@@ -6241,8 +6241,11 @@ figure.alignnone {
   }
 }
 .navbar-default {
-  background-color: transparent;
+  background-color: #fff;
   border: none;
+}
+.navbar-default .navbar-brand {
+  height: auto;
 }
 .sidebar {
   position: relative;
@@ -6255,6 +6258,48 @@ figure.alignnone {
     float: left;
     width: 33.33333333%;
   }
+}
+.content-info {
+  background: #D7D7E3;
+  padding: 0 20px;
+}
+.home .main {
+  margin-top: 110px;
+  padding-left: 0;
+  padding-right: 0;
+}
+.home .page-header {
+  display: none;
+}
+.home h2,
+.home .h2 {
+  font-size: 130%;
+  text-align: center;
+  margin: 3px 0 0 0;
+  color: #fff;
+  padding: 5px 0;
+}
+.home .container {
+  padding: 0!important;
+}
+.home .videoHomeHeader {
+  background: #4DA6FF;
+}
+.home .imageHomeHeader {
+  background: #2DB200;
+}
+.home .activitiesHomeHeader {
+  background: #FFBF00;
+}
+.home .discussionHomeHeader {
+  background: #605CA9;
+}
+.home .quizHomeHeader {
+  background: #FF8000;
+}
+.home .activitesListHomeHeader,
+.home .newsListHomeHeader {
+  background: #777777;
 }
 @media (min-width: 768px) {
   .main {

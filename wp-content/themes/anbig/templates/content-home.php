@@ -23,20 +23,20 @@
 <section>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-4">
-				<h2>Video Lecture</h2>
+			<div class="col-sm-4 col-xs-6 ">
+				<h2 class="videoHomeHeader">Video</h2>
 
 			</div>
-			<div class="col-sm-4">
-				<h2>Image Archives</h2>
+			<div class="col-sm-4 col-xs-6">
+				<h2 class="imageHomeHeader">Image</h2>
 				<?
 				if(!empty($image_archives_banner)){
 					echo '<img class="img-responsive" src="'.$image_archives_banner['sizes']['listing-image'].'">';
 				}
 				?>
 			</div>
-			<div class="col-sm-4">
-				<h2>Activities</h2>
+			<div class="col-sm-4 hidden-xs">
+				<h2 class="activitiesHomeHeader">Activities</h2>
 				<?
 				if(!empty($activities_banner)){
 					echo '<img class="img-responsive" src="'.$activities_banner['sizes']['listing-image'].'">';
@@ -46,7 +46,7 @@
 		</div>
 		<div class="row">
 			<div class="col-sm-6">
-				<h2>Discussion Forum</h2>
+				<h2 class="discussionHomeHeader">Discussion Forum</h2>
 				<?
 				if(!empty($discussion_forum_banner)){
 					echo '<img class="img-responsive" src="'.$discussion_forum_banner['sizes']['mainpage-section-image'].'">';
@@ -54,7 +54,7 @@
 				?>
 			</div>
 			<div class="col-sm-6">
-				<h2>NBI Quiz</h2>
+				<h2 class="quizHomeHeader">NBI Quiz</h2>
 				<?
 				if(!empty($nbi_quiz_banner)){
 					echo '<img class="img-responsive" src="'.$nbi_quiz_banner['sizes']['mainpage-section-image'].'">';
@@ -64,7 +64,7 @@
 		</div>
 		<div class="row">
 			<div class="col-sm-6">
-				<h2>Activities</h2>
+				<h2 class="activitesListHomeHeader">Activities</h2>
 				<ul class="main-list">
 				<?
 					$args = array( 'numberposts' => 2, 'post_type' => 'activity', 'post_status' => 'publish', 'order' => 'DESC', 'orderby' => 'date');
@@ -84,7 +84,7 @@
 				<a class="pull-right" href="<?=site_url()?>/activities/">View all activities</a>
 			</div>
 			<div class="col-sm-6">
-				<h2>Latest News</h2>
+				<h2 class="newsListHomeHeader">Latest News</h2>
 				<ul class="main-list">
 				<?
 					$args = array( 'numberposts' => 2, 'post_type' => 'post', 'post_status' => 'publish', 'order' => 'DESC', 'orderby' => 'date');

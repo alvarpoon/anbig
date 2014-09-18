@@ -8,7 +8,7 @@
 <footer class="content-info" role="contentinfo">
   <div class="container">
     <div class="row">
-    	<div class="col-sm-6">
+    	<div class="col-sm-6 hidden-xs">
     		<?php
 		          //footer menu
 		          if (has_nav_menu('footer_menu')) :
