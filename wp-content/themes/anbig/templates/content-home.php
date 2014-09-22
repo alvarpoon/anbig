@@ -7,31 +7,33 @@
 	$nbi_quiz_banner = get_field("nbi_quiz_banner",$post_id);
 ?>
 <section id="home-hero" class="hero">
-	<div id="main-banner-container" >
-		<?
-			$args = array( 'numberposts' => -1, 'post_type' => 'mainpage_banner', 'post_status' => 'publish', 'order' => 'ASC', 'orderby' => 'menu_order');
-		  $results = get_posts( $args );
-		  foreach( $results as $result ) :
-		  	$url = wp_get_attachment_image_src( get_post_thumbnail_id($result->ID), 'mainpage-banner');
-		?>
-			<div class="main-banner">
-				<img class="img-responsive" src="<?=$url[0]?>" />
-			</div>
-		<? endforeach;?>
+	<div class="container">
+        <div id="main-banner-container" >
+            <?
+                $args = array( 'numberposts' => -1, 'post_type' => 'mainpage_banner', 'post_status' => 'publish', 'order' => 'ASC', 'orderby' => 'menu_order');
+              $results = get_posts( $args );
+              foreach( $results as $result ) :
+                $url = wp_get_attachment_image_src( get_post_thumbnail_id($result->ID), 'mainpage-banner');
+            ?>
+                <div class="main-banner">
+                    <img class="img-responsive" src="<?=$url[0]?>" />
+                </div>
+            <? endforeach;?>
+        </div>
 	</div>
 </section>
 <section>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-4 col-xs-6 ">
-				<h2 class="videoHomeHeader">Video</h2>
+			<div class="col-sm-4 col-xs-6 smallPadding-xs">
+				<h2 class="videoHomeHeader">Videos</h2>
 
 			</div>
-			<div class="col-sm-4 col-xs-6">
-				<h2 class="imageHomeHeader">Image</h2>
+			<div class="col-sm-4 col-xs-6 smallPadding-xs">
+				<h2 class="imageHomeHeader">Image Archives</h2>
 				<?
 				if(!empty($image_archives_banner)){
-					echo '<img class="img-responsive" src="'.$image_archives_banner['sizes']['listing-image'].'">';
+					echo '<img class="img-responsive fullWidthImg" src="'.$image_archives_banner['sizes']['listing-image'].'">';
 				}
 				?>
 			</div>
@@ -39,7 +41,7 @@
 				<h2 class="activitiesHomeHeader">Activities</h2>
 				<?
 				if(!empty($activities_banner)){
-					echo '<img class="img-responsive" src="'.$activities_banner['sizes']['listing-image'].'">';
+					echo '<img class="img-responsive fullWidthImg" src="'.$activities_banner['sizes']['listing-image'].'">';
 				}
 				?>
 			</div>
@@ -49,7 +51,7 @@
 				<h2 class="discussionHomeHeader">Discussion Forum</h2>
 				<?
 				if(!empty($discussion_forum_banner)){
-					echo '<img class="img-responsive" src="'.$discussion_forum_banner['sizes']['mainpage-section-image'].'">';
+					echo '<img class="img-responsive fullWidthImg" src="'.$discussion_forum_banner['sizes']['mainpage-section-image'].'">';
 				}
 				?>
 			</div>
@@ -57,13 +59,13 @@
 				<h2 class="quizHomeHeader">NBI Quiz</h2>
 				<?
 				if(!empty($nbi_quiz_banner)){
-					echo '<img class="img-responsive" src="'.$nbi_quiz_banner['sizes']['mainpage-section-image'].'">';
+					echo '<img class="img-responsive fullWidthImg" src="'.$nbi_quiz_banner['sizes']['mainpage-section-image'].'">';
 				}
 				?>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-sm-6">
+			<div class="col-sm-6 clearfix">
 				<h2 class="activitesListHomeHeader">Activities</h2>
 				<ul class="main-list">
 				<?
@@ -83,7 +85,7 @@
 				</ul>
 				<a class="pull-right" href="<?=site_url()?>/activities/">View all activities</a>
 			</div>
-			<div class="col-sm-6">
+			<div class="col-sm-6 clearfix">
 				<h2 class="newsListHomeHeader">Latest News</h2>
 				<ul class="main-list">
 				<?

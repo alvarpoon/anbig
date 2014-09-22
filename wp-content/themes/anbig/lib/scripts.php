@@ -16,7 +16,7 @@
  */
 function roots_scripts() {
     wp_enqueue_style('google_fonts', 'http://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic,300,300italic', false, '9880649384aea9f1ee166331c0a30daa');
-    wp_enqueue_style('google_fonts', 'http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700', false, '9880649384aea9f1ee166331c0a30daa');
+    wp_enqueue_style('google_fonts2', 'http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700', false, '9880649384aea9f1ee166331c0a30daa');
     wp_enqueue_style('font_awesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', false, '90912b55a3d6b2070ca68c801a5ef6bb');
   /**
    * The build task in Grunt renames production assets with a hash
