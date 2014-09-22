@@ -6346,6 +6346,15 @@ figure.alignnone {
   .main-menu .navbar-nav li:last-child a {
     border: none;
   }
+  .main-menu .dropdown .dropdown-toggle {
+    padding: 13px 0;
+  }
+  .main-menu .dropdown .dropdown-toggle .caret {
+    display: block;
+    position: absolute;
+    bottom: 2px;
+    left: 48%;
+  }
   .main-menu .dropdown-menu {
     min-width: 158px;
     border: 1px solid #fff;
@@ -6382,6 +6391,63 @@ figure.alignnone {
 .content-info {
   background: #D7D7E3;
   padding: 0 20px;
+}
+.footerPaddingTop {
+  padding-top: 15px;
+}
+.contactInfoDiv {
+  color: #000;
+  font-family: 'Roboto Condensed';
+  font-size: 15px;
+}
+.contactInfoDiv h4 {
+  margin: 0;
+  font-weight: bold;
+}
+.contactInfoDiv a {
+  color: #000;
+}
+.contactInfoDiv p {
+  margin-bottom: 0;
+}
+.contactInfoDiv .directContactInfo {
+  margin-top: 15px;
+}
+.contactInfoDiv .directContactInfo .col-sm-6 {
+  padding-left: 0;
+  padding-right: 0;
+}
+.contactInfoDiv .logo_tel {
+  background: url(../img/logo_tel.png) no-repeat;
+  padding-left: 23px;
+}
+.contactInfoDiv .logo_fax {
+  background: url(../img/logo_fax.png) no-repeat;
+  padding-left: 23px;
+}
+.contactInfoDiv .logo_email {
+  background: url(../img/logo_mail.png) no-repeat;
+  padding-left: 23px;
+}
+.contactInfoDiv .logo_map {
+  background: url(../img/logo_map.png) no-repeat;
+  padding-left: 18px;
+}
+@media (min-width: 768px) {
+  #menu-footer-menu {
+    width: 70%;
+  }
+  #menu-footer-menu li {
+    width: 50%;
+  }
+  #menu-footer-menu li a {
+    color: #000;
+    padding-top: 5px;
+    padding-bottom: 0;
+    font-family: 'Roboto Condensed';
+    font-weight: bold;
+    font-size: 15px;
+  }
 }
 @media (min-width: 768px) {
   .main {
@@ -6448,9 +6514,31 @@ figure.alignnone {
   padding-left: 1px;
   padding-right: 1px;
 }
-@media (min-width: 992px) {
+.home .viewAllBtn {
+  background: url(../img/btn_viewall.png) no-repeat right;
+  padding-right: 30px;
+  height: 25px;
+  color: #000;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  display: block;
+}
+@media (min-width: 768px) {
   .home .main {
     margin-top: 0px;
+  }
+  .home .main .main-list .date {
+    float: left;
+    width: 40%;
+  }
+  .home .main .main-list div {
+    float: left;
+    width: 60%;
+  }
+  .home .main .main-list div .title {
+    font-weight: bold;
+    margin-bottom: 0;
+    font-family: 'Roboto';
   }
   .home .smallPadding-xs {
     padding-left: 15px;
@@ -6458,8 +6546,14 @@ figure.alignnone {
   }
   .home h2,
   .home .h2 {
-    font-size: 200%;
+    font-size: 170%;
     margin: 30px 0 3px 0;
+  }
+}
+@media (min-width: 992px) {
+  .home h2,
+  .home .h2 {
+    font-size: 200%;
   }
 }
 /*! fancyBox v2.1.5 fancyapps.com | fancyapps.com/fancybox/#license */

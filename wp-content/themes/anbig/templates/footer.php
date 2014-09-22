@@ -5,7 +5,7 @@
 	$fax = get_field("fax",$post_id);
 	$email = get_field("email",$post_id);
 ?>
-<footer class="content-info" role="contentinfo">
+<footer class="content-info footerPaddingTop" role="contentinfo">
   <div class="container">
     <div class="row">
     	<div class="col-sm-6 hidden-xs">
@@ -16,13 +16,18 @@
 		          endif;
 		      ?>
     	</div>
-    	<div class="col-sm-6">
+    	<div class="col-sm-6 contactInfoDiv">
     		<h4>Contact Us</h4>
     		<p><?=$address?></p>
-    		<p>Tel: <?=$telephone?></p>
-    		<p>Fax: <?=$fax?></p>
-    		<p>Email: <a href="mailto:<?=$email?>"><?=$email?></a></p>
-    		<p><a href="#">Map</a></p>
+            <div class="directContactInfo">
+            	<div class="col-sm-6">
+                    <p class="logo_tel">Tel: <?=$telephone?></p>
+                    <p class="logo_email">Email: <a href="mailto:<?=$email?>"><?=$email?></a></p>
+                </div>
+                <div class="col-sm-6">
+                    <p class="logo_fax">Fax: <?=$fax?></p>
+                    <p class="logo_map"><a href="#">Map</a></p>
+                </div>
     	</div>
     </div>
     <div class="row">

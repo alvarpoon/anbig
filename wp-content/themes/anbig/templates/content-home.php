@@ -74,7 +74,7 @@
 				  foreach( $results as $result ) :
 				  	$link = get_permalink($result->ID);
 				?>
-					<li>
+					<li class="clearfix">
 						<p class="date"><?=get_field("date",$result->ID)?></p>
 						<div>
 							<p class="title"><?=$result->post_title?></p>
@@ -83,7 +83,7 @@
 					</li>
 				<? endforeach;?>
 				</ul>
-				<a class="pull-right" href="<?=site_url()?>/activities/">View all activities</a>
+				<a class="pull-right viewAllBtn" href="<?=site_url()?>/activities/">View all activities</a>
 			</div>
 			<div class="col-sm-6 clearfix">
 				<h2 class="newsListHomeHeader">Latest News</h2>
@@ -94,7 +94,7 @@
 				  foreach( $results as $result ) :
 				  	$link = get_permalink($result->ID);
 				?>
-					<li>
+					<li class="clearfix">
 						<p class="date"><?=get_field("speaker",$result->ID)?></p>
 						<div>
 							<p class="title"><?=$result->post_title?></p>
@@ -103,7 +103,7 @@
 					</li>
 				<? endforeach;?>
 				</ul>
-				<a class="pull-right" href="<?=site_url()?>/latest-news/">View all news</a>
+				<a class="pull-right viewAllBtn" href="<?=site_url()?>/latest-news/">View all news</a>
 			</div>
 		</div>
 	</div>
