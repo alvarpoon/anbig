@@ -1,3 +1,4 @@
+<?=get_template_part('partials/video_menu'); ?>
 <div class="container">
 	<div class="row">
 <?
