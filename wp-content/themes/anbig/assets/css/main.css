@@ -6449,14 +6449,31 @@ figure.alignnone {
     font-size: 15px;
   }
 }
+.main {
+  float: none;
+  margin-top: 110px;
+}
+.videoTitle {
+  display: none;
+}
 @media (min-width: 768px) {
   .main {
-    float: none;
-    margin-top: 150px;
+    margin-top: 0;
+  }
+  .videoTitle {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    background-color: #ffbf00;
+    padding: 5px 0;
+    font-family: 'Roboto Condensed';
+  }
+  .video-col-sm-padding-bottom {
+    padding-bottom: 35px;
   }
 }
 .home .main {
-  margin-top: 63px;
   padding-left: 0;
   padding-right: 0;
 }
