@@ -64,7 +64,7 @@ var Roots = {
     init: function() {
       // JavaScript to be fired on the about us page
       $(document).ready(function(){
-        $(".video").click(function() {
+        /*$(".video").click(function() {
             $.fancybox({
                 'padding'       : 0,
                 'width'         : 'auto',
@@ -75,7 +75,7 @@ var Roots = {
                 'content'       : "<video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" controls preload=\"none\" width=\"640\" height=\"264\" data-setup='{'autoplay': true}'><source src=\""+this.href+"\" type='video/mp4' /><track kind=\"captions\" src=\"demo.captions.vtt\" srclang=\"en\" label=\"English\"></track><!-- Tracks need an ending tag thanks to IE9 --><track kind=\"subtitles\" src=\"demo.captions.vtt\" srclang=\"en\" label=\"English\"></track><!-- Tracks need an ending tag thanks to IE9 --></video>"
                 });
               return false;
-            });
+            });*/
         });
     }
   },
