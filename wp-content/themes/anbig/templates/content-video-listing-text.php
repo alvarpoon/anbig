@@ -13,7 +13,7 @@
                       )
                     ),
     'post_status' => 'publish',
-    'posts_per_page' => 1,
+    'posts_per_page' => 6,
     'orderby'		=> 'date',
     'order' => 'DESC',
     'paged' => $paged

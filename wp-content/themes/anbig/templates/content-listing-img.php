@@ -1,26 +1,54 @@
+<?=get_template_part('partials/image_menu'); ?>
+<?=get_template_part('partials/image_submenu'); ?>
 <div class="container">
-	<div class="row">
+  <div class="row">
 <?
+  global $current_cat_id;
+  //echo $current_cat_id;
+  $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
   $args= array(
-    'post_type' => 'page',
-    'post_parent' => $post->ID,
+    'post_type' => 'image',
+    'tax_query' => array(
+                      array(
+                        'taxonomy' => 'image_category',
+                        'field'    => 'id',
+                        'terms'    => $current_cat_id,
+                      )
+                    ),
     'post_status' => 'publish',
-    'posts_per_page' => -1,
-    'orderby'		=> 'menu_order',
-    'order' => 'ASC'
-
+    'posts_per_page' => 6,
+    'orderby'   => 'date',
+    'order' => 'DESC',
+    'paged' => $paged
   );
-  $results = get_posts( $args );
-  foreach( $results as $result ) :
-  	$permalink = get_permalink( $result->ID );
-  	$image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $result->ID ), 'listing-image' );
+  $wp_query = new WP_Query($args);
+  while ( $wp_query->have_posts() ) :
+    $wp_query->the_post();
+    $id = get_the_ID();
+    $post = get_post($id);
+    $image = get_field('original_image',$id);
+    $url = $image['sizes']['listing-image'];
  ?>
- 		<div class="col-sm-4 video-col-sm-padding-bottom">
- 			<h2 class="videoTitle"><?=$result->post_title?></h2>
- 			<a href="<?=$permalink?>"><img class="img-responsive" src="<?=$image_url[0]?>" /></a>
- 		</div>
+    <div class="col-sm-4">
+      <img class="img-responsive" src="<?=$url?>" />
+        <p><?=get_field("doctor",$id)?></p>
+        <p><?=cutoff_string(the_content(),100)?></p>
+        <a class="fancybox" href="<?=$url?>">Read more</a>
+    </div>
  <?
-  endforeach;
+  endwhile;
  ?>
- 	</div>
+  </div>
+  <div class="row">
+<?
+  $big = 999999999; // need an unlikely integer
+
+  echo paginate_links( array(
+  'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+  'format' => '?paged=%#%',
+  'current' => max( 1, get_query_var('paged') ),
+  'total' => $wp_query->max_num_pages
+) );
+?>
+  </div>
 </div>
