@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container nopaddingHeader-xs">
 	<div class="page-header">
 	  <h1>
 	    <?php echo roots_title(); ?>

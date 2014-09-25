@@ -15,8 +15,8 @@
   	$permalink = get_permalink( $result->ID );
   	$image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $result->ID ), 'listing-image' );
  ?>
- 		<div class="col-sm-4">
- 			<h2><?=$result->post_title?></h2>
+ 		<div class="col-sm-4 video-col-sm-padding-bottom">
+ 			<h2 class="videoTitle"><?=$result->post_title?></h2>
  			<a href="<?=$permalink?>"><img class="img-responsive" src="<?=$image_url[0]?>" /></a>
  		</div>
  <?

@@ -25,10 +25,14 @@
     $post = get_post($id);
     $video_id = get_field('video');
     $video_url = wp_get_attachment_url( $video_id );
- ?>
+ ?><div class="container row">
  		<div class="col-sm-2"><p class="date"><?=get_the_date("M j",$id)?></p></div>
-    <div class="col-sm-8"><p class="title"><a class="video" href="<?=$video_url?>"><?=$post->post_title?></a></p></div>
-    <div class="col-sm-2"><p class="person"><?=get_field("doctor")?></p></div>
+	    <div class="col-sm-8">
+			<p class="title"><?=$post->post_title?></p>
+			<a class="btnVideoDetail" href="<?=$video_url?>">Details</a>
+		</div>
+    	<div class="col-sm-2"><p class="person"><?=get_field("doctor")?></p></div>
+	</div>
  <?
   endwhile;
  ?>

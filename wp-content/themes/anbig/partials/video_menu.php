@@ -1,4 +1,5 @@
-<div class="container video-menu hidden-xs">
+<div class="container video-menu">
+	<div class="hidden-xs">
       <?
       /*$args = array(
           'type'                     => 'post',
@@ -25,4 +26,5 @@
       <?
       }
       ?>
+	</div>
 </div>

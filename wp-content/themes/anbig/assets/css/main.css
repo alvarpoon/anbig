@@ -6451,14 +6451,55 @@ figure.alignnone {
 }
 .main {
   float: none;
-  margin-top: 110px;
+  margin-top: 63px;
+  padding: 0;
+}
+.main .nopaddingHeader-xs {
+  padding-left: 0;
+  padding-right: 0;
+}
+.page-header {
+  background: url(../img/bg_mainnav.png) repeat-x;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+.page-header h1,
+.page-header .h1 {
+  font-size: 15px!important;
+  margin: 0;
+  padding: 10px 30px;
+  font-family: 'Roboto';
 }
 .videoTitle {
   display: none;
 }
+.page-template-template-video-listing-text-php .date,
+.page-template-template-video-listing-text-php .title,
+.page-template-template-video-listing-text-php .person {
+  font-family: 'Roboto';
+  font-weight: bold;
+}
+.page-template-template-video-listing-text-php .title {
+  margin-bottom: 3px;
+}
+.page-template-template-video-listing-text-php .btnVideoDetail {
+  font-family: 'Roboto';
+  color: #000;
+  font-weight: bold;
+  padding: 3px 20px;
+  background-color: #FFC926;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
 @media (min-width: 768px) {
   .main {
     margin-top: 0;
+  }
+  .main .nopaddingHeader-xs {
+    padding-left: 15px;
+    padding-right: 15px;
   }
   .videoTitle {
     display: block;
@@ -6471,6 +6512,63 @@ figure.alignnone {
   }
   .video-col-sm-padding-bottom {
     padding-bottom: 35px;
+  }
+  .page-template-template-video-listing-text-php .page-header,
+  .page-template-template-video-listing-image-php .page-header {
+    display: none;
+  }
+  .page-template-template-video-listing-text-php .video-menu a,
+  .page-template-template-video-listing-image-php .video-menu a {
+    background-color: #DDD;
+  }
+  .page-template-template-video-listing-text-php .video-menu .active,
+  .page-template-template-video-listing-image-php .video-menu .active {
+    background-color: #4DA6FF;
+  }
+  .page-template-template-listing-img-php .page-header {
+    display: none;
+  }
+  .page-template-template-listing-img-php .image-menu a {
+    background-color: #DDD;
+  }
+  .page-template-template-listing-img-php .image-menu .active {
+    background-color: #2DB300;
+  }
+  .video-menu,
+  .image-menu {
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  .video-menu a,
+  .image-menu a {
+    font-family: 'Roboto Condensed';
+    color: #fff;
+    padding: 11px 15px;
+    float: left;
+    display: block;
+    margin-right: 7px;
+    text-transform: uppercase;
+  }
+  .video-menu .active,
+  .image-menu .active {
+    font-size: 170%;
+    padding: 4px 8px;
+  }
+  .video-submenu,
+  .image-submenu {
+    margin-bottom: 15px;
+  }
+  .video-submenu a,
+  .image-submenu a {
+    font-family: 'Roboto Condensed';
+    color: #000;
+    font-weight: bold;
+    padding: 3px 10px;
+    background-color: #FFC926;
+    display: block;
+    float: left;
+    margin-right: 7px;
+    border-radius: 3px;
   }
 }
 .home .main {
