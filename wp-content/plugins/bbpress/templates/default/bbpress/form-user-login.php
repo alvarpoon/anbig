@@ -39,4 +39,5 @@
 		</div>
 	</fieldset>
 </form>
+<p>If you don't have an account, please register <a href="<?=site_url().'/register/';?>">here</a>.</p>
 </div>
