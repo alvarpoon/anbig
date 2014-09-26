@@ -26,5 +26,33 @@
       <?
       }
       ?>
+	  <span class="hidden-xs"></span>
+	</div>
+	<div class="hidden-sm hidden-md hidden-lg">
+		<? foreach( $results as $result ){
+				$permalink = get_permalink($result->ID); 
+				if ($result->ID==$post->ID) {
+		?>
+				<div class="mobileMediaNav">
+					<div class="mobileMediaToggle clearfix">
+						<span class="currentPageName"><?=$result->post_title;?></span>
+						<span class="dropdownArrow"></span>
+					</div>
+					<div class="mobileMediaList">
+			<?		
+					}
+				}
+				foreach( $results as $result ){
+					$permalink = get_permalink($result->ID); 
+				?>
+					
+						<a href="<?=$permalink?>"><?=$result->post_title;?></a>
+					
+				<?	
+				}
+				
+			?>
+			</div>
+		</div>
 	</div>
 </div>

@@ -30,11 +30,11 @@
     $video_url = wp_get_attachment_url( $video_id );
     $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'listing-image' );
  ?>
- 		<div class="col-sm-4">
-      <a class="fancybox" href="<?=$video_url?>"><img class="img-responsive" src="<?=$image_url[0]?>" /></a>
+ 	<div class="col-sm-4 listingImageItem clearfix">
+      <a class="videoLink" href="<?=$video_url?>" person="<?=get_field("doctor",$result->ID)?>" desp="<?=the_content()?>"><img class="img-responsive fullwidthImg" src="<?=$image_url[0]?>" /></a>
       <p class="doctor"><?=get_field("doctor",$result->ID)?></p>
-      <p class="desp"><?=cutoff_string(the_content(),100)?></p>
-      <a class="fancybox" href="<?=$video_url?>">Read more</a>
+	  <p class="desp"><? $content = get_the_content(); $content = strip_tags($content); echo substr($content, 0, 90).'...'; ?></p>
+      <a class="btnReadMore videoLink" href="<?=$video_url?>" person="<?=get_field("doctor",$result->ID)?>" desp="<?=the_content()?>">Read more</a>
     </div>
  <?
   endwhile;

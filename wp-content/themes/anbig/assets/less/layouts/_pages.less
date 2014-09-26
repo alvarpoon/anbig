@@ -6,7 +6,7 @@
 
 .main {
 	float: none;
-	margin-top: 63px;
+	margin-top: 109px;
 	padding:0;
 	
 	.nopaddingHeader-xs{padding-left:0; padding-right:0;}
@@ -25,6 +25,7 @@
 	}
 }
 
+//Videos and image listing page starts
 .videoTitle{display:none;}
 
 .page-template-template-video-listing-text-php{
@@ -45,6 +46,129 @@
 		display:inline-block;
 	}
 }
+
+.page-template-template-listing-img-php, .page-template-template-video-listing-image-php{
+	.page-header{display:none;}
+}
+
+.listingImageItem{
+	.videoLink{
+		margin-bottom:10px;
+		display:block;
+	}
+	.doctor{
+		margin-bottom:0;
+		font-size:16px;
+	}
+	.desp{
+		color:#777;
+	}
+	.btnReadMore{
+		font-family:'Roboto Condensed';
+		background-color:#FFC926;
+		color:#000;
+		font-weight:bold;
+		padding:3px 10px;
+		display:block;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		display:inline-block;
+		float:right;
+		margin-bottom:50px;
+	}
+	.fullwidthImg{width:100%; height:auto;}
+}
+
+.mobileMediaNav{	
+	margin-bottom:10px;
+	background-color:#2db300;
+	color:#fff;
+	margin-right:40px;
+	font-family:'Roboto Condensed';
+	font-weight:bold;
+	text-transform:uppercase;
+	border-radius: 4px;
+	
+	.mobileMediaToggle{
+		-moz-border-radius: 4px;
+		padding-left:15px;
+		cursor: pointer;
+		
+		.currentPageName{
+			padding:5px 0;
+			float:left;
+			display:block;
+		}
+		.dropdownArrow{
+			float:right;
+			display:block;
+			width:30px;
+			height:30px;
+			border-left:1px solid #777;
+		}
+	}
+	
+	.mobileMediaList{
+		display:none;
+		padding:5px 15px 5px 15px;
+		border-top:1px solid #fff;
+		a{
+			color:#fff;
+			display:block;
+		}
+	}
+}
+.mobileMediaNav.open{
+	.mobileMediaList{
+		display:block;
+	}
+}
+
+.mobileMediaSubNav{	
+	margin-bottom:10px;
+	background-color:#ffc926;
+	color:#fff;
+	margin-right:40px;
+	font-family:'Roboto Condensed';
+	font-weight:bold;
+	text-transform:uppercase;
+	border-radius: 4px;
+	
+	.mobileMediaSubToggle{
+		-moz-border-radius: 4px;
+		padding-left:15px;
+		cursor: pointer;
+		
+		.currentPageName{
+			padding:5px 0;
+			float:left;
+			display:block;
+		}
+		.dropdownArrow{
+			float:right;
+			display:block;
+			width:30px;
+			height:30px;
+			border-left:1px solid #777;
+		}
+	}
+	
+	.mobileMediaSubList{
+		display:none;
+		padding:5px 15px 5px 15px;
+		border-top:1px solid #fff;
+		a{
+			color:#fff;
+			display:block;
+		}
+	}
+}
+.mobileMediaSubNav.open{
+	.mobileMediaSubList{
+		display:block;
+	}
+}
+//Videos and image listing page ends
 
 //===============================================================================
 //===============================================================================
@@ -67,6 +191,29 @@
 		font-family:'Roboto Condensed';
 	}
 	
+	.page-header{
+		background-image:none;
+		margin:0;
+		padding:0;
+		text-transform:uppercase;
+		border-bottom:none;
+		h1, .h1{
+			font-size:30px!important;
+			margin:15px 0 0 0;
+			padding:5px 10px;
+			font-family:'Roboto';
+			
+		}
+	}
+	
+	.page-template-template-listing-php{
+		h1, .h1{
+			background-color:#4da6ff;
+			color:#fff!important;
+			display:inline-block;
+		}
+	}
+	
 	.video-col-sm-padding-bottom{padding-bottom:35px;}
 	
 	//Videos and Images listing ends
@@ -77,6 +224,10 @@
 		.video-menu{
 			a{
 				background-color:#DDD;
+				&:hover{
+					background-color:#4DA6FF;
+					text-decoration:none;
+				}
 			}
 			.active{
 				background-color:#4DA6FF;
@@ -90,6 +241,10 @@
 		.image-menu{
 			a{
 				background-color:#DDD;
+				&:hover{
+					background-color:#2DB300;
+					text-decoration:none;
+				}
 			}
 			.active{
 				background-color:#2DB300;
@@ -113,21 +268,37 @@
 				font-size:170%;
 				padding:4px 8px;
 			}
+		span{
+			background:url(../img/arrow_nav_right.png) no-repeat right;
+			width:15px;
+			height:42px;
+			float:left;
+			display:block;
+		}
 	}
 	
 	.video-submenu, .image-submenu{
 		margin-bottom:15px;
 		a{
 			font-family:'Roboto Condensed';
-			color:#000;
+			color:#777;
 			font-weight:bold;
 			padding:3px 10px;
-			background-color:#FFC926;
+			background-color:#DDD;
 			display:block;
 			float:left;
 			margin-right:7px;
 			-moz-border-radius: 4px;
 			border-radius: 3px;
+			&:hover{
+				background-color:#FFC926;
+				color:#000;
+				text-decoration:none;
+			}
+		}
+		.active{
+			background-color:#FFC926;
+			color:#000;
 		}
 	}
 	

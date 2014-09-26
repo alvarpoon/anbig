@@ -6451,7 +6451,7 @@ figure.alignnone {
 }
 .main {
   float: none;
-  margin-top: 63px;
+  margin-top: 109px;
   padding: 0;
 }
 .main .nopaddingHeader-xs {
@@ -6493,6 +6493,115 @@ figure.alignnone {
   margin-bottom: 10px;
   display: inline-block;
 }
+.page-template-template-listing-img-php .page-header,
+.page-template-template-video-listing-image-php .page-header {
+  display: none;
+}
+.listingImageItem .videoLink {
+  margin-bottom: 10px;
+  display: block;
+}
+.listingImageItem .doctor {
+  margin-bottom: 0;
+  font-size: 16px;
+}
+.listingImageItem .desp {
+  color: #777;
+}
+.listingImageItem .btnReadMore {
+  font-family: 'Roboto Condensed';
+  background-color: #FFC926;
+  color: #000;
+  font-weight: bold;
+  padding: 3px 10px;
+  display: block;
+  border-radius: 3px;
+  display: inline-block;
+  float: right;
+  margin-bottom: 50px;
+}
+.listingImageItem .fullwidthImg {
+  width: 100%;
+  height: auto;
+}
+.mobileMediaNav {
+  margin-bottom: 10px;
+  background-color: #2db300;
+  color: #fff;
+  margin-right: 40px;
+  font-family: 'Roboto Condensed';
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+.mobileMediaNav .mobileMediaToggle {
+  -moz-border-radius: 4px;
+  padding-left: 15px;
+  cursor: pointer;
+}
+.mobileMediaNav .mobileMediaToggle .currentPageName {
+  padding: 5px 0;
+  float: left;
+  display: block;
+}
+.mobileMediaNav .mobileMediaToggle .dropdownArrow {
+  float: right;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-left: 1px solid #777;
+}
+.mobileMediaNav .mobileMediaList {
+  display: none;
+  padding: 5px 15px 5px 15px;
+  border-top: 1px solid #fff;
+}
+.mobileMediaNav .mobileMediaList a {
+  color: #fff;
+  display: block;
+}
+.mobileMediaNav.open .mobileMediaList {
+  display: block;
+}
+.mobileMediaSubNav {
+  margin-bottom: 10px;
+  background-color: #ffc926;
+  color: #fff;
+  margin-right: 40px;
+  font-family: 'Roboto Condensed';
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+.mobileMediaSubNav .mobileMediaSubToggle {
+  -moz-border-radius: 4px;
+  padding-left: 15px;
+  cursor: pointer;
+}
+.mobileMediaSubNav .mobileMediaSubToggle .currentPageName {
+  padding: 5px 0;
+  float: left;
+  display: block;
+}
+.mobileMediaSubNav .mobileMediaSubToggle .dropdownArrow {
+  float: right;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-left: 1px solid #777;
+}
+.mobileMediaSubNav .mobileMediaSubList {
+  display: none;
+  padding: 5px 15px 5px 15px;
+  border-top: 1px solid #fff;
+}
+.mobileMediaSubNav .mobileMediaSubList a {
+  color: #fff;
+  display: block;
+}
+.mobileMediaSubNav.open .mobileMediaSubList {
+  display: block;
+}
 @media (min-width: 768px) {
   .main {
     margin-top: 0;
@@ -6510,6 +6619,26 @@ figure.alignnone {
     padding: 5px 0;
     font-family: 'Roboto Condensed';
   }
+  .page-header {
+    background-image: none;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    border-bottom: none;
+  }
+  .page-header h1,
+  .page-header .h1 {
+    font-size: 30px!important;
+    margin: 15px 0 0 0;
+    padding: 5px 10px;
+    font-family: 'Roboto';
+  }
+  .page-template-template-listing-php h1,
+  .page-template-template-listing-php .h1 {
+    background-color: #4da6ff;
+    color: #fff!important;
+    display: inline-block;
+  }
   .video-col-sm-padding-bottom {
     padding-bottom: 35px;
   }
@@ -6521,6 +6650,11 @@ figure.alignnone {
   .page-template-template-video-listing-image-php .video-menu a {
     background-color: #DDD;
   }
+  .page-template-template-video-listing-text-php .video-menu a:hover,
+  .page-template-template-video-listing-image-php .video-menu a:hover {
+    background-color: #4DA6FF;
+    text-decoration: none;
+  }
   .page-template-template-video-listing-text-php .video-menu .active,
   .page-template-template-video-listing-image-php .video-menu .active {
     background-color: #4DA6FF;
@@ -6530,6 +6664,10 @@ figure.alignnone {
   }
   .page-template-template-listing-img-php .image-menu a {
     background-color: #DDD;
+  }
+  .page-template-template-listing-img-php .image-menu a:hover {
+    background-color: #2DB300;
+    text-decoration: none;
   }
   .page-template-template-listing-img-php .image-menu .active {
     background-color: #2DB300;
@@ -6554,6 +6692,14 @@ figure.alignnone {
     font-size: 170%;
     padding: 4px 8px;
   }
+  .video-menu span,
+  .image-menu span {
+    background: url(../img/arrow_nav_right.png) no-repeat right;
+    width: 15px;
+    height: 42px;
+    float: left;
+    display: block;
+  }
   .video-submenu,
   .image-submenu {
     margin-bottom: 15px;
@@ -6561,19 +6707,31 @@ figure.alignnone {
   .video-submenu a,
   .image-submenu a {
     font-family: 'Roboto Condensed';
-    color: #000;
+    color: #777;
     font-weight: bold;
     padding: 3px 10px;
-    background-color: #FFC926;
+    background-color: #DDD;
     display: block;
     float: left;
     margin-right: 7px;
     border-radius: 3px;
   }
+  .video-submenu a:hover,
+  .image-submenu a:hover {
+    background-color: #FFC926;
+    color: #000;
+    text-decoration: none;
+  }
+  .video-submenu .active,
+  .image-submenu .active {
+    background-color: #FFC926;
+    color: #000;
+  }
 }
 .home .main {
   padding-left: 0;
   padding-right: 0;
+  margin-top: 108px!important;
 }
 .home .main .container {
   padding: 0!important;
@@ -6639,9 +6797,6 @@ figure.alignnone {
   display: block;
 }
 @media (min-width: 768px) {
-  .home .main {
-    margin-top: 0px;
-  }
   .home .main .main-list .date {
     float: left;
     width: 40%;
@@ -6696,8 +6851,8 @@ figure.alignnone {
 }
 .fancybox-skin {
   position: relative;
-  background: #f9f9f9;
-  color: #444;
+  background: #000;
+  color: #fff;
   text-shadow: none;
   border-radius: 4px;
 }

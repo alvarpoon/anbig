@@ -4996,8 +4996,22 @@ var Roots = {
           $(".nav-container").css({overflow:"inherit"});
         }
       }
+	  
+	  function setMediaMenu(){
+		if($('.mobileMediaNav').length > 0){
+			$('.mobileMediaToggle').click(function(){
+				$('.mobileMediaNav').toggleClass('open');			
+			});
+		}
+		if($('.mobileMediaSubNav').length > 0){
+			$('.mobileMediaSubToggle').click(function(){
+				$('.mobileMediaSubNav').toggleClass('open');			
+			});
+		}
+	  }
       //fix the mobile menu scrolling problem
       $(document).ready(setMobileMenu);
+	  $(document).ready(setMediaMenu);
       $(window).resize(setMobileMenu);
     }
   },
@@ -5024,11 +5038,11 @@ var Roots = {
       });
     }
   },
-  page_template_template_listing_text_php:  {
+  page_template_template_video_listing_text_php:  {
     init: function() {
       // JavaScript to be fired on the about us page
       $(document).ready(function(){
-        /*$(".video").click(function() {
+        $(".btnVideoDetail").click(function() {
             $.fancybox({
                 'padding'       : 0,
                 'width'         : 'auto',
@@ -5036,10 +5050,33 @@ var Roots = {
                 'href'          : this.href,
                 'autoResize'    : true,
                 'autoSize'      : true,
-                'content'       : "<video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" controls preload=\"none\" width=\"640\" height=\"264\" data-setup='{'autoplay': true}'><source src=\""+this.href+"\" type='video/mp4' /><track kind=\"captions\" src=\"demo.captions.vtt\" srclang=\"en\" label=\"English\"></track><!-- Tracks need an ending tag thanks to IE9 --><track kind=\"subtitles\" src=\"demo.captions.vtt\" srclang=\"en\" label=\"English\"></track><!-- Tracks need an ending tag thanks to IE9 --></video>"
+				'showCloseButton': true,
+				'autoScale'		: true,
+                'content'       : "<div><video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" controls preload=\"none\" data-setup='{'autoplay': true}'><source src=\""+this.href+"\" type='video/mp4' /><track kind=\"captions\" src=\"demo.captions.vtt\" srclang=\"en\" label=\"English\"></track><!-- Tracks need an ending tag thanks to IE9 --><track kind=\"subtitles\" src=\"demo.captions.vtt\" srclang=\"en\" label=\"English\"></track><!-- Tracks need an ending tag thanks to IE9 --></video></div><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p>"
                 });
               return false;
-            });*/
+            });
+        });
+    }
+  },
+  page_template_template_video_listing_image_php:  {
+    init: function() {
+      // JavaScript to be fired on the about us page
+      $(document).ready(function(){
+        $(".videoLink").click(function() {
+            $.fancybox({
+                'padding'       : 30,
+                'width'         : 'auto',
+                'height'        : 'auto',
+                'href'          : this.href,
+                'autoResize'    : true,
+                'autoSize'      : true,
+				'showCloseButton': true,
+				'autoScale'		: true,
+                'content'       : "<div><video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" controls preload=\"none\" data-setup='{'autoplay': true}'><source src=\""+this.href+"\" type='video/mp4' /><track kind=\"captions\" src=\"demo.captions.vtt\" srclang=\"en\" label=\"English\"></track><!-- Tracks need an ending tag thanks to IE9 --><track kind=\"subtitles\" src=\"demo.captions.vtt\" srclang=\"en\" label=\"English\"></track><!-- Tracks need an ending tag thanks to IE9 --></video></div><div style='width:640px'><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p></div>"
+                });
+              return false;
+            });
         });
     }
   },

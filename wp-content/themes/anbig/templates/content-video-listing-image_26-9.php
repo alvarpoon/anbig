@@ -1,23 +1,23 @@
-<?=get_template_part('partials/image_menu'); ?>
-<?=get_template_part('partials/image_submenu'); ?>
+<?=get_template_part('partials/video_menu'); ?>
+<?=get_template_part('partials/video_submenu'); ?>
 <div class="container">
-  <div class="row">
+	<div class="row">
 <?
   global $current_cat_id;
   //echo $current_cat_id;
   $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
   $args= array(
-    'post_type' => 'image',
+    'post_type' => 'video',
     'tax_query' => array(
                       array(
-                        'taxonomy' => 'image_category',
+                        'taxonomy' => 'video_category',
                         'field'    => 'id',
                         'terms'    => $current_cat_id,
                       )
                     ),
     'post_status' => 'publish',
     'posts_per_page' => 6,
-    'orderby'   => 'date',
+    'orderby'		=> 'date',
     'order' => 'DESC',
     'paged' => $paged
   );
@@ -26,19 +26,20 @@
     $wp_query->the_post();
     $id = get_the_ID();
     $post = get_post($id);
-    $image = get_field('original_image',$id);
-    $url = $image['sizes']['listing-image'];
+    $video_id = get_field('video');
+    $video_url = wp_get_attachment_url( $video_id );
+    $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'listing-image' );
  ?>
-    <div class="col-sm-4 listingImageItem clearfix">
-    	<img class="fullwidthImg img-responsive" src="<?=$url?>" />
-   		<p class="doctor"><?=get_field("doctor",$id)?></p>
-        <p class="desp"><? $content = get_the_content(); $content = strip_tags($content); echo substr($content, 0, 90).'...'; ?></p>
-        <a class="btnReadMore fancybox" href="<?=$url?>">Read more</a>
+ 		<div class="col-sm-4">
+      <a class="videoLink" href="<?=$video_url?>" person="<?=get_field("doctor",$result->ID)?>" desp="<?=the_content()?>"><img class="img-responsive" src="<?=$image_url[0]?>" /></a>
+      <p class="doctor"><?=get_field("doctor",$result->ID)?></p>
+	  <p class="desp"><? $content = get_the_content(); $content = strip_tags($content); echo substr($content, 0, 80).'...'; ?></p>
+      <a class="videoLink" href="<?=$video_url?>" person="<?=get_field("doctor",$result->ID)?>" desp="<?=the_content()?>">Read more</a>
     </div>
  <?
   endwhile;
  ?>
-  </div>
+ 	</div>
   <div class="row">
 <?
   $big = 999999999; // need an unlikely integer
