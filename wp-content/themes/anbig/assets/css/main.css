@@ -6901,7 +6901,8 @@ figure.alignnone {
   background-image: url('../img/fancyBox/btn_fancybox_right.gif');
 }
 .fancybox-close {
-  background-image: url('../img/fancyBox/btn-popup-close.gif');
+  /*background-image: url('../img/fancyBox/btn-popup-close.gif');*/
+  background: url('../img/btn_lightbox_close.png') no-repeat;
 }
 #fancybox-loading {
   position: fixed;
@@ -6921,12 +6922,12 @@ figure.alignnone {
 }
 .fancybox-close {
   position: absolute;
-  top: -32px;
+  top: 20px;
   right: 20px;
   cursor: pointer;
   z-index: 8040;
-  width: 57px;
-  height: 32px;
+  width: 25px;
+  height: 25px;
 }
 .fancybox-nav {
   position: absolute;

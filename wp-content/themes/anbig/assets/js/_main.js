@@ -80,15 +80,15 @@ var Roots = {
       $(document).ready(function(){
         $(".btnVideoDetail").click(function() {
             $.fancybox({
-                'padding'       : 0,
-                'width'         : 'auto',
-                'height'        : 'auto',
+                'padding'       : 30,
+                'width'         : '640',
+                'height'        : '500',
                 'href'          : this.href,
                 'autoResize'    : true,
                 'autoSize'      : true,
 				'showCloseButton': true,
 				'autoScale'		: true,
-                'content'       : "<div><video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" controls preload=\"none\" data-setup='{'autoplay': true}'><source src=\""+this.href+"\" type='video/mp4' /><track kind=\"captions\" src=\"demo.captions.vtt\" srclang=\"en\" label=\"English\"></track><!-- Tracks need an ending tag thanks to IE9 --><track kind=\"subtitles\" src=\"demo.captions.vtt\" srclang=\"en\" label=\"English\"></track><!-- Tracks need an ending tag thanks to IE9 --></video></div><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p>"
+                'content'       : "<div><video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" width=\"auto\" height=\"auto\" style=\"width:100% !important; height:auto !important\" controls preload=\"none\" data-setup='{'autoplay': true, 'enterFullScreen':true}'><source src=\""+this.href+"\" type='video/mp4' /></video></div><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p>"
                 });
               return false;
             });
@@ -102,14 +102,14 @@ var Roots = {
         $(".videoLink").click(function() {
             $.fancybox({
                 'padding'       : 30,
-                'width'         : 'auto',
-                'height'        : 'auto',
+                'width'         : '640',
+                'height'        : '500',
                 'href'          : this.href,
                 'autoResize'    : true,
                 'autoSize'      : true,
 				'showCloseButton': true,
 				'autoScale'		: true,
-                'content'       : "<div><video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" controls preload=\"none\" data-setup='{'autoplay': true}'><source src=\""+this.href+"\" type='video/mp4' /><track kind=\"captions\" src=\"demo.captions.vtt\" srclang=\"en\" label=\"English\"></track><!-- Tracks need an ending tag thanks to IE9 --><track kind=\"subtitles\" src=\"demo.captions.vtt\" srclang=\"en\" label=\"English\"></track><!-- Tracks need an ending tag thanks to IE9 --></video></div><div style='width:640px'><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p></div>"
+                'content'       : "<div style=\"margin:0 auto; width:80%;\"><video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" width=\"auto\" height=\"auto\" style=\"width:100% !important; height:auto !important\" controls preload=\"none\" data-setup='{'autoplay': true, 'enterFullScreen':true}'><source src=\""+this.href+"\" type='video/mp4' /></video></div><div style=\"max-width:500px; height:100px; overflow:hidden;\"><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p>"
                 });
               return false;
             });
