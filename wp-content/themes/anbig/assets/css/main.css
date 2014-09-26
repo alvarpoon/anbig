@@ -6494,7 +6494,8 @@ figure.alignnone {
   display: inline-block;
 }
 .page-template-template-listing-img-php .page-header,
-.page-template-template-video-listing-image-php .page-header {
+.page-template-template-video-listing-image-php .page-header,
+.page-template-template-video-listing-text-php .page-header {
   display: none;
 }
 .listingImageItem .videoLink {
