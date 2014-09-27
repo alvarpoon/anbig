@@ -6451,7 +6451,7 @@ figure.alignnone {
 }
 .main {
   float: none;
-  margin-top: 109px;
+  margin-top: 63px;
   padding: 0;
 }
 .main .nopaddingHeader-xs {
@@ -6732,7 +6732,7 @@ figure.alignnone {
 .home .main {
   padding-left: 0;
   padding-right: 0;
-  margin-top: 108px!important;
+  margin-top: 63px;
 }
 .home .main .container {
   padding: 0!important;
@@ -6798,6 +6798,9 @@ figure.alignnone {
   display: block;
 }
 @media (min-width: 768px) {
+  .home .main {
+    margin-top: 0;
+  }
   .home .main .main-list .date {
     float: left;
     width: 40%;
