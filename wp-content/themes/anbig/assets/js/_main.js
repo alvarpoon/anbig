@@ -80,7 +80,7 @@ var Roots = {
       $(document).ready(function(){
         $(".btnVideoDetail").click(function() {
             $.fancybox({
-                'padding'       : 30,
+                'padding'       : 0,
                 'width'         : '640',
                 'height'        : '500',
                 'href'          : this.href,
@@ -88,7 +88,7 @@ var Roots = {
                 'autoSize'      : true,
 				'showCloseButton': true,
 				'autoScale'		: true,
-                'content'       : "<div><video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" width=\"auto\" height=\"auto\" style=\"width:100% !important; height:auto !important\" controls preload=\"none\" data-setup='{'autoplay': true, 'enterFullScreen':true}'><source src=\""+this.href+"\" type='video/mp4' /></video></div><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p>"
+                'content'       : "<div class=\"lightboxVideoContainer\"><video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" width=\"auto\" height=\"auto\" style=\"width:100% !important; height:auto !important\" controls preload=\"none\" data-setup='{'autoplay': true, 'enterFullScreen':true}'><source src=\""+this.href+"\" type='video/mp4' /></video></div><div class=\"lightboxContentContainer\"><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p></div>"
                 });
               return false;
             });
@@ -101,7 +101,7 @@ var Roots = {
       $(document).ready(function(){
         $(".videoLink").click(function() {
             $.fancybox({
-                'padding'       : 30,
+                'padding'       : 0,
                 'width'         : '640',
                 'height'        : '500',
                 'href'          : this.href,
@@ -109,11 +109,81 @@ var Roots = {
                 'autoSize'      : true,
 				'showCloseButton': true,
 				'autoScale'		: true,
-                'content'       : "<div style=\"margin:0 auto; width:80%;\"><video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" width=\"auto\" height=\"auto\" style=\"width:100% !important; height:auto !important\" controls preload=\"none\" data-setup='{'autoplay': true, 'enterFullScreen':true}'><source src=\""+this.href+"\" type='video/mp4' /></video></div><div style=\"max-width:500px; height:100px; overflow:hidden;\"><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p>"
+                'content'       : "<div class=\"lightboxVideoContainer\"><video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" width=\"auto\" height=\"auto\" style=\"width:100% !important; height:auto !important\" controls preload=\"none\" data-setup='{'autoplay': true, 'enterFullScreen':true}'><source src=\""+this.href+"\" type='video/mp4' /></video></div><div class=\"lightboxContentContainer\"><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p></div>"
                 });
               return false;
             });
         });
+		$(".lightboxContentContainer").jScrollPane({
+		});
+    }
+  },
+  page_template_template_listing_img_php:  {
+    init: function() {
+      // JavaScript to be fired on the about us page
+      $(document).ready(function(){
+		  
+		function setImageFilter(){
+			$('.lightBoxImg').children('div').each(function(){
+				$(this).css('display','none');
+				$('.originalImgContainer').css('display','block');
+				$('.btnOriginalImage').addClass("active");
+			});
+			
+			$('.btnOriginalImage').click(function(){
+				$('.imageFilterContainer a').each(function(){
+					$(this).removeClass("active");	
+				});
+				$('.lightBoxImg').children('div').each(function(){
+					$(this).css('display','none');
+					$('.originalImgContainer').css('display','block');
+					$('.btnOriginalImage').addClass("active");
+				});
+			});
+			
+			$('.btnNBI').click(function(){
+				$('.imageFilterContainer a').each(function(){
+					$(this).removeClass("active");	
+				});
+				$('.lightBoxImg').children('div').each(function(){
+					$(this).css('display','none');
+					$('.nbiImgContainer').css('display','block');
+					$('.btnNBI').addClass("active");
+				});
+			});
+		}
+		  
+        $(".imgLink").click(function() {
+            $.fancybox({
+                'padding'       : 0,
+                'width'         : '640',
+                'height'        : '600',
+                'href'          : this.href,
+                'autoResize'    : true,
+                'autoSize'      : true,
+				'showCloseButton': true,
+				'autoScale'		: true,
+                'content'       : "<div class=\"lightboxVideoContainer\"><div class=\"lightBoxImg\"><div class=\"originalImgContainer\"><img class=\"fullImgWidth\" src=\""+this.href+"\"></div><div class=\"nbiImgContainer\"><img id=\"nbi_image\" class=\"fullImgWidth\" src=\""+this.href+"\" data-big=\""+$(this).attr("nbi_image")+"\" data-big2x=\""+$(this).attr("nbi_image")+"\" data-overlay="+$(this).attr("nbi_image")+"\" /></div></div><div class=\"imageFilterContainer\"><a href=\"javascript:;\" class=\"btnOriginalImage\">Original image</a><a href=\"javascript:;\" class=\"btnNBI\">NBI image</a></div><div class=\"lightboxImgContentContainer\"><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p></div></div>",
+				 afterShow : function() {
+					 $.when($("#nbi_image").mlens({
+						imgSrc: $("#nbi_image").attr("data-big"),	    // path of the hi-res version of the image
+						imgSrc2x: $("#nbi_image").attr("data-big2x"),  // path of the hi-res @2x version of the image
+																				   //for retina displays (optional)
+						lensShape: "circle",				// shape of the lens (circle/square)
+						lensSize: 180,					// size of the lens (in px)
+						borderSize: 1,					// size of the lens border (in px)
+						borderColor: "#fff",				// color of the lens border (#hex)
+						borderRadius: 0,				// border radius (optional, only if the shape is square)
+						imgOverlay: $("#nbi_image").attr("data-overlay"), // path of the overlay image (optional)
+						overlayAdapt: true, // true if the overlay image has to adapt to the lens size (true/false)
+						zoomLevel: 0                                  // zoom level multiplicator (number)
+					})).then(setImageFilter());
+				}
+                });
+              return false;
+            });
+        });
+		$(".lightboxContentContainer").jScrollPane();
     }
   },
   // About us page, note the change from about-us to about_us.

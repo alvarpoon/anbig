@@ -27,13 +27,16 @@
     $id = get_the_ID();
     $post = get_post($id);
     $image = get_field('original_image',$id);
-    $url = $image['sizes']['listing-image'];
+    //$url = $image['sizes']['listing-image'];
+	$url = $image['sizes']['large'];
+	$nbiImage = get_field("nbi_image",$id);
+	$nbiURL = $nbiImage['sizes']['large'];
  ?>
     <div class="col-sm-4 listingImageItem clearfix">
-    	<img class="fullwidthImg img-responsive" src="<?=$url?>" />
+    	<a class="imgLink" href="<?=$url?>" person="<?=get_field("doctor",$result->ID)?>" desp="<?=the_content()?>" nbi_image="<?=$nbiURL?>"><img class="fullwidthImg img-responsive" src="<?=$url?>" /></a>
    		<p class="doctor"><?=get_field("doctor",$id)?></p>
         <p class="desp"><? $content = get_the_content(); $content = strip_tags($content); echo substr($content, 0, 90).'...'; ?></p>
-        <a class="btnReadMore fancybox" href="<?=$url?>">Read more</a>
+        <a class="btnReadMore imgLink" href="<?=$url?>" person="<?=get_field("doctor",$result->ID)?>" desp="<?=the_content()?>" nbi_image="">Read more</a>
     </div>
  <?
   endwhile;

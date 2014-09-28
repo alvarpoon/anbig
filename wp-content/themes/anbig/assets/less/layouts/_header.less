@@ -26,18 +26,33 @@
 	.main-menu li a{
 		background:url(../img/bg_mainnav.png) repeat-x top;
 		.dropdown-toggle{background:url(../img/bg_mainnav.png) repeat-x top;}
+		font-family:"Roboto Condensed";
+		color:#212121;
+		padding-left:40px;
 		text-transform:uppercase;
 	}
+	
+	.main-menu .dropdown{
+		.dropdown-toggle{
+			.caret{
+				float:right;
+				color:#fff;
+				margin-top:8px;
+			}
+		}
+	}
+	
 	.main-menu li .dropdown-menu{
 		padding-top:0;
 		li{
-			border-bottom:1px solid #fff;
 			a{
 				background-image:none; 
 				background-color:#888; 
 				color:#fff;
 				padding-top:10px;
 				padding-bottom:10px;
+				padding-left:67px;
+				border-bottom:1px solid #fff;
 			}
 		}
 	}
@@ -111,6 +126,7 @@
 					position:absolute;
 					bottom:2px;
 					left:48%;
+					color:#212121!important;
 				}
 			}
 		}
@@ -126,12 +142,15 @@
 					width:195px;
 					font-size:15px;
 					color:#fff!important;
-					padding:15px 0;
+					padding:10px 0!important;
 					border-right:0;
 					
 					&:hover{color:#212121!important; background-color:#fff!important;}
-				}			
+				}
 			}
+			li:last-child a{
+				border:none;
+			} 
 		}
 	}
 }
