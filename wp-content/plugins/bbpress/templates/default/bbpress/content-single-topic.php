@@ -9,7 +9,7 @@
 
 ?>
 
-<div id="bbpress-forums">
+<div class="container" id="bbpress-forums">
 
 	<?php bbp_breadcrumb(); ?>
 
