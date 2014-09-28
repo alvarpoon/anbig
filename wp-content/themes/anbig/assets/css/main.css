@@ -6669,7 +6669,7 @@ figure.alignnone {
 .lightBoxImg {
   text-align: center;
   position: relative;
-  height: 500px;
+  height: 250px;
   overflow: hidden;
 }
 .lightBoxImg .originalImgContainer {
@@ -6814,6 +6814,9 @@ figure.alignnone {
   .image-submenu .active {
     background-color: #FFC926;
     color: #000;
+  }
+  .lightBoxImg {
+    height: 500px;
   }
 }
 .home .main {
