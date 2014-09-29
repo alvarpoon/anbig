@@ -36,7 +36,7 @@
 				<div class="mobileMediaNav">
 					<div class="mobileMediaToggle clearfix">
 						<span class="currentPageName"><?=$result->post_title;?></span>
-						<span class="dropdownArrow"></span>
+						<span class="dropdownArrow"><b class="caret"></b></span>
 					</div>
 					<div class="mobileMediaList">
 			<?		

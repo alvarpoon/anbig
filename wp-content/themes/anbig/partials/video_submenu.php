@@ -67,7 +67,7 @@
 				<div class="mobileMediaSubNav">
 					<div class="mobileMediaSubToggle clearfix">
 						<span class="currentPageName"><?=$category->name;?></span>
-						<span class="dropdownArrow"></span>
+						<span class="dropdownArrow"><b class="caret"></b></span>
 					</div>
 			<?
 			}	

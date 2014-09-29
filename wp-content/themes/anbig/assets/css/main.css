@@ -6302,12 +6302,7 @@ figure.alignnone {
   color: #fff;
 }
 @media (min-width: 768px) {
-  .navbar-fixed-top {
-    position: relative;
-    top: auto;
-  }
   .navbar-default {
-    max-width: 992px !important;
     margin: 0 auto;
   }
   .sector-menu {
@@ -6387,6 +6382,13 @@ figure.alignnone {
     border: none;
   }
 }
+@media (min-width: 992px) {
+  .navbar-nav {
+    float: none;
+    margin: 0 auto;
+    max-width: 992px;
+  }
+}
 .sidebar {
   position: relative;
   min-height: 1px;
@@ -6462,7 +6464,7 @@ figure.alignnone {
 }
 .main {
   float: none;
-  margin-top: 63px;
+  margin-top: 109px;
   padding: 0;
 }
 .main .nopaddingHeader-xs {
@@ -6564,6 +6566,10 @@ figure.alignnone {
   height: 30px;
   border-left: 1px solid #777;
 }
+.mobileMediaNav .mobileMediaToggle .dropdownArrow .caret {
+  margin: 14px auto 0 auto;
+  display: block;
+}
 .mobileMediaNav .mobileMediaList {
   display: none;
   padding: 5px 15px 5px 15px;
@@ -6602,6 +6608,10 @@ figure.alignnone {
   width: 30px;
   height: 30px;
   border-left: 1px solid #777;
+}
+.mobileMediaSubNav .mobileMediaSubToggle .dropdownArrow .caret {
+  margin: 14px auto 0 auto;
+  display: block;
 }
 .mobileMediaSubNav .mobileMediaSubList {
   display: none;
@@ -6692,7 +6702,7 @@ figure.alignnone {
 }
 @media (min-width: 768px) {
   .main {
-    margin-top: 0;
+    margin-top: 160px;
   }
   .main .nopaddingHeader-xs {
     padding-left: 15px;
@@ -6818,11 +6828,18 @@ figure.alignnone {
   .lightBoxImg {
     height: 500px;
   }
+  .single-forum h1,
+  .single-forum .h1 {
+    background-color: #605CA9;
+    color: #fff!important;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
 }
 .home .main {
   padding-left: 0;
   padding-right: 0;
-  margin-top: 63px;
+  margin-top: 109px;
 }
 .home .main .container {
   padding: 0!important;
@@ -6889,7 +6906,7 @@ figure.alignnone {
 }
 @media (min-width: 768px) {
   .home .main {
-    margin-top: 0;
+    margin-top: 159px;
   }
   .home .main .main-list .date {
     float: left;

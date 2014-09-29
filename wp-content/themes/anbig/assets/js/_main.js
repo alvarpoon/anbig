@@ -163,21 +163,36 @@ var Roots = {
                 'autoSize'      : true,
 				'showCloseButton': true,
 				'autoScale'		: true,
-                'content'       : "<div class=\"lightboxVideoContainer\"><div class=\"lightBoxImg\"><div class=\"originalImgContainer\"><img class=\"fullImgWidth\" src=\""+this.href+"\"></div><div class=\"nbiImgContainer\"><img id=\"nbi_image\" class=\"fullImgWidth\" src=\""+this.href+"\" data-big=\""+$(this).attr("nbi_image")+"\" data-big2x=\""+$(this).attr("nbi_image")+"\" data-overlay="+$(this).attr("nbi_image")+"\" /></div></div><div class=\"imageFilterContainer\"><a href=\"javascript:;\" class=\"btnOriginalImage\">Original image</a><a href=\"javascript:;\" class=\"btnNBI\">NBI image</a></div><div class=\"lightboxImgContentContainer\"><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p></div></div>",
+                'content'       : "<div class=\"lightboxVideoContainer\"><div class=\"lightBoxImg\"><div class=\"originalImgContainer\"><img id=\"orginal_image\" class=\"fullImgWidth\" src=\""+this.href+"\" data-big=\""+$(this).attr("nbi_image")+"\" data-big2x=\""+$(this).attr("nbi_image")+"\" data-overlay="+$(this).attr("nbi_image")+"\" /></div><div class=\"nbiImgContainer\"><img id=\"nbi_image\" class=\"fullImgWidth\" src=\""+$(this).attr("nbi_image")+"\" data-big=\""+this.href+"\" data-big2x=\""+this.href+"\" data-overlay="+this.href+"\" /></div></div><div class=\"imageFilterContainer\"><a href=\"javascript:;\" class=\"btnOriginalImage\">Original image</a><a href=\"javascript:;\" class=\"btnNBI\">NBI image</a></div><div class=\"lightboxImgContentContainer\"><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p></div></div>",
 				 afterShow : function() {
-					 $.when($("#nbi_image").mlens({
-						imgSrc: $("#nbi_image").attr("data-big"),	    // path of the hi-res version of the image
-						imgSrc2x: $("#nbi_image").attr("data-big2x"),  // path of the hi-res @2x version of the image
-																				   //for retina displays (optional)
-						lensShape: "circle",				// shape of the lens (circle/square)
-						lensSize: 180,					// size of the lens (in px)
-						borderSize: 1,					// size of the lens border (in px)
-						borderColor: "#fff",				// color of the lens border (#hex)
-						borderRadius: 0,				// border radius (optional, only if the shape is square)
-						imgOverlay: $("#nbi_image").attr("data-overlay"), // path of the overlay image (optional)
-						overlayAdapt: true, // true if the overlay image has to adapt to the lens size (true/false)
-						zoomLevel: 0                                  // zoom level multiplicator (number)
-					})).then(setImageFilter());
+					 $.when(
+					 	$("#orginal_image").mlens({
+							imgSrc: $("#orginal_image").attr("data-big"),	    // path of the hi-res version of the image
+							imgSrc2x: $("#orginal_image").attr("data-big2x"),  // path of the hi-res @2x version of the image
+																					   //for retina displays (optional)
+							lensShape: "circle",				// shape of the lens (circle/square)
+							lensSize: 180,					// size of the lens (in px)
+							borderSize: 1,					// size of the lens border (in px)
+							borderColor: "#fff",				// color of the lens border (#hex)
+							borderRadius: 0,				// border radius (optional, only if the shape is square)
+							imgOverlay: $("#orginal_image").attr("data-overlay"), // path of the overlay image (optional)
+							overlayAdapt: true, // true if the overlay image has to adapt to the lens size (true/false)
+							zoomLevel: 0                                  // zoom level multiplicator (number)
+						}),
+						$("#nbi_image").mlens({
+							imgSrc: $("#nbi_image").attr("data-big"),	    // path of the hi-res version of the image
+							imgSrc2x: $("#nbi_image").attr("data-big2x"),  // path of the hi-res @2x version of the image
+																					   //for retina displays (optional)
+							lensShape: "circle",				// shape of the lens (circle/square)
+							lensSize: 180,					// size of the lens (in px)
+							borderSize: 1,					// size of the lens border (in px)
+							borderColor: "#fff",				// color of the lens border (#hex)
+							borderRadius: 0,				// border radius (optional, only if the shape is square)
+							imgOverlay: $("#nbi_image").attr("data-overlay"), // path of the overlay image (optional)
+							overlayAdapt: true, // true if the overlay image has to adapt to the lens size (true/false)
+							zoomLevel: 0                                  // zoom level multiplicator (number)
+						})
+					).then(setImageFilter());
 				}
                 });
               return false;
