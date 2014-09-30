@@ -27,39 +27,45 @@
 		<div class="row">
 			<div class="col-sm-4 col-xs-6 smallPadding-xs">
 				<h2 class="videoHomeHeader">Videos</h2>
-
+			<?
+				/*$args = array( 'numberposts' => 1, 'post_type' => 'video', 'post_status' => 'publish', 'order' => 'DESC', 'orderby' => 'date');
+				  $results = get_posts( $args );
+				  foreach( $results as $result ){
+				  	$link = get_permalink($result->ID);
+				  }*/
+			?>
 			</div>
 			<div class="col-sm-4 col-xs-6 smallPadding-xs">
-				<h2 class="imageHomeHeader">Image Archives</h2>
+				<h2 class="imageHomeHeader"><a href="<?=site_url()?>/image-archives/">Image Archives</a></h2>
 				<?
 				if(!empty($image_archives_banner)){
-					echo '<img class="img-responsive fullWidthImg" src="'.$image_archives_banner['sizes']['listing-image'].'">';
+					echo '<a href="'.site_url().'/image-archives/"><img class="img-responsive fullWidthImg" src="'.$image_archives_banner['sizes']['listing-image'].'"></a>';
 				}
 				?>
 			</div>
 			<div class="col-sm-4 hidden-xs">
-				<h2 class="activitiesHomeHeader">Activities</h2>
+				<h2 class="activitiesHomeHeader"><a href="<?=site_url()?>/activities/">Activities</a></h2>
 				<?
 				if(!empty($activities_banner)){
-					echo '<img class="img-responsive fullWidthImg" src="'.$activities_banner['sizes']['listing-image'].'">';
+					echo '<a href="'.site_url().'/activities/"><img class="img-responsive fullWidthImg" src="'.$activities_banner['sizes']['listing-image'].'"></a>';
 				}
 				?>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-sm-6">
-				<h2 class="discussionHomeHeader">Discussion Forum</h2>
+				<h2 class="discussionHomeHeader"><a href="<?=site_url()?>/forum/discussion-forum-2/">Discussion Forum</a></h2>
 				<?
 				if(!empty($discussion_forum_banner)){
-					echo '<img class="img-responsive fullWidthImg" src="'.$discussion_forum_banner['sizes']['mainpage-section-image'].'">';
+					echo '<a href="'.site_url().'/forum/discussion-forum-2/"><img class="img-responsive fullWidthImg" src="'.$discussion_forum_banner['sizes']['mainpage-section-image'].'"></a>';
 				}
 				?>
 			</div>
 			<div class="col-sm-6">
-				<h2 class="quizHomeHeader">NBI Quiz</h2>
+				<h2 class="quizHomeHeader"><a href="<?=site_url()?>/nbi-quiz/">NBI Quiz</a></h2>
 				<?
 				if(!empty($nbi_quiz_banner)){
-					echo '<img class="img-responsive fullWidthImg" src="'.$nbi_quiz_banner['sizes']['mainpage-section-image'].'">';
+					echo '<a href="'.site_url().'/nbi-quiz/"><img class="img-responsive fullWidthImg" src="'.$nbi_quiz_banner['sizes']['mainpage-section-image'].'"></a>';
 				}
 				?>
 			</div>
