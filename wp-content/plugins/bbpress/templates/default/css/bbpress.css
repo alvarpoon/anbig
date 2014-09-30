@@ -1161,6 +1161,7 @@ body.my-account #bbpress-forums {
 	font-size:15px;	
 }
 .bbp-body a{color:#000!important;}
+.bbp-author-avatar{display:none;}
 /*added by Ron ends*/
 
 /* =Standard Mobile Landscape

@@ -29,9 +29,12 @@
  		<div class="col-sm-2"><p class="date"><?=get_the_date("M j",$id)?></p></div>
 	    <div class="col-sm-8">
 			<p class="title"><?=$post->post_title?></p>
-			<a class="btnVideoDetail" href="<?=$video_url?>" person="<?=get_field("doctor")?>" desp="<?=$post->post_title?>">Details</a>
+			<a class="btnVideoDetail hidden-xs" href="<?=$video_url?>" person="<?=get_field("doctor")?>" desp="<?=$post->post_title?>">Details</a>
 		</div>
-    	<div class="col-sm-2"><p class="person"><?=get_field("doctor")?></p></div>
+    	<div class="col-sm-2">
+        	<p class="person"><?=get_field("doctor")?></p>
+            <a class="btnVideoDetail hidden-sm hidden-md hidden-lg" href="<?=$video_url?>" person="<?=get_field("doctor")?>" desp="<?=$post->post_title?>">Details</a>
+        </div>
 	</div>
  <?
   endwhile;

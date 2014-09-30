@@ -31,7 +31,10 @@
     	</div>
     </div>
     <div class="row">
-    	<p class="pull-right"><strong>20136</strong> Total Views</p>
+    	<p class="pull-right viewCounter">
+        	<strong>20 136</strong>
+            <span>Total Views</span>
+        </p>
     </div>
   </div>
 </footer>
