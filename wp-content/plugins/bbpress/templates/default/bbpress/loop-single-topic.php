@@ -46,6 +46,11 @@
 		<?php do_action( 'bbp_theme_before_topic_title' ); ?>
 
 		<a class="bbp-topic-permalink" href="<?php bbp_topic_permalink(); ?>"><?php bbp_topic_title(); ?></a>
+        
+        <div class="bbp-topic-content-preview">
+			<p><?php $content = bbp_get_topic_content(); $content = strip_tags($content); echo substr($content, 0, 100).'...'; ?></p>
+            <a href="<?php bbp_topic_permalink(); ?>" class="btnReadMore">Read More</a>
+        </div>
 
 		<?php do_action( 'bbp_theme_after_topic_title' ); ?>
 
@@ -53,7 +58,7 @@
 
 		<?php do_action( 'bbp_theme_before_topic_meta' ); ?>
 
-		<p class="bbp-topic-meta">
+		<!--<p class="bbp-topic-meta">
 
 			<?php do_action( 'bbp_theme_before_topic_started_by' ); ?>
 
@@ -71,7 +76,7 @@
 
 			<?php endif; ?>
 
-		</p>
+		</p>-->
 
 		<?php do_action( 'bbp_theme_after_topic_meta' ); ?>
 

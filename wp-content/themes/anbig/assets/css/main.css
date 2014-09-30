@@ -6511,6 +6511,17 @@ figure.alignnone {
 .page-template-template-video-listing-text-php .page-header {
   display: none;
 }
+.btnReadMore {
+  font-family: 'Roboto Condensed';
+  background-color: #FFC926;
+  color: #000;
+  font-weight: bold;
+  padding: 3px 10px;
+  display: block;
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 45px;
+}
 .listingImageItem .videoLink {
   margin-bottom: 10px;
   display: block;
@@ -6523,21 +6534,12 @@ figure.alignnone {
   color: #777;
   font-size: 14px;
 }
-.listingImageItem .btnReadMore {
-  font-family: 'Roboto Condensed';
-  background-color: #FFC926;
-  color: #000;
-  font-weight: bold;
-  padding: 3px 10px;
-  display: block;
-  border-radius: 3px;
-  display: inline-block;
-  float: right;
-  margin-bottom: 45px;
-}
 .listingImageItem .fullwidthImg {
   width: 100%;
   height: auto;
+}
+.listingImageItem .btnReadMore {
+  float: right;
 }
 .mobileMediaNav {
   margin-bottom: 10px;

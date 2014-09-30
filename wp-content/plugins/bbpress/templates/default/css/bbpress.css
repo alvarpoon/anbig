@@ -99,7 +99,7 @@ body.reply-edit .reply {
 	/*background: #f3f3f3;
 	border-top: 1px solid #eee;*/
 	font-weight: bold;
-	padding: 8px;
+	padding: 8px 8px 8px 48px;
 	text-align: center;
 }
 
@@ -137,8 +137,15 @@ li.bbp-topic-title {
 	text-align: left;
 	width: 65%;
 }
+
+li.bbp-topic-title .bbp-topic-permalink{
+	font-size:18px;
+	color:#000;
+	font-family:'Roboto';
+	font-weight:bold;
+}
+
 li.bbp-forum-topic-count,
-li.bbp-topic-voice-count,
 li.bbp-forum-reply-count,
 li.bbp-topic-reply-count {
 	float: left;
@@ -146,9 +153,15 @@ li.bbp-topic-reply-count {
 	width: 10%;
 }
 
+li.bbp-topic-voice-count{
+	float: left;
+	text-align: right;
+	width: 10%;
+}
+
 li.bbp-forum-freshness,
 li.bbp-topic-freshness {
-	text-align: center;
+	text-align: left;
 	float: left;
 	width: 22%;
 }
@@ -157,7 +170,7 @@ li.bbp-topic-freshness {
 #bbpress-forums li.bbp-body ul.topic {
 	/*border-top: 1px solid #eee;*/
 	overflow: hidden;
-	padding: 8px;
+	padding: 8px 8px 8px 20px;
 }
 
 li.bbp-header div.bbp-topic-content span#subscription-toggle,
@@ -541,10 +554,11 @@ td.bbp-topic-counts {
 
 #bbpress-forums .bbp-forum-info .bbp-forum-content,
 #bbpress-forums p.bbp-topic-meta {
-	font-size: 11px;
+	font-size: 15px;
 	margin: 5px 0 5px;
 	padding: 0;
 	word-wrap: break-word;
+	color:#000;
 }
 
 #bbpress-forums p.bbp-topic-meta span {
@@ -872,7 +886,7 @@ div.bbp-template-notice a {
 		color: #000;
 	}
 	div.bbp-template-notice.info {
-		
+		display:none;
 		border: #cee1ef 1px solid;
 		background-color: #f0f8ff;
 	}
@@ -1137,6 +1151,17 @@ body.my-account #bbpress-forums {
 /*--------------------------------------------------------------
  Media Queries
 --------------------------------------------------------------*/
+
+/*added by Ron starts*/
+.bbp-topic-content-preview{
+	font-size:15px;
+	width:430px;	
+}
+.bbp-topic-content-preview .btnReadMore{
+	font-size:15px;	
+}
+.bbp-body a{color:#000!important;}
+/*added by Ron ends*/
 
 /* =Standard Mobile Landscape
 -------------------------------------------------------------- */
