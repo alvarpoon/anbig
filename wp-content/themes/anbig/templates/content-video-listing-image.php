@@ -31,10 +31,13 @@
     $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'listing-image' );
  ?>
  	<div class="col-sm-4 listingImageItem clearfix">
-      <a class="videoLink" href="<?=$video_url?>" person="<?=get_field("doctor",$result->ID)?>" desp="<?=the_content()?>"><img class="img-responsive fullwidthImg" src="<?=$image_url[0]?>" /></a>
-      <p class="doctor"><?=get_field("doctor",$result->ID)?></p>
-	  <p class="desp"><? $content = get_the_content(); $content = strip_tags($content); echo substr($content, 0, 90).'...'; ?></p>
-      <a class="btnReadMore videoLink" href="<?=$video_url?>" person="<?=get_field("doctor",$result->ID)?>" desp="<?=the_content()?>">Read more</a>
+    	<div class="videoThumbContainer">
+	      <a class="videoLink" href="<?=$video_url?>" person="<?=get_field("doctor",$result->ID)?>" desp="<?=the_content()?>"><img class="img-responsive fullwidthImg" src="<?=$image_url[0]?>" /></a>
+          <a class="videoLink btnVideoPlay" href="<?=$video_url?>" person="<?=get_field("doctor",$result->ID)?>" desp="<?=the_content()?>"></a>
+        </div>
+      	<p class="doctor"><?=get_field("doctor",$result->ID)?></p>
+	  	<p class="desp"><? $content = get_the_content(); $content = strip_tags($content); echo substr($content, 0, 90).'...'; ?></p>
+      	<a class="btnReadMore videoLink" href="<?=$video_url?>" person="<?=get_field("doctor",$result->ID)?>" desp="<?=the_content()?>">Read more</a>
     </div>
  <?
   endwhile;

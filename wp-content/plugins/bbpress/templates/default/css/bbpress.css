@@ -1155,13 +1155,25 @@ body.my-account #bbpress-forums {
 /*added by Ron starts*/
 .bbp-topic-content-preview{
 	font-size:15px;
-	width:430px;	
+	width:70%;
 }
 .bbp-topic-content-preview .btnReadMore{
 	font-size:15px;	
 }
 .bbp-body a{color:#000!important;}
 .bbp-author-avatar{display:none;}
+
+.bbp-replies li.bbp-header, .bbp-replies li.bbp-footer{
+	padding-left:10px!important;	
+} 
+
+#bbpress-forums li.bbp-header .bbp-forum-author,#bbpress-forums li.bbp-header .bbp-topic-author,#bbpress-forums li.bbp-header .bbp-reply-author{
+	float: left;
+	text-align: left;
+	width: 115px;
+}
+
+.bbp-author-role, .bbp-reply-ip, .bbp-footer{display:none;}
 /*added by Ron ends*/
 
 /* =Standard Mobile Landscape

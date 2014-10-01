@@ -6512,7 +6512,17 @@ figure.alignnone {
   font-family: 'Roboto';
 }
 .videoTitle {
-  display: none;
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #000;
+  background-color: #ffbf00;
+  padding: 5px 0;
+  font-family: 'Roboto Condensed';
+  text-transform: uppercase;
+}
+.videoTitle a {
+  color: #000;
 }
 .page-template-template-video-listing-text-php .date,
 .page-template-template-video-listing-text-php .title,
@@ -6538,6 +6548,9 @@ figure.alignnone {
 .page-template-template-video-listing-text-php .page-header {
   display: none;
 }
+.page-template-template-listing-php .main {
+  margin-top: 63px;
+}
 .btnReadMore {
   font-family: 'Roboto Condensed';
   background-color: #FFC926;
@@ -6548,6 +6561,10 @@ figure.alignnone {
   border-radius: 3px;
   display: inline-block;
   margin-bottom: 45px;
+}
+.fullwidthImg {
+  width: 100%;
+  height: auto;
 }
 .listingImageItem .videoLink {
   margin-bottom: 10px;
@@ -6560,10 +6577,6 @@ figure.alignnone {
 .listingImageItem .desp {
   color: #777;
   font-size: 14px;
-}
-.listingImageItem .fullwidthImg {
-  width: 100%;
-  height: auto;
 }
 .listingImageItem .btnReadMore {
   float: right;
@@ -6678,6 +6691,21 @@ figure.alignnone {
   margin-bottom: 30px;
   padding-right: 30px;
 }
+.videoThumbContainer {
+  position: relative;
+}
+.videoThumbContainer .btnVideoPlay {
+  position: absolute;
+  margin: auto;
+  display: block;
+  background: url(../img/logo_video.png) no-repeat;
+  width: 78px;
+  height: 55px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
 .imageFilterContainer {
   text-align: right;
   margin: 15px 0;
@@ -6736,16 +6764,6 @@ figure.alignnone {
   .main .nopaddingHeader-xs {
     padding-left: 15px;
     padding-right: 15px;
-  }
-  .videoTitle {
-    display: block;
-    width: 100%;
-    text-align: center;
-    color: #000;
-    background-color: #ffbf00;
-    padding: 5px 0;
-    font-family: 'Roboto Condensed';
-    text-transform: uppercase;
   }
   .page-header {
     background-image: none;
@@ -6901,6 +6919,10 @@ figure.alignnone {
   padding: 5px 0;
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
+}
+.home h2 a,
+.home .h2 a {
+  color: #fff;
 }
 .home .videoHomeHeader {
   background: #4DA6FF;
