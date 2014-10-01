@@ -1186,6 +1186,7 @@ body.my-account #bbpress-forums {
 		clear: left;
 		float: left;
 	}
+	#bbpress-forums li.bbp-header, #bbpress-forums li.bbp-footer{padding-left:20px;}
 	div.bbp-search-form input,
 	div.bbp-search-form button {
 		font-size: 11px;
@@ -1193,7 +1194,8 @@ body.my-account #bbpress-forums {
 	}
 	li.bbp-forum-info,
 	li.bbp-topic-title {
-		width: 45%;
+		/*width: 45%;*/
+		width: 60%;
 	}
 	li.bbp-forum-topic-count,
 	li.bbp-forum-reply-count,
