@@ -25,6 +25,29 @@
 	}
 }
 
+.paginationContainer{
+	display:inline-block;
+	border:1px solid #DDDDDD;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	margin-bottom:30px;
+	a, span{
+		border-right:1px solid #DDDDDD;
+		padding:10px;
+		display:block;
+		float:left;
+		color:#999;
+	}
+	span{
+		background-color:#777;
+		color:#fff;
+	}
+	span:last-child, a:last-child{
+		border-right:0;
+	}
+	
+}
+
 //Videos and image listing page starts
 .videoTitle{
 	display:block; 
@@ -52,7 +75,7 @@
 		font-weight:bold;
 		padding:3px 20px;
 		background-color:#FFC926;
-		-moz-border-radius: 4px;
+		-moz-border-radius: 3px;
 		border-radius: 3px;
 		margin-bottom:10px;
 		display:inline-block;

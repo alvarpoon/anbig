@@ -6197,6 +6197,9 @@ body {
   width: 100%;
   height: auto;
 }
+.textAlignCenter {
+  text-align: center;
+}
 .gallery-row {
   padding: 10px 0;
 }
@@ -6510,6 +6513,28 @@ figure.alignnone {
   margin: 0;
   padding: 10px 30px;
   font-family: 'Roboto';
+}
+.paginationContainer {
+  display: inline-block;
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+.paginationContainer a,
+.paginationContainer span {
+  border-right: 1px solid #DDDDDD;
+  padding: 10px;
+  display: block;
+  float: left;
+  color: #999;
+}
+.paginationContainer span {
+  background-color: #777;
+  color: #fff;
+}
+.paginationContainer span:last-child,
+.paginationContainer a:last-child {
+  border-right: 0;
 }
 .videoTitle {
   display: block;
