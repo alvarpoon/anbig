@@ -146,12 +146,17 @@
 					color:#fff!important;
 				}
 				&:hover{
-					color:#fff!important;
+					color:#fff;
 				}
 			}
 			li:last-child a{
 				border:none;
-			} 
+			}
+			.dropdown-menu li.active a{
+				&:hover{
+					color:#212121!important;
+				}
+			}
 		}
 		
 		.dropdown{
@@ -173,6 +178,13 @@
 				background:url(../img/bg_mainnav_active.png) repeat-x;
 				.caret{
 					color:#fff!important;
+				}
+			}
+			.dropdown-menu{
+				a{
+					&:hover{
+						color:#212121!important;
+					}
 				}
 			}
 		}

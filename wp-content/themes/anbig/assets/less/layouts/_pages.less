@@ -38,12 +38,29 @@
 		float:left;
 		color:#999;
 	}
+	a{
+		&:hover{
+			background-color:#777;
+			color:#fff;
+			text-decoration:none;
+		}
+	}
 	span{
 		background-color:#777;
 		color:#fff;
 	}
 	span:last-child, a:last-child{
 		border-right:0;
+		border-top-right-radius:5px;
+		border-bottom-right-radius:5px;
+		-moz-border-top-right-radius:5px;
+		-moz-border-bottom-right-radius:5px;
+	}
+	span:first-child, a:first-child{
+		border-top-left-radius:5px;
+		border-bottom-left-radius:5px;
+		-moz-border-top-left-radius:5px;
+		-moz-border-bottom-left-radius:5px;
 	}
 	
 }
@@ -350,6 +367,9 @@
 	}
 	
 	.page-template-template-listing-php{
+		.main{
+			margin-top:159px;
+		}		
 		h1, .h1{
 			background-color:#4da6ff;
 			color:#fff!important;

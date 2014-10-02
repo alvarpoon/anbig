@@ -6382,10 +6382,13 @@ figure.alignnone {
     color: #fff!important;
   }
   .main-menu .navbar-nav li.active a:hover {
-    color: #fff!important;
+    color: #fff;
   }
   .main-menu .navbar-nav li:last-child a {
     border: none;
+  }
+  .main-menu .navbar-nav .dropdown-menu li.active a:hover {
+    color: #212121!important;
   }
   .main-menu .dropdown .dropdown-toggle {
     padding: 15px 0;
@@ -6403,6 +6406,9 @@ figure.alignnone {
   }
   .main-menu .open .dropdown-toggle .caret {
     color: #fff!important;
+  }
+  .main-menu .open .dropdown-menu a:hover {
+    color: #212121!important;
   }
   .main-menu .dropdown-menu {
     min-width: 158px;
@@ -6453,6 +6459,7 @@ figure.alignnone {
 }
 .footerPaddingTop {
   padding-top: 15px;
+  margin-top: 30px;
 }
 .contactInfoDiv {
   color: #000;
@@ -6513,6 +6520,19 @@ figure.alignnone {
 @media (min-width: 768px) {
   #menu-footer-menu {
     width: 70%;
+    height: 140px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
   }
   #menu-footer-menu li {
     width: 50%;
@@ -6562,6 +6582,11 @@ figure.alignnone {
   float: left;
   color: #999;
 }
+.paginationContainer a:hover {
+  background-color: #777;
+  color: #fff;
+  text-decoration: none;
+}
 .paginationContainer span {
   background-color: #777;
   color: #fff;
@@ -6569,6 +6594,17 @@ figure.alignnone {
 .paginationContainer span:last-child,
 .paginationContainer a:last-child {
   border-right: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -moz-border-top-right-radius: 5px;
+  -moz-border-bottom-right-radius: 5px;
+}
+.paginationContainer span:first-child,
+.paginationContainer a:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -moz-border-top-left-radius: 5px;
+  -moz-border-bottom-left-radius: 5px;
 }
 .videoTitle {
   display: block;
@@ -6837,6 +6873,9 @@ figure.alignnone {
     margin: 15px 0 0 0;
     padding: 5px 10px;
     font-family: 'Roboto';
+  }
+  .page-template-template-listing-php .main {
+    margin-top: 159px;
   }
   .page-template-template-listing-php h1,
   .page-template-template-listing-php .h1 {
