@@ -5051,15 +5051,18 @@ var Roots = {
       // JavaScript to be fired on the about us page
       $(document).ready(function(){
         $(".btnVideoDetail").click(function() {
+			
             $.fancybox({
                 'padding'       : 0,
-                'width'         : '640',
-                'height'        : '500',
+                'width'         : '50%',
+                'height'        : '70%',
                 'href'          : this.href,
                 'autoResize'    : true,
                 'autoSize'      : true,
 				'showCloseButton': true,
 				'autoScale'		: true,
+				'type'        : 'iframe',
+			    'scrolling'   : 'no',
                 'content'       : "<div class=\"lightboxVideoContainer\"><video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" width=\"auto\" height=\"auto\" style=\"width:100% !important; height:auto !important\" controls preload=\"none\" data-setup='{'autoplay': true, 'enterFullScreen':true}'><source src=\""+this.href+"\" type='video/mp4' /></video></div><div class=\"lightboxContentContainer\"><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p></div>"
                 });
               return false;
@@ -5074,13 +5077,15 @@ var Roots = {
         $(".videoLink").click(function() {
             $.fancybox({
                 'padding'       : 0,
-                'width'         : '640',
-                'height'        : '500',
+                'width'         : '50%',
+                'height'        : '70%',
                 'href'          : this.href,
                 'autoResize'    : true,
                 'autoSize'      : true,
 				'showCloseButton': true,
 				'autoScale'		: true,
+				'type'        : 'iframe',
+			    'scrolling'   : 'no',
                 'content'       : "<div class=\"lightboxVideoContainer\"><video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" width=\"auto\" height=\"auto\" style=\"width:100% !important; height:auto !important\" controls preload=\"none\" data-setup='{'autoplay': true, 'enterFullScreen':true}'><source src=\""+this.href+"\" type='video/mp4' /></video></div><div class=\"lightboxContentContainer\"><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p></div>"
                 });
               return false;
@@ -5128,8 +5133,8 @@ var Roots = {
         $(".imgLink").click(function() {
             $.fancybox({
                 'padding'       : 0,
-                'width'         : '640',
-                'height'        : '600',
+                'width'         : '50%',
+                'height'        : '70%',
                 'href'          : this.href,
                 'autoResize'    : true,
                 'autoSize'      : true,
