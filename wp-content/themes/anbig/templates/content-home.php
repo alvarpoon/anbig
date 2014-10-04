@@ -26,13 +26,20 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4 col-xs-6 smallPadding-xs">
-				<h2 class="videoHomeHeader">Videos</h2>
+				<h2 class="videoHomeHeader"><a href="<?=site_url()?>/vid/">Videos</a></h2>
 			<?
-				/*$args = array( 'numberposts' => 1, 'post_type' => 'video', 'post_status' => 'publish', 'order' => 'DESC', 'orderby' => 'date');
+				$args = array( 'numberposts' => 1, 'post_type' => 'video', 'post_status' => 'publish', 'order' => 'DESC', 'orderby' => 'date');
 				  $results = get_posts( $args );
-				  foreach( $results as $result ){
-				  	$link = get_permalink($result->ID);
-				  }*/
+				  //foreach( $results as $result ){
+				  	$result = $results[0];
+				  	$id = $result->ID;
+				  	$link = get_permalink($id);
+				  	$post = get_post($id);
+				    $video_id = get_field('video',$id);
+				    $video_url = wp_get_attachment_url( $video_id );
+				    $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'listing-image' );
+				    echo '<a class="videoLink" href="'.$video_url.'" person="'.get_field("doctor",$id).'" desp="'.apply_filters('the_content', $post->post_content).'"><img class="img-responsive fullwidthImg" src="'.$image_url[0].'" /></a>';
+				  //}
 			?>
 			</div>
 			<div class="col-sm-4 col-xs-6 smallPadding-xs">

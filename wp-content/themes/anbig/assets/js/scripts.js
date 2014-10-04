@@ -5043,6 +5043,23 @@ var Roots = {
           pager: false,
           adaptiveHeight: false
         });
+
+        $(".videoLink").click(function() {
+            $.fancybox({
+                'padding'       : 0,
+                'width'         : '50%',
+                'height'        : '70%',
+                'href'          : this.href,
+                'autoResize'    : true,
+                'autoSize'      : true,
+        'showCloseButton': true,
+        'autoScale'   : true,
+        'type'        : 'iframe',
+          'scrolling'   : 'no',
+                'content'       : "<div class=\"lightboxVideoContainer\"><video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" width=\"auto\" height=\"auto\" style=\"width:100% !important; height:auto !important\" controls preload=\"none\" data-setup='{'autoplay': true, 'enterFullScreen':true}'><source src=\""+this.href+"\" type='video/mp4' /></video></div><div class=\"lightboxContentContainer\"><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p></div>"
+                });
+              return false;
+            });
       });
     }
   },
@@ -5068,6 +5085,9 @@ var Roots = {
               return false;
             });
         });
+
+      $(".lightboxContentContainer").jScrollPane({
+          });
     }
   },
   page_template_template_video_listing_image_php:  {
