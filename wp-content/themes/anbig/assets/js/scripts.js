@@ -5017,9 +5017,21 @@ var Roots = {
 			});
 		}
 	  }
+	  
+	  function setPagination(){
+		  $('.next').text(function(){
+			return $(this).text().replace("Next", "");  
+		  });
+		  
+		  $('.prev').text(function(){
+			return $(this).text().replace("Previous", "");  
+		  });
+	  }
+	  
       //fix the mobile menu scrolling problem
       $(document).ready(setMobileMenu);
 	  $(document).ready(setMediaMenu);
+	  $(document).ready(setPagination());
       $(window).resize(setMobileMenu);
     }
   },
@@ -5070,9 +5082,9 @@ var Roots = {
         $(".btnVideoDetail").click(function() {
 			
             $.fancybox({
-                'padding'       : 0,
+                'padding'       : 30,
                 'width'         : '50%',
-                'height'        : '70%',
+                'height'        : 'auto',
                 'href'          : this.href,
                 'autoResize'    : true,
                 'autoSize'      : true,
@@ -5080,14 +5092,39 @@ var Roots = {
 				'autoScale'		: true,
 				'type'        : 'iframe',
 			    'scrolling'   : 'no',
-                'content'       : "<div class=\"lightboxVideoContainer\"><video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" width=\"auto\" height=\"auto\" style=\"width:100% !important; height:auto !important\" controls preload=\"none\" data-setup='{'autoplay': true, 'enterFullScreen':true}'><source src=\""+this.href+"\" type='video/mp4' /></video></div><div class=\"lightboxContentContainer\"><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p></div>"
-                });
+                'content'       : "<div class=\"lightboxVideoContainer\"><video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" width=\"auto\" height=\"auto\" style=\"width:100%  !important; height:100% !important\" controls preload=\"none\" data-setup='{'autoplay': true, 'enterFullScreen':true}'><source src=\""+this.href+"\" type='video/mp4' /></video></div><div class=\"lightboxContentContainer\"><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p></div>",
+				afterShow : function() {	
+					$('.lightboxContentContainer').each(
+						function()
+						{
+							var settings = {
+								autoReinitialise: true
+							};
+							$(this).jScrollPane(settings);
+							var api = $(this).data('jsp');
+							var throttleTimeout;
+							$(window).bind(
+								'resize',
+								function()
+								{
+									if (!throttleTimeout) {
+										throttleTimeout = setTimeout(
+											function()
+											{
+												api.reinitialise();
+												throttleTimeout = null;
+											},
+											50
+										);
+									}
+								});
+						});
+					}
+           	  });
               return false;
-            });
         });
-
-      $(".lightboxContentContainer").jScrollPane({
-          });
+			
+      });
     }
   },
   page_template_template_video_listing_image_php:  {
@@ -5096,9 +5133,9 @@ var Roots = {
       $(document).ready(function(){
         $(".videoLink").click(function() {
             $.fancybox({
-                'padding'       : 0,
+                'padding'       : 30,
                 'width'         : '50%',
-                'height'        : '70%',
+                'height'        : 'auto',
                 'href'          : this.href,
                 'autoResize'    : true,
                 'autoSize'      : true,
@@ -5106,13 +5143,39 @@ var Roots = {
 				'autoScale'		: true,
 				'type'        : 'iframe',
 			    'scrolling'   : 'no',
-                'content'       : "<div class=\"lightboxVideoContainer\"><video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" width=\"auto\" height=\"auto\" style=\"width:100% !important; height:auto !important\" controls preload=\"none\" data-setup='{'autoplay': true, 'enterFullScreen':true}'><source src=\""+this.href+"\" type='video/mp4' /></video></div><div class=\"lightboxContentContainer\"><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p></div>"
-                });
+                'content'       : "<div class=\"lightboxVideoContainer\"><video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" width=\"auto\" height=\"auto\" style=\"width:100%  !important; height:100% !important\" controls preload=\"none\" data-setup='{'autoplay': true, 'enterFullScreen':true}'><source src=\""+this.href+"\" type='video/mp4' /></video></div><div class=\"lightboxContentContainer\"><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p></div>",
+				afterShow : function() {	
+					$('.lightboxContentContainer').each(
+						function()
+						{
+							var settings = {
+								autoReinitialise: true
+							};
+							$(this).jScrollPane(settings);
+							var api = $(this).data('jsp');
+							var throttleTimeout;
+							$(window).bind(
+								'resize',
+								function()
+								{
+									if (!throttleTimeout) {
+										throttleTimeout = setTimeout(
+											function()
+											{
+												api.reinitialise();
+												throttleTimeout = null;
+											},
+											50
+										);
+									}
+								});
+						});
+					}
+           	  });
               return false;
-            });
         });
-		$(".lightboxContentContainer").jScrollPane({
-		});
+			
+      });
     }
   },
   page_template_template_listing_img_php:  {
