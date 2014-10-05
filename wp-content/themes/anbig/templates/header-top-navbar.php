@@ -25,10 +25,22 @@
       <nav class="collapse navbar-collapse sector-menu" role="navigation">
         <?php
             //Utility menu
-            if (has_nav_menu('utility_menu')) :
+            /*if (has_nav_menu('utility_menu')) :
               wp_nav_menu(array('theme_location' => 'utility_menu', 'menu_class' => 'nav navbar-right navbar-nav','depth' => 1));
-            endif;
+            endif;*/
         ?>
+          <ul id="menu-utility-menu" class="nav navbar-right navbar-nav">
+            <li class="active menu-home"><a href="http://anbig.local.com/">Home</a></li>
+            <li class="menu-links"><a href="http://anbig.local.com/links/">Links</a></li>
+        <?
+          if ( is_user_logged_in()) {
+            echo '<li class="menu-logout"><a href="'.wp_logout_url().'">Logout</a></li>';
+          }
+          else {
+            echo '<li class="menu-login"><a href="http://anbig.local.com/login/">Login</a></li>';
+          }
+        ?>
+          </ul>
       </nav>
     </div>
   </div>
