@@ -30,14 +30,14 @@
             endif;*/
         ?>
           <ul id="menu-utility-menu" class="nav navbar-right navbar-nav">
-            <li class="active menu-home"><a href="http://anbig.local.com/">Home</a></li>
-            <li class="menu-links"><a href="http://anbig.local.com/links/">Links</a></li>
+            <li class="active menu-home"><a href="<?php echo home_url(); ?>">Home</a></li>
+            <li class="menu-links"><a href="<?php echo home_url(); ?>/links/">Links</a></li>
         <?
           if ( is_user_logged_in()) {
             echo '<li class="menu-logout"><a href="'.wp_logout_url().'">Logout</a></li>';
           }
           else {
-            echo '<li class="menu-login"><a href="http://anbig.local.com/login/">Login</a></li>';
+            echo '<li class="menu-login"><a href="'.home_url().'/login/">Login</a></li>';
           }
         ?>
           </ul>
