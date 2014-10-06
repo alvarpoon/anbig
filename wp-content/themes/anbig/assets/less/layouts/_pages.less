@@ -257,13 +257,22 @@
 	margin-top:15px;
 }
 
+.lightboxImgContainer{
+	margin:0 auto;
+	text-align:center;
+	//height:65%;
+	max-width:640px;
+	.fullImgWidth{
+		width:95%;
+		height:auto;
+	}
+}
+
 .lightboxImgContentContainer{
-	max-width:610px; 
-	height:100px;
+	max-width:640px; 
+	height:25%;
 	overflow:auto; 
 	margin-top:15px; 
-	margin-bottom:30px;
-	padding-right:30px;
 }
 
 .videoThumbContainer{
@@ -314,25 +323,35 @@
 .lightBoxImg{
 	text-align:center;
 	position:relative;
-	height:250px;
+	//height:250px;
 	overflow:hidden;
+	
 	.originalImgContainer{
-		max-width:640px;
+		position:relative;
+		z-index:999;
+		visibility:hidden;
 		margin: 0 auto;
+		width:auto;
+		height:100% !important;
+		text-align:center;
 		img{
-			width:100%;
-			height:auto;
+			width:auto !important;
+			height:100% !important;
+			margin:0 auto;
 		}
 	}
 	
 	.nbiImgContainer{
-		position:relative;
-		max-width:640px;
-		height: auto;
+		position:absolute;
+		visibility:hidden;
 		margin: 0 auto;
+		width:auto;
+		height:100% !important;
+		text-align:center;
 		img{
-			width:100%;
-			height:auto;
+			width:auto !important;
+			height:100% !important;
+			margin:0 auto;
 		}
 	}
 }
@@ -471,8 +490,12 @@
 		height:20%;
 	}
 	
+	.lightboxImgContentContainer{
+		height:20%;
+	}
+	
 	.lightBoxImg{
-		height:500px;
+		//max-height:450px;
 	}
 	
 	.single-forum{
