@@ -6809,13 +6809,24 @@ figure.alignnone {
   overflow: auto;
   margin-top: 15px;
 }
+.lightboxImgContainer {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 640px;
+}
+.lightboxImgContainer .fullImgWidth {
+  width: 95%;
+  height: auto;
+}
 .lightboxImgContentContainer {
-  max-width: 610px;
-  height: 100px;
+  max-width: 640px;
+  height: 25%;
   overflow: auto;
   margin-top: 15px;
-  margin-bottom: 30px;
-  padding-right: 30px;
+}
+.forumlightboxVideoContainer {
+  margin: 0 auto;
+  text-align: center;
 }
 .videoThumbContainer {
   position: relative;
@@ -6862,26 +6873,34 @@ figure.alignnone {
 .lightBoxImg {
   text-align: center;
   position: relative;
-  height: 250px;
   overflow: hidden;
 }
 .lightBoxImg .originalImgContainer {
-  max-width: 640px;
+  position: relative;
+  z-index: 999;
+  visibility: hidden;
   margin: 0 auto;
+  width: auto;
+  height: 100% !important;
+  text-align: center;
 }
 .lightBoxImg .originalImgContainer img {
-  width: 100%;
-  height: auto;
-}
-.lightBoxImg .nbiImgContainer {
-  position: relative;
-  max-width: 640px;
-  height: auto;
+  width: auto !important;
+  height: 100% !important;
   margin: 0 auto;
 }
+.lightBoxImg .nbiImgContainer {
+  position: absolute;
+  visibility: hidden;
+  margin: 0 auto;
+  width: auto;
+  height: 100% !important;
+  text-align: center;
+}
 .lightBoxImg .nbiImgContainer img {
-  width: 100%;
-  height: auto;
+  width: auto !important;
+  height: 100% !important;
+  margin: 0 auto;
 }
 @media (min-width: 768px) {
   .main {
@@ -7008,8 +7027,8 @@ figure.alignnone {
   .lightboxContentContainer {
     height: 20%;
   }
-  .lightBoxImg {
-    height: 500px;
+  .lightboxImgContentContainer {
+    height: 20%;
   }
   .single-forum h1,
   .single-forum .h1 {
@@ -8741,5 +8760,21 @@ https://github.com/videojs/video.js/blob/master/src/css/video-js.less */
 /* Yuk! CSS Hack for IE6 3 pixel bug :( */
 * html .jspCorner {
   margin: 0 -3px 0 0;
+}
+.large {
+  width: 170px;
+  height: 170px;
+  position: absolute;
+  border-radius: 100%;
+  /*Multiple box shadows to achieve the glass effect*/
+  -webkit-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.85), 0 0 7px 7px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.85), 0 0 7px 7px rgba(0, 0, 0, 0.25);
+  /*Lets load up the large image first*/
+  /*hide the glass by default*/
+  display: none;
+}
+/*To solve overlap bug at the edges during magnification*/
+.small {
+  display: block;
 }
 /*# sourceMappingURL=main.css.map */

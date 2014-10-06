@@ -293,7 +293,7 @@ class gdbbAtt_Front {
                             $item.= '<div style="width: '.d4p_bba_o("image_thumbnail_size_x").'px" class="wp-caption">';
                         }
 
-                        $item.= '<a class="'.$class_a.'"'.$rel_a.' href="'.$file_url.'" title="'.$a_title.'">'.$html.'</a>';
+                        $item.= '<a class="'.$class_li.' '.$class_a.'"'.$rel_a.' href="'.$file_url.'" title="'.$a_title.'">'.$html.'</a>';
 
                         if ($caption) {
                             $item.= '<p class="wp-caption-text">'.$a_title.'<br/>'.$actions.'</p></div>';

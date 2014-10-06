@@ -214,18 +214,13 @@ var Roots = {
     init: function() {
       // JavaScript to be fired on the about us page
       $(document).ready(function(){
-		var nbiFlag = false;
+		  
 		function setImageFilter(){
 			$('.lightBoxImg').children('div').each(function(){
 				//$(this).css('display','none');
 				$('.originalImgContainer').css('visibility','visible');
 				$('.btnOriginalImage').addClass("active");
 			});
-			
-			if(!nbiFlag){
-				$('.btnNBI').css({'display':'none'});
-				return;
-			}
 			
 			$('.btnOriginalImage').click(function(){
 				$('.imageFilterContainer a').each(function(){
@@ -251,85 +246,8 @@ var Roots = {
 				});
 			});
 		}
-		
-		function imageResize(){
-			var imgHeight = 0;
-			var wHeight = $(window).height();
-			//console.log(wHeight);
-			if(wHeight >= 980){
-				//console.log(1);
-				imgHeight = 500;
-			}else if(wHeight >=700 && wHeight <980){
-				imgHeight = 350;
-			}else if(wHeight >360 && wHeight <700){
-				//console.log(3);
-				imgHeight = 180;
-			} 
-			else{
-				//console.log(3);
-				imgHeight = 120;					
-			} 
-			$('.lightBoxImg').css({"height":imgHeight+'px'});
-
-		}
-		
-		function setNBIfilter(id,nImageSrc){
-			if(!nbiFlag){return;}
-			var native_width = 0;
-			var native_height = 0;
-			var nbiImageSrc = nImageSrc;
-			$("#"+id+" .large").css({"background": "url('"+nbiImageSrc+"') no-repeat"});
-		
-			$("#"+id).mousemove(function(e){
-				if(!native_width && !native_height)
-				{
-					var image_object = new Image();
-					image_object.src = $("#"+id+" .small").attr("src");
-					
-					native_width = $("#"+id+" .small").width();
-					native_height = $("#"+id+" .small").height();
-					$(this).css({"width":native_width});
-					//console.log(native_width+' '+native_height);
-				}
-				else
-				{
-					var magnify_offset = $(this).offset();
-					var mx = e.pageX - magnify_offset.left;
-					var my = e.pageY - magnify_offset.top;
-					
-					if(mx < $(this).width() && my < $(this).height() && mx > 0 && my > 0)
-					{
-						$("#"+id+" .large").fadeIn(100);
-					}
-					else
-					{
-						$("#"+id+" .large").fadeOut(100);
-					}
-					if($("#"+id+" .large").is(":visible"))
-					{
-						$("#"+id+" .large").css({"background-size":native_width+'px '+native_height+'px'});
-						var rx = Math.round(mx/$("#"+id+" .small").width()*native_width - $("#"+id+" .large").width()/2)*-1;
-						var ry = Math.round(my/$("#"+id+" .small").height()*native_height - $("#"+id+" .large").height()/2)*-1;
-						var bgp = rx + "px " + ry + "px";
-						
-						var px = mx - $("#"+id+" .large").width()/2;
-						var py = my - $("#"+id+" .large").height()/2;
-		
-						$("#"+id+" .large").css({left: px, top: py, backgroundPosition: bgp});
-					}
-				}
-			});
-		}		
-		
+		  
         $(".imgLink").click(function() {
-			if($(this).attr('nbi_image'))
-			{
-				console.log('no null');
-				nbiFlag = true;
-			}else{
-				console.log('null');
-				nbiFlag = false;
-			}
             $.fancybox({
                 'padding'       : 30,
                 'width'         : '50%',
@@ -341,10 +259,9 @@ var Roots = {
 				'autoScale'		: true,
 				'type'        : 'iframe',
 			    'scrolling'   : 'no',
-                'content'       : "<div class=\"lightboxImgContainer\"><div class=\"lightBoxImg\"><div id=\"original_image\" class=\"originalImgContainer\"><div class=\"large\"></div><img class=\"small fullImgWidth\" src=\""+this.href+"\" data-big=\""+$(this).attr("nbi_image")+"\"/></div><div id=\"nbi_image\" class=\"nbiImgContainer\"><div class=\"large\"></div><img class=\"small fullImgWidth\" src=\""+$(this).attr("nbi_image")+"\" data-big=\""+this.href+"\"/></div></div></div><div class=\"imageFilterContainer\"><a href=\"javascript:;\" class=\"btnOriginalImage\">Original image</a><a href=\"javascript:;\" class=\"btnNBI\">NBI image</a></div><div class=\"lightboxImgContentContainer\"><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p></div>",
+                'content'       : "<div class=\"lightboxImgContainer\"><div class=\"lightBoxImg\"><div class=\"originalImgContainer\"><img id=\"orginal_image\" class=\"fullImgWidth\" src=\""+this.href+"\" data-big=\""+$(this).attr("nbi_image")+"\" data-big2x=\""+$(this).attr("nbi_image")+"\" data-overlay="+$(this).attr("nbi_image")+"\" /></div><div class=\"nbiImgContainer\"><img id=\"nbi_image\" class=\"fullImgWidth\" src=\""+$(this).attr("nbi_image")+"\" data-big=\""+this.href+"\" data-big2x=\""+this.href+"\" data-overlay="+this.href+"\" /></div></div></div><div class=\"imageFilterContainer\"><a href=\"javascript:;\" class=\"btnOriginalImage\">Original image</a><a href=\"javascript:;\" class=\"btnNBI\">NBI image</a></div><div class=\"lightboxImgContentContainer\"><p>"+$(this).attr("person")+"</p> <p>Description:"+$(this).attr("desp")+"</p></div>",
 				 afterShow : function() {
 					 $.when(
-					 	imageResize(),
 					 	$('.lightboxImgContentContainer').each(function()
 						{
 							var settings = {
@@ -369,13 +286,32 @@ var Roots = {
 									}
 								});
 						}),
-						setNBIfilter('original_image', $("#original_image .small").attr("data-big")),
-						setNBIfilter('nbi_image', $("#nbi_image .small").attr("data-big")),
-						$(window).resize(function() {
-							imageResize();
-							setNBIfilter('original_image', $("#original_image .small").attr("data-big"));
-							setNBIfilter('nbi_image', $("#nbi_image .small").attr("data-big"));
-						})
+					 	$("#orginal_image").mlens({
+							imgSrc: $("#orginal_image").attr("data-big"),	    // path of the hi-res version of the image
+							imgSrc2x: $("#orginal_image").attr("data-big2x"),  // path of the hi-res @2x version of the image
+																					   //for retina displays (optional)
+							lensShape: "circle",				// shape of the lens (circle/square)
+							lensSize: 180,					// size of the lens (in px)
+							borderSize: 1,					// size of the lens border (in px)
+							borderColor: "#fff",				// color of the lens border (#hex)
+							borderRadius: 0,				// border radius (optional, only if the shape is square)
+							imgOverlay: $("#orginal_image").attr("data-overlay"), // path of the overlay image (optional)
+							overlayAdapt: true, // true if the overlay image has to adapt to the lens size (true/false)
+							zoomLevel: 0                                  // zoom level multiplicator (number)
+						}),
+						$("#nbi_image").mlens({
+							imgSrc: $("#nbi_image").attr("data-big"),	    // path of the hi-res version of the image
+							imgSrc2x: $("#nbi_image").attr("data-big2x"),  // path of the hi-res @2x version of the image
+																					   //for retina displays (optional)
+							lensShape: "circle",				// shape of the lens (circle/square)
+							lensSize: 180,					// size of the lens (in px)
+							borderSize: 1,					// size of the lens border (in px)
+							borderColor: "#fff",				// color of the lens border (#hex)
+							borderRadius: 0,				// border radius (optional, only if the shape is square)
+							imgOverlay: $("#nbi_image").attr("data-overlay"), // path of the overlay image (optional)
+							overlayAdapt: true, // true if the overlay image has to adapt to the lens size (true/false)
+							zoomLevel: 0                                  // zoom level multiplicator (number)
+						})						
 					).then(setImageFilter());
 				}
                 });
@@ -385,47 +321,6 @@ var Roots = {
     }
   },
   // About us page, note the change from about-us to about_us.
-  single_topic:{
-    init: function() {
-      // JavaScript to be fired on the about us page
-      $(document).ready(function(){
-        $("a.bbp-atticon-video").click(function() {
-            $.fancybox({
-                'padding'       : 30,
-                'width'         : 'auto',
-                'height'        : 'auto',
-                'href'          : this.href,
-                'autoResize'    : true,
-                'autoSize'      : true,
-				'showCloseButton': true,
-				'autoScale'		: true,
-				'type'        : 'iframe',
-			    'scrolling'   : 'no',
-                'content'       : "<div class=\"forumlightboxVideoContainer\"><video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" width=\"auto\" height=\"auto\" style=\"width:100%  !important; height:100% !important\" controls preload=\"none\" data-setup='{'autoplay': true, 'enterFullScreen':true}'><source src=\""+this.href+"\" type='video/mp4' /></video></div>"
-           	  });
-              return false;
-        });
-		
-		$("a.bbp-atthumb").click(function() {
-            $.fancybox({
-                'padding'       : 30,
-                'width'         : 'auto',
-                'height'        : 'auto',
-                'href'          : this.href,
-                'autoResize'    : true,
-                'autoSize'      : true,
-				'showCloseButton': true,
-				'autoScale'		: true,
-				'type'        : 'iframe',
-			    'scrolling'   : 'no',
-                'content'       : "<div class=\"forumlightboxVideoContainer\"><img class=\"fullImgWidth\" src=\""+this.href+"\"/></div>"
-           	  });
-              return false;
-        });
-		
-      });
-    }
-  },  
   about_us: {
     init: function() {
       // JavaScript to be fired on the about us page
