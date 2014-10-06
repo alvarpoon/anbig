@@ -8,7 +8,7 @@
 		$args = array(
 			'type'                     => 'post',
 			'orderby'                  => 'id',
-			'order'                    => 'ASC',
+			'order'                    => 'asc',
 			'hide_empty'               => 0,
 			'hierarchical'             => 0,
 			'taxonomy'                 => 'video_category',
