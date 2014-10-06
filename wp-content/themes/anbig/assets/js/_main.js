@@ -385,6 +385,47 @@ var Roots = {
     }
   },
   // About us page, note the change from about-us to about_us.
+  single_topic:{
+    init: function() {
+      // JavaScript to be fired on the about us page
+      $(document).ready(function(){
+        $("a.bbp-atticon-video").click(function() {
+            $.fancybox({
+                'padding'       : 30,
+                'width'         : 'auto',
+                'height'        : 'auto',
+                'href'          : this.href,
+                'autoResize'    : true,
+                'autoSize'      : true,
+				'showCloseButton': true,
+				'autoScale'		: true,
+				'type'        : 'iframe',
+			    'scrolling'   : 'no',
+                'content'       : "<div class=\"forumlightboxVideoContainer\"><video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" width=\"auto\" height=\"auto\" style=\"width:100%  !important; height:100% !important\" controls preload=\"none\" data-setup='{'autoplay': true, 'enterFullScreen':true}'><source src=\""+this.href+"\" type='video/mp4' /></video></div>"
+           	  });
+              return false;
+        });
+		
+		$("a.bbp-atthumb").click(function() {
+            $.fancybox({
+                'padding'       : 30,
+                'width'         : 'auto',
+                'height'        : 'auto',
+                'href'          : this.href,
+                'autoResize'    : true,
+                'autoSize'      : true,
+				'showCloseButton': true,
+				'autoScale'		: true,
+				'type'        : 'iframe',
+			    'scrolling'   : 'no',
+                'content'       : "<div class=\"forumlightboxVideoContainer\"><img class=\"fullImgWidth\" src=\""+this.href+"\"/></div>"
+           	  });
+              return false;
+        });
+		
+      });
+    }
+  },  
   about_us: {
     init: function() {
       // JavaScript to be fired on the about us page
