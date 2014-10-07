@@ -6643,7 +6643,6 @@ figure.alignnone {
   width: 100%;
   text-align: center;
   color: #000;
-  background-color: #ffbf00;
   padding: 5px 0;
   font-family: 'Roboto Condensed';
   text-transform: uppercase;
@@ -6654,6 +6653,7 @@ figure.alignnone {
 .page-template-template-video-listing-text-php .date,
 .page-template-template-video-listing-text-php .title,
 .page-template-template-video-listing-text-php .person {
+  font-size: 18px;
   font-family: 'Roboto';
   font-weight: bold;
 }
@@ -6667,7 +6667,7 @@ figure.alignnone {
   padding: 3px 20px;
   background-color: #FFC926;
   border-radius: 3px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   display: inline-block;
 }
 .page-template-template-listing-img-php .page-header,
@@ -6929,8 +6929,7 @@ figure.alignnone {
   }
   .page-template-template-listing-php h1,
   .page-template-template-listing-php .h1 {
-    background-color: #4da6ff;
-    color: #fff!important;
+    color: #000;
     display: inline-block;
   }
   .video-col-sm-padding-bottom {
@@ -6946,12 +6945,19 @@ figure.alignnone {
   }
   .page-template-template-video-listing-text-php .video-menu a:hover,
   .page-template-template-video-listing-image-php .video-menu a:hover {
-    background-color: #4DA6FF;
+    background-color: #000;
     text-decoration: none;
   }
   .page-template-template-video-listing-text-php .video-menu .active,
   .page-template-template-video-listing-image-php .video-menu .active {
-    background-color: #4DA6FF;
+    background: none;
+    font-size: 30px;
+    line-height: 112%;
+    color: #000;
+  }
+  .page-template-template-video-listing-text-php .video-menu .active:hover,
+  .page-template-template-video-listing-image-php .video-menu .active:hover {
+    color: #fff;
   }
   .page-template-template-listing-img-php .page-header {
     display: none;
@@ -6960,11 +6966,17 @@ figure.alignnone {
     background-color: #DDD;
   }
   .page-template-template-listing-img-php .image-menu a:hover {
-    background-color: #2DB300;
+    background-color: #000;
     text-decoration: none;
   }
   .page-template-template-listing-img-php .image-menu .active {
-    background-color: #2DB300;
+    background: none;
+    font-size: 30px;
+    line-height: 112%;
+    color: #000;
+  }
+  .page-template-template-listing-img-php .image-menu .active:hover {
+    color: #fff;
   }
   .video-menu,
   .image-menu {
@@ -7012,14 +7024,14 @@ figure.alignnone {
   }
   .video-submenu a:hover,
   .image-submenu a:hover {
-    background-color: #FFC926;
-    color: #000;
+    background-color: #000;
+    color: #fff;
     text-decoration: none;
   }
   .video-submenu .active,
   .image-submenu .active {
-    background-color: #FFC926;
-    color: #000;
+    background-color: #000;
+    color: #fff;
   }
   .lightboxVideoContainer {
     height: 80%;
@@ -7069,33 +7081,14 @@ figure.alignnone {
   font-size: 130%;
   text-align: center;
   margin: 3px 0 0 0;
-  color: #fff;
+  color: #000;
   padding: 5px 0;
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
 }
 .home h2 a,
 .home .h2 a {
-  color: #fff;
-}
-.home .videoHomeHeader {
-  background: #4DA6FF;
-}
-.home .imageHomeHeader {
-  background: #2DB200;
-}
-.home .activitiesHomeHeader {
-  background: #FFBF00;
-}
-.home .discussionHomeHeader {
-  background: #605CA9;
-}
-.home .quizHomeHeader {
-  background: #FF8000;
-}
-.home .activitesListHomeHeader,
-.home .newsListHomeHeader {
-  background: #777777;
+  color: #000;
 }
 .home .smallPadding-xs {
   padding-left: 1px;
