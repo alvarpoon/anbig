@@ -1,7 +1,7 @@
 <?=get_template_part('partials/video_menu'); ?>
 <?=get_template_part('partials/video_submenu'); ?>
 <div class="container">
-	<div class="row">
+	<!-- <div class="row"> -->
 <?
   global $current_cat_id;
   //echo $current_cat_id;
@@ -22,6 +22,7 @@
     'paged' => $paged
   );
   $wp_query = new WP_Query($args);
+  $i=0;
   while ( $wp_query->have_posts() ) :
     $wp_query->the_post();
     $id = get_the_ID();
@@ -29,6 +30,11 @@
     $video_id = get_field('video');
     $video_url = wp_get_attachment_url( $video_id );
     $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'listing-image' );
+    if($i%3==0){
+        ?>
+        <div class="row">
+        <?
+      }
  ?>
  	<div class="col-sm-4 listingImageItem clearfix">
     	<div class="videoThumbContainer">
@@ -40,6 +46,12 @@
       	<a class="btnReadMore videoLink" href="<?=$video_url?>" person="<?=get_field("doctor",$result->ID)?>" desp="<?=the_content()?>">Read more</a>
     </div>
  <?
+ if($i%3==2){
+        ?>
+        </div>
+        <?
+        }
+        $i++;
   endwhile;
  ?>
  	</div>

@@ -27,7 +27,7 @@
       ?>
 </div>
 <div class="container">
-  <div class="row">
+  <!-- <div class="row"> -->
 <?
   //show category thumbnail if no category is selected
   if ($_GET['cat'] == ""){
@@ -69,9 +69,15 @@
                     )
     );
       $results = get_posts( $args );
+      $i=0;
       foreach( $results as $result ){
       $image = get_field('original_image',$result->ID);
       $url = $image['sizes']['listing-image'];
+      if($i%3==0){
+        ?>
+        <div class="row">
+        <?
+      }
     ?>
       <div class="col-sm-4">
         <img class="img-responsive" src="<?=$url?>" />
@@ -79,8 +85,14 @@
         <p><?=cutoff_string($result->post_content,100)?></p>
       </div>
     <?
+      if($i%3==2){
+        ?>
+        </div>
+        <?
+        }
+        $i++;
       }
     }
   ?>
-</div>
+<!-- </div> -->
 </div>

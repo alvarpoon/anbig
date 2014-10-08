@@ -1,7 +1,7 @@
 <?=get_template_part('partials/image_menu'); ?>
 <?=get_template_part('partials/image_submenu'); ?>
 <div class="container">
-  <div class="row">
+  <!-- <div class="row"> -->
 <?
   global $current_cat_id;
   //echo $current_cat_id;
@@ -22,6 +22,7 @@
     'paged' => $paged
   );
   $wp_query = new WP_Query($args);
+  $i=0;
   while ( $wp_query->have_posts() ) :
     $wp_query->the_post();
     $id = get_the_ID();
@@ -31,6 +32,11 @@
 	$url = $image['sizes']['large'];
 	$nbiImage = get_field("nbi_image",$id);
 	$nbiURL = $nbiImage['sizes']['large'];
+  if($i%3==0){
+        ?>
+        <div class="row">
+        <?
+      }
  ?>
     <div class="col-sm-4 listingImageItem clearfix">
     	<a class="imgLink" href="<?=$url?>" person="<?=get_field("doctor",$result->ID)?>" desp="<?=the_content()?>" nbi_image="<?=$nbiURL?>"><img class="fullwidthImg img-responsive" src="<?=$url?>" /></a>
@@ -39,9 +45,15 @@
         <a class="btnReadMore imgLink" href="<?=$url?>" person="<?=get_field("doctor",$result->ID)?>" desp="<?=the_content()?>" nbi_image="<?=$nbiURL?>">Read more</a>
     </div>
  <?
+ if($i%3==2){
+        ?>
+        </div>
+        <?
+        }
+        $i++;
   endwhile;
  ?>
-  </div>
+  <!-- </div> -->
   <div class="row">
 <?
   $big = 999999999; // need an unlikely integer
