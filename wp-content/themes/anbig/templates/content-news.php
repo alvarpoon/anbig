@@ -1,7 +1,7 @@
 <div class="container">
 <?
   $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-    $args = array( 'numberposts' => -1, 'post_type' => 'activity', 'post_status' => 'publish', 'order' => 'DESC', 'orderby' => 'date');
+    $args = array( 'numberposts' => -1, 'post_type' => 'post', 'post_status' => 'publish', 'order' => 'DESC', 'orderby' => 'date');
     $results = get_posts( $args );
     $wp_query = new WP_Query($args);
   $i=0;
@@ -10,32 +10,15 @@
     $id = get_the_ID();
     $post = get_post($id);
   ?>
-    <div class="row activitiesItem">
-      <div class="col-sm-8">
-        <h2><?=$post->post_title?></h2>
-        <dl class="dl-horizontal">
-          <dt>Date:</dt>
-          <dd><?=get_field("date",$id)?></dd>
-        </dl>
-        <dl class="dl-horizontal">
-          <dt>Venue:</dt>
-          <dd><?=get_field("venue",$id)?></dd>
-        </dl>
-        <dl class="dl-horizontal">
-          <dt>Organizer:</dt>
-          <dd><?=get_field("organizer",$id)?></dd>
-        </dl>
+    <div class="row">
+      <div class="container"><p><?=$post->date?></p></div>
+      <div class="col-sm-10">
+      	<p class="newsTitle"><?=$post->post_title?> <span class="speaker">by <?=$post->speaker?></span></p>
+        <p><? $content = get_the_content(); $content = strip_tags($content); echo substr($content, 0, 90).'...'; ?></p>
+        <p><?php the_excerpt(); ?></p>
       </div>
-      <div class="col-sm-4">
-      <?
-        $poster = get_field("poster",$id);
-        if(!empty($poster)){
-          $url = $poster['sizes']['large'];
-      ?>
-          <a class="imgLink" href="<?=$url?>"><img class="fullwidthImg img-responsive" src="<?=$url?>" /></a>
-      <?
-        }
-      ?>
+      <div class="col-sm-2" style="display:table-cell; vertical-align:middle;">
+      	<a href="#" class="btnReadMore">Read More</a>
       </div>
     </div>
   <? endwhile;
