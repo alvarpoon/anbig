@@ -39,10 +39,10 @@
       }
  ?>
     <div class="col-sm-4 listingImageItem clearfix">
-    	<a class="imgLink" href="<?=$url?>" person="<?=get_field("doctor",$result->ID)?>" desp="<?=the_content()?>" nbi_image="<?=$nbiURL?>"><img class="fullwidthImg img-responsive" src="<?=$url?>" /></a>
+    	<a class="imgArchievesLink" href="<?=$url?>" person="<?=get_field("doctor",$result->ID)?>" desp="<?=the_content()?>" nbi_image="<?=$nbiURL?>"><img class="fullwidthImg img-responsive" src="<?=$url?>" /></a>
    		<p class="doctor"><?=get_field("doctor",$id)?></p>
         <p class="desp"><? $content = get_the_content(); $content = strip_tags($content); echo substr($content, 0, 90).'...'; ?></p>
-        <a class="btnReadMore imgLink" href="<?=$url?>" person="<?=get_field("doctor",$result->ID)?>" desp="<?=the_content()?>" nbi_image="<?=$nbiURL?>">Read more</a>
+        <a class="btnReadMore imgArchievesLink" href="<?=$url?>" person="<?=get_field("doctor",$result->ID)?>" desp="<?=the_content()?>" nbi_image="<?=$nbiURL?>">Read more</a>
     </div>
  <?
  if($i%3==2){

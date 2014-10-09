@@ -5234,6 +5234,24 @@ var Roots = {
 		  });
 	  }
 	  
+	  $("a.imgLink").click(function() {
+		$.fancybox({
+			'padding'       : 30,
+			'maxwidth'		: '90%',
+			'fitToView'		: true,
+			'href'          : this.href,
+			'autoResize'    : true,
+			'autoSize'      : true,
+			'showCloseButton': true,
+			'autoScale'		: true,
+			'type'        : 'iframe',
+			'scrolling'   : 'no',
+			'content'       : "<div class=\"forumlightboxVideoContainer\"><img class=\"fullImgWidth\" src=\""+this.href+"\"/></div>"
+		  });
+		  return false;
+	});
+
+	  
       //fix the mobile menu scrolling problem
       $(document).ready(setMobileMenu);
 	  $(document).ready(setMediaMenu);
@@ -5429,11 +5447,11 @@ var Roots = {
 		function imageResize(){
 			var imgHeight = 0;
 			var wHeight = $(window).height();
-			//console.log(wHeight);
-			if(wHeight >= 980){
+			console.log(wHeight);
+			if(wHeight >= 900){
 				//console.log(1);
 				imgHeight = 500;
-			}else if(wHeight >=700 && wHeight <980){
+			}else if(wHeight >=700 && wHeight <900){
 				imgHeight = 350;
 			}else if(wHeight >360 && wHeight <700){
 				//console.log(3);
@@ -5495,7 +5513,7 @@ var Roots = {
 			});
 		}		
 		
-        $(".imgLink").click(function() {
+        $(".imgArchievesLink").click(function() {
 			if($(this).attr('nbi_image'))
 			{
 				console.log('no null');
@@ -5583,8 +5601,8 @@ var Roots = {
 		$("a.bbp-atthumb").click(function() {
             $.fancybox({
                 'padding'       : 30,
-                'width'         : 'auto',
-                'height'        : 'auto',
+				'maxwidth'		: '90%',
+				'fitToView'		: true,
                 'href'          : this.href,
                 'autoResize'    : true,
                 'autoSize'      : true,

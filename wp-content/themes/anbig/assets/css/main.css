@@ -6591,14 +6591,13 @@ figure.alignnone {
   background: url(../img/bg_mainnav.png) repeat-x;
   margin: 0;
   padding: 0;
-  text-transform: uppercase;
 }
 .page-header h1,
 .page-header .h1 {
   font-size: 15px!important;
   margin: 0;
   padding: 10px 30px;
-  font-family: 'Roboto';
+  font-family: 'Roboto Condensed';
 }
 .paginationContainer {
   display: inline-block;
@@ -6693,12 +6692,19 @@ figure.alignnone {
   width: 100%;
   height: auto;
 }
+.listingImageItem {
+  margin-bottom: 40px;
+}
+.listingImageItem .imgArchievesLink {
+  margin-bottom: 10px;
+  display: block;
+}
 .listingImageItem .videoLink {
   margin-bottom: 10px;
   display: block;
 }
 .listingImageItem .doctor {
-  margin-bottom: 0;
+  margin-bottom: 10px;
   font-size: 15px;
 }
 .listingImageItem .desp {
@@ -6827,6 +6833,11 @@ figure.alignnone {
 .forumlightboxVideoContainer {
   margin: 0 auto;
   text-align: center;
+  height: 100%!important;
+}
+.forumlightboxVideoContainer .fullImgWidth {
+  width: auto;
+  height: 100%!important;
 }
 .videoThumbContainer {
   position: relative;
@@ -6902,6 +6913,21 @@ figure.alignnone {
   height: 100% !important;
   margin: 0 auto;
 }
+.page-template-template-activities-php h2,
+.page-template-template-activities-php .h2 {
+  font-size: 20px;
+  font-family: 'Roboto';
+  font-weight: bold;
+}
+.page-template-template-activities-php dt {
+  color: #535353;
+  font-size: 18px;
+  font-weight: normal;
+  padding-bottom: 10px;
+}
+.page-template-template-activities-php dd {
+  font-size: 18px;
+}
 @media (min-width: 768px) {
   .main {
     margin-top: 160px;
@@ -6914,7 +6940,6 @@ figure.alignnone {
     background-image: none;
     margin: 0;
     padding: 0;
-    text-transform: uppercase;
     border-bottom: none;
   }
   .page-header h1,
@@ -6922,7 +6947,7 @@ figure.alignnone {
     font-size: 30px!important;
     margin: 15px 0 0 0;
     padding: 5px 10px;
-    font-family: 'Roboto';
+    font-family: 'Roboto Condensed';
   }
   .page-template-template-listing-php .main {
     margin-top: 159px;
@@ -7044,10 +7069,22 @@ figure.alignnone {
   }
   .single-forum h1,
   .single-forum .h1 {
-    background-color: #605CA9;
-    color: #fff!important;
+    color: #000!important;
     display: inline-block;
     margin-bottom: 20px;
+  }
+  .page-template-template-activities-php .dl-horizontal {
+    margin-bottom: 0px;
+  }
+  .page-template-template-activities-php .dl-horizontal dt {
+    width: 100px;
+    text-align: left;
+  }
+  .page-template-template-activities-php .dl-horizontal dd {
+    margin-left: 120px;
+  }
+  .page-template-template-activities-php .activitiesItem {
+    margin-bottom: 30px;
   }
 }
 .home .main {
