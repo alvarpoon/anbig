@@ -1,0 +1,9 @@
+/* This style is used only from some quiz type so we don't include these styles in all quizzes */
+.watupro-mark-review {
+	margin-right: 5px;
+	cursor: pointer;
+}
+
+ul.watupro-paginator li.marked {
+	background-color: yellow;
+}
