@@ -6588,12 +6588,12 @@ figure.alignnone {
   padding-right: 0;
 }
 .page-header {
-  background: url(../img/bg_mainnav.png) repeat-x;
   margin: 0;
   padding: 0;
 }
 .page-header h1,
 .page-header .h1 {
+  background: url(../img/bg_mainnav.png) repeat-x;
   font-size: 15px!important;
   margin: 0;
   padding: 10px 30px;
@@ -6962,9 +6962,13 @@ figure.alignnone {
 }
 .single-forum #bbp-search-form,
 .bbpress #bbp-search-form {
-  display: inline-block !important;
-  float: right;
-  margin-top: 25px;
+  display: block!important;
+  margin: 15px 0;
+}
+.single-forum #bbp-search-form div,
+.bbpress #bbp-search-form div {
+  margin: 0 auto;
+  text-align: center;
 }
 .single-forum #bbp_search,
 .bbpress #bbp_search {
@@ -6997,13 +7001,13 @@ figure.alignnone {
     padding-right: 15px;
   }
   .page-header {
-    background-image: none;
     margin: 0;
     padding: 0;
     border-bottom: none;
   }
   .page-header h1,
   .page-header .h1 {
+    background-image: none;
     font-size: 30px!important;
     margin: 15px 0 0 0;
     padding: 5px 10px;
@@ -7151,6 +7155,12 @@ figure.alignnone {
   }
   .page-template-template-news-php .newsItem .btnReadMore {
     margin-top: 20%;
+  }
+  .single-forum #bbp-search-form,
+  .bbpress #bbp-search-form {
+    display: inline-block !important;
+    float: right;
+    margin-top: 25px;
   }
 }
 .home .main {

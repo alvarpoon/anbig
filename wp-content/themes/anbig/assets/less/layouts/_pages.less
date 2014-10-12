@@ -13,11 +13,12 @@
 }
 
 .page-header{
-	background:url(../img/bg_mainnav.png) repeat-x;
+	
 	margin:0;
 	padding:0;
 	//text-transform:uppercase;
 	h1, .h1{
+		background:url(../img/bg_mainnav.png) repeat-x;
 		font-size:15px!important;
 		margin:0;
 		padding:10px 30px;
@@ -429,9 +430,12 @@
 
 .single-forum, .bbpress{
 	#bbp-search-form{
-		display:inline-block!important;
-		float:right;
-		margin-top:25px;
+		display:block!important;
+		margin:15px 0;
+		div{
+			margin:0 auto;
+			text-align:center;
+		}	
 	}
 	#bbp_search{
 		background:#eee;
@@ -468,12 +472,13 @@
 	}
 	//Videos and Images listing starts		
 	.page-header{
-		background-image:none;
+		
 		margin:0;
 		padding:0;
 		//text-transform:uppercase;
 		border-bottom:none;
 		h1, .h1{
+			background-image:none;
 			font-size:30px!important;
 			margin:15px 0 0 0;
 			padding:5px 10px;
@@ -657,6 +662,14 @@
 		}
 	}
 	//News ends
+	
+	.single-forum, .bbpress{
+		#bbp-search-form{
+			display:inline-block!important;
+			float:right;
+			margin-top:25px;
+		}
+	}
 	
 }
 
