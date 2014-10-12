@@ -8,19 +8,29 @@
  */
 
 ?>
+<?php
+$args = my_custom_display_topic_index_query ();
+if($args['order'] == 'DESC'){
+	$tpOrder = 'ASC';
+}else{
+	$tpOrder = 'DESC';
+}
+
+parse_str($queryString, $vars);
+unset($vars['return']);
+$queryString = http_build_query($vars);
+?>
+
 
 <?php do_action( 'bbp_template_before_topics_loop' ); ?>
 
 <ul id="bbp-forum-<?php bbp_forum_id(); ?>" class="bbp-topics">
 
 	<li class="bbp-header">
-
 		<ul class="forum-titles">
-			<li class="bbp-topic-title"><?php _e( 'Topic', 'bbpress' ); ?></li>
-			<!--<li class="bbp-topic-voice-count"><?php _e( 'Voices', 'bbpress' ); ?></li>
-			<li class="bbp-topic-reply-count"><?php bbp_show_lead_topic() ? _e( 'Replies', 'bbpress' ) : _e( 'Posts', 'bbpress' ); ?></li>-->
-            <li class="bbp-topic-freshness"><?php _e( 'Post By', 'bbpress' ); ?></li>
-			<li class="bbp-topic-voice-count"><?php _e( 'Post date', 'bbpress' ); ?></li>
+			<li class="bbp-topic-title"><a class="<? setOrderSign('topic') ?>" href="<?php echo $actual_link = "$queryString?order=$tpOrder&orderby=topic";?>"><?php _e( 'Topic', 'bbpress' ); ?></a></li>
+            <li class="bbp-topic-freshness"><a class="<? setOrderSign('user') ?>" href="<?php echo $actual_link = "$queryString?order=$tpOrder&orderby=user";?>"><?php _e( 'Post By', 'bbpress' ); ?></a></li>
+			<li class="bbp-topic-voice-count"><a class="<? setOrderSign('date') ?>" href="<?php echo $actual_link = "$queryString?order=$tpOrder&orderby=date";?>"><?php _e( 'Post date', 'bbpress' ); ?></a></li>
 		</ul>
 
 	</li>

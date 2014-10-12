@@ -6992,6 +6992,16 @@ figure.alignnone {
   border: none;
   margin-left: 5px;
 }
+.ascOrder {
+  background: url(../img/bg_bbs_order.png) no-repeat;
+  background-position: right 8px;
+  padding-right: 15px;
+}
+.descOrder {
+  background: url(../img/bg_bbs_order.png) no-repeat;
+  background-position: right -81px;
+  padding-right: 15px;
+}
 @media (min-width: 768px) {
   .main {
     margin-top: 160px;
