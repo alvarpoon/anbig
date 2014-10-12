@@ -1,5 +1,5 @@
 <div class="container">
-<?
+  <?
   $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
     $args = array( 'numberposts' => -1, 'post_type' => 'post', 'post_status' => 'publish', 'order' => 'DESC', 'orderby' => 'date');
     $results = get_posts( $args );
@@ -10,23 +10,20 @@
     $id = get_the_ID();
     $post = get_post($id);
   ?>
-    <div class="row">
-      <div class="container"><p><?=$post->date?></p></div>
-      <div class="col-sm-10">
-      	<p class="newsTitle"><?=$post->post_title?> <span class="speaker">by <?=$post->speaker?></span></p>
-        <p><? $content = get_the_content(); $content = strip_tags($content); echo substr($content, 0, 90).'...'; ?></p>
-        <p><?php the_excerpt(); ?></p>
-      </div>
-      <div class="col-sm-2" style="display:table-cell; vertical-align:middle;">
-      	<a href="#" class="btnReadMore">Read More</a>
-      </div>
+  <div class="newsItem clearfix">
+    <div class="date"><?=$post->date?></div>
+    <div class="col-sm-10 noPadding">
+      <p class="newsTitle"><?=$post->post_title?><span class="speaker"> by <?=$post->speaker?></span></p>
+      <div class="newsContent"><? $content = get_the_content(); $content = strip_tags($content); echo substr($content, 0, 120).'...'; ?></div>
+      <p><? if($post->show_invitation) echo "*If you are interested, please send us an email for further details." ?></p>
     </div>
+    <div class="col-sm-2 noPadding alignRight"> <a href="<?=get_field('pdf',$id)?>" class="btnReadMore">Read More</a> </div>
+  </div>
   <? endwhile;
 ?>
-</div>
-<div class="row textAlignCenter">
-  <div class="paginationContainer">
-  <?
+  <div class="row textAlignCenter">
+    <div class="paginationContainer">
+      <?
         $big = 999999999; // need an unlikely integer
       
         echo paginate_links( array(
@@ -36,5 +33,6 @@
         'total' => $wp_query->max_num_pages
       ) );
       ?>
-</div>
+    </div>
+  </div>
 </div>

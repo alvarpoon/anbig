@@ -6928,6 +6928,66 @@ figure.alignnone {
 .page-template-template-activities-php dd {
   font-size: 18px;
 }
+.page-template-template-news-php .newsItem {
+  margin-bottom: 50px;
+  padding: 0 10px 0;
+}
+.page-template-template-news-php .newsItem .date {
+  font-size: 18px;
+}
+.page-template-template-news-php .newsItem .newsTitle {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Roboto';
+}
+.page-template-template-news-php .newsItem .newsTitle .speaker {
+  font-weight: normal;
+}
+.page-template-template-news-php .newsItem .newsContent {
+  width: 90%;
+  padding-bottom: 10px;
+}
+.page-template-template-news-php .newsItem .noPadding {
+  padding: 0;
+}
+.page-template-template-news-php .newsItem .alignRight {
+  text-align: right;
+}
+.page-template-template-news-php .newsItem .btnReadMore {
+  margin-bottom: 0;
+  font-size: 15px;
+}
+#bbp-search-form {
+  display: none;
+}
+.single-forum #bbp-search-form,
+.bbpress #bbp-search-form {
+  display: inline-block !important;
+  float: right;
+  margin-top: 25px;
+}
+.single-forum #bbp_search,
+.bbpress #bbp_search {
+  background: #eee;
+  color: #999;
+  font-family: 'Roboto Condensed';
+  font-size: 15px;
+  font-weight: lighter;
+  border-radius: 5px;
+  border: 1px solid #999;
+  width: 300px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.single-forum #bbp_search_submit,
+.bbpress #bbp_search_submit {
+  background: url(../img/btn_submit.png) no-repeat;
+  width: 25px;
+  height: 25px;
+  text-indent: -9999px;
+  border: none;
+  margin-left: 5px;
+}
 @media (min-width: 768px) {
   .main {
     margin-top: 160px;
@@ -7085,6 +7145,12 @@ figure.alignnone {
   }
   .page-template-template-activities-php .activitiesItem {
     margin-bottom: 30px;
+  }
+  .page-template-template-news-php .newsItem .newsContent {
+    width: 80%;
+  }
+  .page-template-template-news-php .newsItem .btnReadMore {
+    margin-top: 20%;
   }
 }
 .home .main {

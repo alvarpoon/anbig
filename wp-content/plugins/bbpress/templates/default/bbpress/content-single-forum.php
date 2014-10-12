@@ -8,9 +8,7 @@
  */
 
 ?>
-
 <div class="container" id="bbpress-forums">
-
 	<?php bbp_breadcrumb(); ?>
 
 	<?php bbp_forum_subscription_link(); ?>
