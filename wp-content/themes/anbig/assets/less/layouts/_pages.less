@@ -13,11 +13,12 @@
 }
 
 .page-header{
-	background:url(../img/bg_mainnav.png) repeat-x;
+	
 	margin:0;
 	padding:0;
 	//text-transform:uppercase;
 	h1, .h1{
+		background:url(../img/bg_mainnav.png) repeat-x;
 		font-size:15px!important;
 		margin:0;
 		padding:10px 30px;
@@ -392,6 +393,73 @@
 }
 //Activities ends
 
+//News starts
+.page-template-template-news-php{
+	.newsItem{
+		margin-bottom:50px;
+		padding:0 10px 0;
+		.date{
+			font-size:18px;
+		}
+		.newsTitle{
+			font-size:18px;
+			font-weight:bold;
+			font-family:'Roboto';
+			.speaker{
+				font-weight:normal;
+			}
+		}
+		.newsContent{
+			width:90%; 
+			padding-bottom:10px;
+		}
+		.noPadding{
+			padding:0;
+		}
+		.alignRight{
+			text-align:right;
+		}
+		.btnReadMore{
+			margin-bottom:0;
+			font-size:15px;
+		}
+	}
+}
+
+#bbp-search-form{display:none;}
+
+.single-forum, .bbpress{
+	#bbp-search-form{
+		display:block!important;
+		margin:15px 0;
+		div{
+			margin:0 auto;
+			text-align:center;
+		}	
+	}
+	#bbp_search{
+		background:#eee;
+		color:#999;
+		font-family:'Roboto Condensed';
+		font-size:15px;
+		font-weight:lighter;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		border:1px solid #999;
+		width:300px;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	#bbp_search_submit{
+		background:url(../img/btn_submit.png) no-repeat;
+		width:25px;
+		height:25px;
+		text-indent:-9999px;
+		border:none;
+		margin-left:5px;
+	}
+}
+
 //===============================================================================
 //===============================================================================
 // tablet
@@ -404,12 +472,13 @@
 	}
 	//Videos and Images listing starts		
 	.page-header{
-		background-image:none;
+		
 		margin:0;
 		padding:0;
 		//text-transform:uppercase;
 		border-bottom:none;
 		h1, .h1{
+			background-image:none;
 			font-size:30px!important;
 			margin:15px 0 0 0;
 			padding:5px 10px;
@@ -580,6 +649,27 @@
 		}
 	}
 	//Activities ends
+	
+	//News starts
+	.page-template-template-news-php{
+		.newsItem{
+			.newsContent{
+				width:80%; 
+			}
+			.btnReadMore{
+				margin-top:20%;
+			}
+		}
+	}
+	//News ends
+	
+	.single-forum, .bbpress{
+		#bbp-search-form{
+			display:inline-block!important;
+			float:right;
+			margin-top:25px;
+		}
+	}
 	
 }
 
