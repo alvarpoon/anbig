@@ -104,7 +104,7 @@ body.reply-edit .reply {
 }
 
 #bbpress-forums li.bbp-header {
-	background: #FFC926;
+	background: #bbb;
 	font-family:'Roboto Condensed';
 	font-size:15px;
 	text-transform:uppercase;
@@ -1174,6 +1174,10 @@ body.my-account #bbpress-forums {
 }
 
 .bbp-author-role, .bbp-reply-ip, .bbp-footer{display:none;}
+
+#bbpress-forums li.bbp-header a{
+	color:#202020;
+}
 /*added by Ron ends*/
 
 /* =Standard Mobile Landscape

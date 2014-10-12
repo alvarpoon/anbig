@@ -47,3 +47,41 @@ if (!current_user_can('administrator') && !is_admin()) {
   show_admin_bar(false);
 }
 }
+
+function my_custom_display_topic_index_query () {
+	
+  //$args['orderby'] = 'date';
+  //$args['order']   = 'ASC';
+  if($_GET["orderby"] == null || $_GET["order"] == null){
+	$args['orderby'] = 'date';
+	$args['order']   = 'DESC';
+  }else{
+	$args['orderby'] = $_GET["orderby"];
+  	$args['order']   = $_GET["order"];
+  }
+
+  return $args;
+}
+add_filter('bbp_before_has_topics_parse_args', 'my_custom_display_topic_index_query' );
+
+function setOrderSign($string){
+	if($_GET["orderby"] == null || $_GET["order"] == null){
+		$args['orderby'] = 'date';
+		$args['order']   = 'DESC';
+	  }else{
+		$args['orderby'] = $_GET["orderby"];
+		$args['order']   = $_GET["order"];
+	  }
+	  
+	if($args['orderby'] == $string){
+		if($args['order'] == 'DESC'){
+			echo 'descOrder';	
+		}else if($args['order'] == 'ASC'){
+			echo 'ascOrder';
+		}else{
+			return;	
+		}
+	}else{
+		return;	
+	}
+}
