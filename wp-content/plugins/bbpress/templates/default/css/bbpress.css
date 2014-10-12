@@ -243,6 +243,7 @@ li.bbp-header div.bbp-reply-content span#favorite-toggle {
 	margin: 0;
 	padding: 0;
 	width: 120px;
+	text-align: left;
 }
 
 #bbpress-forums li.bbp-header .bbp-search-content,
@@ -1169,7 +1170,7 @@ body.my-account #bbpress-forums {
 
 #bbpress-forums li.bbp-header .bbp-forum-author,#bbpress-forums li.bbp-header .bbp-topic-author,#bbpress-forums li.bbp-header .bbp-reply-author{
 	float: left;
-	text-align: left;
+	text-align: center;
 	width: 115px;
 }
 

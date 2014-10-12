@@ -7022,6 +7022,7 @@ figure.alignnone {
     margin: 15px 0 0 0;
     padding: 5px 10px;
     font-family: 'Roboto Condensed';
+    padding-left: 0;
   }
   .page-template-template-listing-php .main {
     margin-top: 159px;

@@ -14,10 +14,10 @@
     <div class="date"><?=$post->date?></div>
     <div class="col-sm-10 noPadding">
       <p class="newsTitle"><?=$post->post_title?><span class="speaker"> by <?=$post->speaker?></span></p>
-      <div class="newsContent"><? $content = get_the_content(); $content = strip_tags($content); echo substr($content, 0, 120).'...'; ?></div>
-      <p><? if($post->show_invitation) echo "*If you are interested, please send us an email for further details." ?></p>
+      <div class="newsContent"><? $content = get_the_content(); echo $content; ?></div>
+      <p><? if($post->show_invitation) echo "*If you are interested, please <a href='mailto:xxx@gmail.com'>send us an email</a> for further details." ?></p>
     </div>
-    <div class="col-sm-2 noPadding alignRight"> <a href="<?=get_field('pdf',$id)?>" class="btnReadMore">Read More</a> </div>
+    <div class="col-sm-2 noPadding alignRight"> <a target="_blank" href="<?=get_field('pdf',$id)?>" class="btnReadMore">Read More</a> </div>
   </div>
   <? endwhile;
 ?>
