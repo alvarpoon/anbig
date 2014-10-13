@@ -6837,6 +6837,10 @@ figure.alignnone {
   height: 100%!important;
 }
 .forumlightboxVideoContainer .fullImgWidth {
+  width: 100%!important;
+  height: auto;
+}
+.forumlightboxVideoContainer .fullImgHeight {
   width: auto;
   height: 100%!important;
 }
