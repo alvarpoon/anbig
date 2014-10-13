@@ -5595,13 +5595,13 @@ var Roots = {
 								});
 						}),
 						setNBIfilter('original_image', $("#original_image .small").attr("data-big")),
-						setNBIfilter('nbi_image', $("#nbi_image .small").attr("data-big")),
-						$(window).resize(function() {
-							imageResize();
-							setNBIfilter('original_image', $("#original_image .small").attr("data-big"));
-							setNBIfilter('nbi_image', $("#nbi_image .small").attr("data-big"));
-						})
+						setNBIfilter('nbi_image', $("#nbi_image .small").attr("data-big"))
 					).then(setImageFilter());
+				},
+				onUpdate : function(){
+					imageResize();
+					setNBIfilter('original_image', $("#original_image .small").attr("data-big"));
+					setNBIfilter('nbi_image', $("#nbi_image .small").attr("data-big"));
 				}
                 });
               return false;
