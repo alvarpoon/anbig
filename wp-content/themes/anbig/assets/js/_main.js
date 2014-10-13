@@ -60,6 +60,22 @@ var Roots = {
 		  });
 	  }
 	  
+	  function setbbpressSearch(){
+		$("#bbp_search").val('Search...');
+		$("#bbp_search").focus(function(){
+			var value = $.trim($(this).val());
+			if(value === "Search..."){
+				$(this).val('');
+			}
+		});
+		$("#bbp_search").blur(function(){
+			var value = $.trim($(this).val());
+			if(value === ""){
+				$(this).val('Search...');
+			}
+		});
+	  }
+	  
 	  $("a.imgLink").click(function() {
 		$.fancybox({
 			'padding'       : 30,
@@ -75,13 +91,14 @@ var Roots = {
 			'content'       : "<div class=\"forumlightboxVideoContainer\"><img class=\"fullImgWidth\" src=\""+this.href+"\"/></div>"
 		  });
 		  return false;
-	});
-
+	  });
 	  
+	  	  
       //fix the mobile menu scrolling problem
       $(document).ready(setMobileMenu);
 	  $(document).ready(setMediaMenu);
 	  $(document).ready(setPagination());
+	  $(document).ready(setbbpressSearch());
       $(window).resize(setMobileMenu);
     }
   },
