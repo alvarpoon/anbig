@@ -1,12 +1,13 @@
 <?=get_template_part('partials/video_menu');?>
 <div class="container">
-  <div class="row">
-    <form role="search" action="<?php echo site_url('/'); ?>" method="get" id="searchform">
-      <input type="text" name="s" placeholder="Search..."/>
-      <input type="hidden" name="post_type" value="video" />
-      <input type="submit" alt="Search" value="Search" />
-    </form>
-  </div>
+	<div class="mediaSearchDiv">
+        <form role="search" action="<?php echo site_url('/'); ?>" method="get" id="searchform">
+          <input type="text" name="s" placeholder="Search..."/>
+          <input type="hidden" name="post_type" value="video" />
+          <input type="submit" alt="Search" value="Search" />
+        </form>
+    </div>
+ 
 	<div class="row">
 <?
   $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
