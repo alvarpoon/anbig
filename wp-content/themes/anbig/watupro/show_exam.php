@@ -17,7 +17,8 @@ if($exam->full_time_limit > 0):?>
 <p id="submittingExam<?php echo $exam->ID?>" style="display:none;text-align:center;"><img src="<?php echo plugins_url('watupro/img/loading.gif')?>"></p>
 
 <?php $button = $_exam->maybe_show_description($exam, true);?>
-
+<div class="col-sm-1 hidden-xs"></div>
+<div class="col-sm-11 col-xs-12">
 <form action="" method="post" class="quiz-form" id="quiz-<?php echo $exam_id?>" <?php if(!$exam->time_limit and $button):?>style="display:none;"<?php endif;?> enctype="multipart/form-data" <?php if(!empty($exam->no_ajax)):?>onsubmit="return WatuPRO.submitResult(this)"<?php endif;?>>
 <?php
 if($exam->email_taker and !is_user_logged_in()) watupro_ask_for_email($exam);
@@ -40,9 +41,10 @@ if(empty($exam->time_limit) or !empty($_POST['watupro_start_timer'])): // on tim
 	   if($exam->single_page == WATUPRO_PAGINATE_CUSTOM_NUMBER) echo watupro_paginate_header($exam, $qct, $num_pages);
 	   $qct++;
 		echo "<div class='watu-question' id='question-$question_count'>";
-			 echo $_question->display($ques, $qct, $question_count, @$in_progress, $exam);		 	
-			 $question_ids .= $ques->ID.',';     
-		    if(!$single_page and $cnt_questions > 1) echo "<p class='watupro-qnum-info'>".sprintf(__("Question %d of %d", 'watupro'), $qct, $total)."</p>";
+		 	if(!$single_page and $cnt_questions > 1) echo "<p class='watupro-qnum-info alignRight'>".sprintf(__("Question Compeleted: %d of %d", 'watupro'), $qct, $total)."</p>";?>
+		  	<?php echo $_question->display($ques, $qct, $question_count, @$in_progress, $exam);?>
+			<?php $question_ids .= $ques->ID.',';     
+		   
 		    
 		   if($exam->live_result):
 			   if(empty($_question->inprogress_snapshots[$ques->ID])):?>
@@ -103,6 +105,7 @@ echo @$recaptcha_html;?><br />
 	<input type="hidden" name="action" value="watupro_submit">
 	<?php endif;?>
 	</form>
+    </div>
 	<p>&nbsp;</p>
 </div>
 
