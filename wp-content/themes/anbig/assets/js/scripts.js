@@ -5264,7 +5264,7 @@ var Roots = {
 			'scrolling'   : 'no',
 			'content'       : "<div class=\"forumlightboxVideoContainer\"><img src=\""+this.href+"\"/></div>",
 			afterShow : function() {
-				console.log('fancybox: width'+$('.fancybox-inner').css('width')+' height:'+$('.fancybox-inner').css('height')+' image: width'+$('.forumlightboxVideoContainer img').css('width')+' height:'+$('.forumlightboxVideoContainer img').css('height'));
+				//console.log('fancybox: width'+$('.fancybox-inner').css('width')+' height:'+$('.fancybox-inner').css('height')+' image: width'+$('.forumlightboxVideoContainer img').css('width')+' height:'+$('.forumlightboxVideoContainer img').css('height'));
 				if(parseInt($('.forumlightboxVideoContainer img').css('width')) > parseInt($('.fancybox-inner').css('width'))){
 					$(".forumlightboxVideoContainer img").removeClass('fullImgHeight').addClass('fullImgWidth');
 				}else if(parseInt($('.forumlightboxVideoContainer img').css('height')) > parseInt($('.fancybox-inner').css('height'))){
@@ -5272,7 +5272,7 @@ var Roots = {
 				}
 			},
 			onUpdate : function(){
-				console.log('resized fancybox: width'+$('.fancybox-inner').css('width')+' height:'+$('.fancybox-inner').css('height')+' image: width'+$('.forumlightboxVideoContainer img').css('width')+' height:'+$('.forumlightboxVideoContainer img').css('height'));
+				//console.log('resized fancybox: width'+$('.fancybox-inner').css('width')+' height:'+$('.fancybox-inner').css('height')+' image: width'+$('.forumlightboxVideoContainer img').css('width')+' height:'+$('.forumlightboxVideoContainer img').css('height'));
 				if(parseInt($('.forumlightboxVideoContainer img').css('width')) > parseInt($('.fancybox-inner').css('width'))){
 					$(".forumlightboxVideoContainer img").removeClass('fullImgHeight').addClass('fullImgWidth');
 				}else if(parseInt($('.forumlightboxVideoContainer img').css('height')) > parseInt($('.fancybox-inner').css('height'))){

@@ -1,7 +1,7 @@
 <?=get_template_part('partials/video_menu'); ?>
 <?=get_template_part('partials/video_submenu'); ?>
 <div class="container">
-  <div class="row">
+  <div class="mediaSearchDiv">
     <form role="search" action="<?php echo site_url('/'); ?>" method="get" id="searchform">
       <input type="text" name="s" placeholder="Search..."/>
       <input type="hidden" name="post_type" value="video" />

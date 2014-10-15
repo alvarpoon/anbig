@@ -6286,6 +6286,9 @@ figure.alignnone {
 .container {
   max-width: 992px;
 }
+.underline {
+  text-decoration: underline;
+}
 .navbar-default {
   background-color: #fff;
   border: none;
@@ -6918,6 +6921,29 @@ figure.alignnone {
   height: 100% !important;
   margin: 0 auto;
 }
+.mediaSearchDiv {
+  margin: 10px 0 20px 0;
+}
+#searchform input[type='text'] {
+  background: #eee;
+  color: #999;
+  font-family: 'Roboto Condensed';
+  font-size: 15px;
+  font-weight: lighter;
+  border-radius: 5px;
+  border: 1px solid #999;
+  width: 300px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+#searchform input[type="submit"] {
+  background: url(../img/btn_submit.png) no-repeat;
+  width: 25px;
+  height: 25px;
+  text-indent: -9999px;
+  border: none;
+  margin-left: 5px;
+}
 .page-template-template-activities-php h2,
 .page-template-template-activities-php .h2 {
   font-size: 20px;
@@ -6967,19 +6993,22 @@ figure.alignnone {
 }
 .single-forum #bbp-search-form,
 .bbpress #bbp-search-form,
-.single-topic #bbp-search-form {
+.single-topic #bbp-search-form,
+.bbp-search #bbp-search-form {
   display: block!important;
   margin: 15px 0;
 }
 .single-forum #bbp-search-form div,
 .bbpress #bbp-search-form div,
-.single-topic #bbp-search-form div {
+.single-topic #bbp-search-form div,
+.bbp-search #bbp-search-form div {
   margin: 0 auto;
   text-align: center;
 }
 .single-forum #bbp_search,
 .bbpress #bbp_search,
-.single-topic #bbp_search {
+.single-topic #bbp_search,
+.bbp-search #bbp_search {
   background: #eee;
   color: #999;
   font-family: 'Roboto Condensed';
@@ -6993,7 +7022,8 @@ figure.alignnone {
 }
 .single-forum #bbp_search_submit,
 .bbpress #bbp_search_submit,
-.single-topic #bbp_search_submit {
+.single-topic #bbp_search_submit,
+.bbp-search #bbp_search_submit {
   background: url(../img/btn_submit.png) no-repeat;
   width: 25px;
   height: 25px;
@@ -7153,8 +7183,10 @@ figure.alignnone {
   }
   .single-forum h1,
   .single-topic h1,
+  .bbp-search h1,
   .single-forum .h1,
-  .single-topic .h1 {
+  .single-topic .h1,
+  .bbp-search .h1 {
     color: #000!important;
     display: inline-block;
     margin-bottom: 20px;
