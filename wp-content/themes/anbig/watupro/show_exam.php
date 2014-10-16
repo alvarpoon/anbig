@@ -41,7 +41,7 @@ if(empty($exam->time_limit) or !empty($_POST['watupro_start_timer'])): // on tim
 	   if($exam->single_page == WATUPRO_PAGINATE_CUSTOM_NUMBER) echo watupro_paginate_header($exam, $qct, $num_pages);
 	   $qct++;
 		echo "<div class='watu-question' id='question-$question_count'>";
-		 	if(!$single_page and $cnt_questions > 1) echo "<p class='watupro-qnum-info alignRight'>".sprintf(__("Question Compeleted: %d of %d", 'watupro'), $qct, $total)."</p>";?>
+		 	if(!$single_page and $cnt_questions > 1) echo "<p class='watupro-qnum-info alignRight'>".sprintf(__("Question Compeleted: %d out of %d", 'watupro'), $qct, $total)."</p>";?>
 		  	<?php echo $_question->display($ques, $qct, $question_count, @$in_progress, $exam);?>
 			<?php $question_ids .= $ques->ID.',';     
 		   

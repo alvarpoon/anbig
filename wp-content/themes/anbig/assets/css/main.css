@@ -7051,6 +7051,10 @@ figure.alignnone {
   background-position: right -81px;
   padding-right: 15px;
 }
+.watupro_num {
+  display: block;
+  font-weight: bold;
+}
 #prev-question input[type='button'],
 #next-question input[type='button'] {
   font-family: 'Roboto';
