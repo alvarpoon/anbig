@@ -1,7 +1,14 @@
-  <?php //the_content(); ?>
+  <?php 
+  	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$wp_query->query_vars["posts_per_page"] = 6;
+	$wp_query->query_vars['orderby'] = 'date';
+	$wp_query->query_vars['order'] = 'DESC';
+	$wp_query->query_vars['paged'] = $paged;  
+  ?>
   <div class="container" style="margin-top:15px;">
   	<? if($post->post_type == "video"){
 		  $i=0;
+		  
 		  while ( $wp_query->have_posts() ) :
 			$wp_query->the_post();
 			$id = get_the_ID();
@@ -27,23 +34,12 @@
 		  $i++; 
 		  endwhile;
 		 ?>
-         
-         <div class="row">
-			<?
-              $big = 999999999; // need an unlikely integer
-            
-              echo paginate_links( array(
-              'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-              'format' => '?paged=%#%',
-              'current' => max( 1, get_query_var('paged') ),
-              'total' => $wp_query->max_num_pages
-            ) );
-            ?>
-          </div>  
     <? } ?>
     
     <? if($post->post_type == "image"){
 		  $i=0;
+		  $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+		  $wp_query->query_vars["posts_per_page"] = 6;
 		  while ( $wp_query->have_posts() ) :
 			$wp_query->the_post();
 			$id = get_the_ID();
@@ -65,21 +61,20 @@
 	        </div>
     	    <? }
 			$i++;
-			endwhile; ?>
-            
-            <div class="row">
-				<?
-                  $big = 999999999; // need an unlikely integer
-                
-                  echo paginate_links( array(
-                  'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-                  'format' => '?paged=%#%',
-                  'current' => max( 1, get_query_var('paged') ),
-                  'total' => $wp_query->max_num_pages
-                ) );
-                ?>
-           </div> 			
+			endwhile; ?>		
   <? } ?>
   </div>
+  <div class="row">
+	<?
+      $big = 999999999; // need an unlikely integer
+    
+      echo paginate_links( array(
+      'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+      'format' => '?paged=%#%',
+      'current' => max( 1, get_query_var('paged') ),
+      'total' => $wp_query->max_num_pages
+    ) );
+    ?>
+  </div>  	
 
   <?php wp_link_pages(array('before' => '<nav class="pagination">', 'after' => '</nav>')); ?>

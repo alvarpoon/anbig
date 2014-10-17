@@ -5,6 +5,7 @@
     <form role="search" action="<?php echo site_url('/'); ?>" method="get" id="searchform">
       <input type="text" name="s" placeholder="Search..."/>
       <input type="hidden" name="post_type" value="video" />
+      <input type="hidden" name="posts_per_page" value="6" />
       <input type="submit" alt="Search" value="Search" />
     </form>
   </div>

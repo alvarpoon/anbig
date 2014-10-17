@@ -7082,6 +7082,12 @@ figure.alignnone {
 .question-content {
   font-size: 18px;
 }
+.question-content .imgLink {
+  margin-bottom: 5px;
+}
+.question-content .fullwidthImg {
+  margin-bottom: 10px;
+}
 .watupro-qnum-info {
   font-style: normal!important;
   color: #777;
