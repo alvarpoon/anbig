@@ -6914,8 +6914,6 @@ figure.alignnone {
   text-align: center;
 }
 .lightBoxImg .originalImgContainer img {
-  width: auto !important;
-  height: 100% !important;
   margin: 0 auto;
 }
 .lightBoxImg .nbiImgContainer {
@@ -6927,9 +6925,15 @@ figure.alignnone {
   text-align: center;
 }
 .lightBoxImg .nbiImgContainer img {
-  width: auto !important;
-  height: 100% !important;
   margin: 0 auto;
+}
+.lightBoxImg .fullImgWidth {
+  width: 100%!important;
+  height: auto;
+}
+.lightBoxImg .fullImgHeight {
+  width: auto;
+  height: 100%!important;
 }
 .mediaSearchDiv {
   margin: 10px 0 20px 0;
