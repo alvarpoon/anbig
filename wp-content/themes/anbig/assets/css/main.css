@@ -6650,6 +6650,19 @@ figure.alignnone {
   -moz-border-top-left-radius: 5px;
   -moz-border-bottom-left-radius: 5px;
 }
+.page-template-template-quiz-listing-php .page-header {
+  margin-bottom: 30px;
+}
+.page-template-template-quiz-listing-php .title {
+  font-size: 18px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  margin-bottom: 3px;
+  padding-left: 15px;
+}
+.page-template-template-quiz-listing-php .title a {
+  color: #000;
+}
 .videoTitle {
   display: block;
   width: 100%;
