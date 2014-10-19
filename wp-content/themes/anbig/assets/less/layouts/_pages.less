@@ -357,8 +357,8 @@
 		height:100% !important;
 		text-align:center;
 		img{
-			width:auto !important;
-			height:100% !important;
+			//width:auto !important;
+			//height:100% !important;
 			margin:0 auto;
 		}
 	}
@@ -371,11 +371,22 @@
 		height:100% !important;
 		text-align:center;
 		img{
-			width:auto !important;
-			height:100% !important;
+			//width:auto !important;
+			//height:100% !important;
 			margin:0 auto;
 		}
 	}
+	
+	.fullImgWidth{
+		width:100%!important;
+		height:auto;
+	}
+	.fullImgHeight{
+		width:auto;
+		height:100%!important;
+	}
+	
+	
 }
 
 .mediaSearchDiv{
@@ -504,6 +515,64 @@
 	background-position:right -81px;
 	padding-right:15px;
 }
+
+//quiz start
+.watupro_num{
+	display: block;
+	font-weight: bold;
+}
+#prev-question, #next-question{
+	input[type='button']{
+		font-family:'Roboto';
+		color:#000;
+		font-weight:bold;
+		padding:3px 20px;
+		background-color:#FFC926;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		display:inline-block;
+		border:none;
+		margin-right:15px;
+	}
+}
+#liveResultBtn, #action-button{
+	font-family:'Roboto';
+	color:#000;
+	font-weight:bold;
+	padding:3px 20px;
+	background-color:#FFC926;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	display:inline-block;
+	border:none;
+	margin-right:15px;
+}
+
+.question-content{
+	font-size:18px;
+	.imgLink{
+		margin-bottom:5px;
+	}
+	.fullwidthImg{
+		margin-bottom:10px;
+	}
+}
+
+.watupro-qnum-info{
+	font-style:normal!important;
+	color:#777;
+	font-weight:bold;
+}
+
+.watupro-question-choice{
+	margin-bottom:10px;
+	label{ 
+		font-size:18px;
+		font-weight:normal;
+		margin-left:10px;
+	}
+}
+//quiz end
 
 //===============================================================================
 //===============================================================================

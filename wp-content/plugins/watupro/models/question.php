@@ -174,7 +174,7 @@ class WTPQuestion {
 	  }
 	  
 	  $compact_class = $ques->compact_format ? "watupro-compact" : "";
-	  $question_number = empty(self :: $advanced_settings['dont_display_question_numbers']) ? "<span class='watupro_num'>$qct. </span>"  : '';
+	  $question_number = empty(self :: $advanced_settings['dont_display_question_numbers']) ? "<span class='watupro_num'>Question $qct </span>"  : '';
 		
 		echo "<div id='questionWrap-$question_count' $nodisplay class='$compact_class'>
 			<div class='question-content' ".@$display_style.">";
@@ -550,7 +550,7 @@ class WTPQuestion {
 		$answer_text=""; // answers as text
 		$unresolved_text = "";
 		$compact_class = $ques->compact_format ? ' watupro-compact ' : '';
-		$question_number = empty(self :: $advanced_settings['dont_display_question_numbers']) ? "<span class='watupro_num'>$qct. </span>"  : '';
+		$question_number = empty(self :: $advanced_settings['dont_display_question_numbers']) ? "<span class='watupro_num'>Question $qct </span>"  : '';
 		
 		$enumerator = self :: define_enumerator();
 		

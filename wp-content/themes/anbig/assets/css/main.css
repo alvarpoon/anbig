@@ -6283,11 +6283,21 @@ figure.alignnone {
     width: 66.66666667%;
   }
 }
+.alignRight {
+  text-align: right;
+}
 .container {
   max-width: 992px;
 }
 .underline {
   text-decoration: underline;
+}
+.nopaddingDiv {
+  padding: 0;
+}
+.smallPaddingRight {
+  padding-right: 5px;
+  padding-left: 0;
 }
 .navbar-default {
   background-color: #fff;
@@ -6904,8 +6914,6 @@ figure.alignnone {
   text-align: center;
 }
 .lightBoxImg .originalImgContainer img {
-  width: auto !important;
-  height: 100% !important;
   margin: 0 auto;
 }
 .lightBoxImg .nbiImgContainer {
@@ -6917,9 +6925,15 @@ figure.alignnone {
   text-align: center;
 }
 .lightBoxImg .nbiImgContainer img {
-  width: auto !important;
-  height: 100% !important;
   margin: 0 auto;
+}
+.lightBoxImg .fullImgWidth {
+  width: 100%!important;
+  height: auto;
+}
+.lightBoxImg .fullImgHeight {
+  width: auto;
+  height: 100%!important;
 }
 .mediaSearchDiv {
   margin: 10px 0 20px 0;
@@ -7040,6 +7054,56 @@ figure.alignnone {
   background: url(../img/bg_bbs_order.png) no-repeat;
   background-position: right -81px;
   padding-right: 15px;
+}
+.watupro_num {
+  display: block;
+  font-weight: bold;
+}
+#prev-question input[type='button'],
+#next-question input[type='button'] {
+  font-family: 'Roboto';
+  color: #000;
+  font-weight: bold;
+  padding: 3px 20px;
+  background-color: #FFC926;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  margin-right: 15px;
+}
+#liveResultBtn,
+#action-button {
+  font-family: 'Roboto';
+  color: #000;
+  font-weight: bold;
+  padding: 3px 20px;
+  background-color: #FFC926;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  margin-right: 15px;
+}
+.question-content {
+  font-size: 18px;
+}
+.question-content .imgLink {
+  margin-bottom: 5px;
+}
+.question-content .fullwidthImg {
+  margin-bottom: 10px;
+}
+.watupro-qnum-info {
+  font-style: normal!important;
+  color: #777;
+  font-weight: bold;
+}
+.watupro-question-choice {
+  margin-bottom: 10px;
+}
+.watupro-question-choice label {
+  font-size: 18px;
+  font-weight: normal;
+  margin-left: 10px;
 }
 @media (min-width: 768px) {
   .main {

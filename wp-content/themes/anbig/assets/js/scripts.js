@@ -5435,7 +5435,7 @@ var Roots = {
       });
     }
   },
-  page_template_template_listing_img_php:  {
+  search_results:  {
     init: function() {
       // JavaScript to be fired on the about us page
       $(document).ready(function(){
@@ -5477,25 +5477,30 @@ var Roots = {
 			});
 		}
 		
-		function imageResize(){
-			var imgHeight = 0;
-			var wHeight = $(window).height();
-			console.log(wHeight);
-			if(wHeight >= 900){
-				//console.log(1);
-				imgHeight = 500;
-			}else if(wHeight >=700 && wHeight <900){
-				imgHeight = 350;
-			}else if(wHeight >360 && wHeight <700){
-				//console.log(3);
-				imgHeight = 180;
-			} 
-			else{
-				//console.log(3);
-				imgHeight = 120;					
-			} 
-			$('.lightBoxImg').css({"height":imgHeight+'px'});
-
+		function imageResize(container1, container2){			
+			function setImgClass(container){
+				if(heightForImg < parseInt($('#'+container+' img').css('height'))){
+					console.log('Img width: '+parseInt($('#'+container+' img').css('width'))+' Img height: '+parseInt($('#'+container+' img').css('height')));
+													
+					var containerWidth = Math.ceil(heightForImg*(parseInt($('#'+container+' img').css('width'))/parseInt($('#'+container+' img').css('height'))));
+					$('#'+container).css('width',containerWidth);	
+				}else{
+					if(parseInt($('#'+container+' img').css('width')) > parseInt($('.fancybox-inner').css('width'))){
+						$('#'+container+' img').removeClass('fullImgHeight').addClass('fullImgWidth');
+					}else if(parseInt($('.'+container+' img').css('height')) > parseInt($('.fancybox-inner').css('height'))){
+						$('#'+container+' img').removeClass('fullImgWidth').addClass('fullImgHeight');
+					}
+					$('#'+container).css('width','auto');
+				}
+			}
+			
+			var heightForImg = parseInt($('.fancybox-inner').css('height')) - parseInt($('.imageFilterContainer').css('height')) - parseInt($('.lightboxImgContentContainer').css('height'))-45;
+			console.log('heightForImg: '+heightForImg);
+			$('.lightBoxImg').css({"height":heightForImg+'px'});
+			
+			
+			setImgClass(container1);
+			setImgClass(container2);
 		}
 		
 		function setNBIfilter(id,nImageSrc){
@@ -5596,12 +5601,244 @@ var Roots = {
 						}),
 						setNBIfilter('original_image', $("#original_image .small").attr("data-big")),
 						setNBIfilter('nbi_image', $("#nbi_image .small").attr("data-big"))
+						//imageResize('original_image', 'nbi_image')
 					).then(setImageFilter());
 				},
 				onUpdate : function(){
-					imageResize();
+					$('.lightBoxImg').css({"height":'auto'});
+					$('#original_image').css({"width":'auto'});
+					$('#nbi_image').css({"width":'auto'});
+					imageResize('original_image', 'nbi_image');
 					setNBIfilter('original_image', $("#original_image .small").attr("data-big"));
-					setNBIfilter('nbi_image', $("#nbi_image .small").attr("data-big"));
+					setNBIfilter('nbi_image', $("#nbi_image .small").attr("data-big"));			
+				}
+                });
+              return false;
+            });
+        });
+		
+		  
+        $(".videoLink").click(function() {
+            $.fancybox({
+                'padding'       : 30,
+                'width'         : '50%',
+                'height'        : 'auto',
+                'href'          : this.href,
+                'autoResize'    : true,
+                'autoSize'      : true,
+				'showCloseButton': true,
+				'autoScale'		: true,
+				'type'        : 'iframe',
+			    'scrolling'   : 'no',
+                'content'       : "<div class=\"lightboxVideoContainer\"><video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" width=\"auto\" height=\"auto\" style=\"width:100%  !important; height:100% !important\" controls preload=\"none\" data-setup='{'autoplay': true, 'enterFullScreen':true}'><source src=\""+this.href+"\" type='video/mp4' /></video></div><div class=\"lightboxContentContainer\"><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p></div>",
+				afterShow : function() {	
+					$('.lightboxContentContainer').each(
+						function()
+						{
+							var settings = {
+								autoReinitialise: true
+							};
+							$(this).jScrollPane(settings);
+							var api = $(this).data('jsp');
+							var throttleTimeout;
+							$(window).bind(
+								'resize',
+								function()
+								{
+									if (!throttleTimeout) {
+										throttleTimeout = setTimeout(
+											function()
+											{
+												api.reinitialise();
+												throttleTimeout = null;
+											},
+											50
+										);
+									}
+								});
+						});
+					}
+           	  });
+              return false;
+			
+      });
+    }
+  },
+  page_template_template_listing_img_php:  {
+    init: function() {
+      // JavaScript to be fired on the about us page
+      $(document).ready(function(){
+		var nbiFlag = false;
+		function setImageFilter(){
+			$('.lightBoxImg').children('div').each(function(){
+				//$(this).css('display','none');
+				$('.originalImgContainer').css('visibility','visible');
+				$('.btnOriginalImage').addClass("active");
+			});
+			
+			if(!nbiFlag){
+				$('.btnNBI').css({'display':'none'});
+				return;
+			}
+			
+			$('.btnOriginalImage').click(function(){
+				$('.imageFilterContainer a').each(function(){
+					$(this).removeClass("active");	
+				});
+				$('.lightBoxImg').children('div').each(function(){
+					$(this).css('display','none');
+					$(this).css('visibility','hidden');
+					$('.originalImgContainer').css({'display':'block','position':'relative', 'visibility':'visible'});
+					$('.btnOriginalImage').addClass("active");
+				});
+			});
+			
+			$('.btnNBI').click(function(){
+				$('.imageFilterContainer a').each(function(){
+					$(this).removeClass("active");	
+				});
+				$('.lightBoxImg').children('div').each(function(){
+					$(this).css('display','none');
+					$(this).css('visibility','hidden');
+					$('.nbiImgContainer').css({'display':'block','position':'relative', 'visibility':'visible'});
+					$('.btnNBI').addClass("active");
+				});
+			});
+		}
+		
+		function imageResize(container1, container2){			
+			function setImgClass(container){
+				if(heightForImg < parseInt($('#'+container+' img').css('height'))){
+					console.log('Img width: '+parseInt($('#'+container+' img').css('width'))+' Img height: '+parseInt($('#'+container+' img').css('height')));
+													
+					var containerWidth = Math.ceil(heightForImg*(parseInt($('#'+container+' img').css('width'))/parseInt($('#'+container+' img').css('height'))));
+					$('#'+container).css('width',containerWidth);	
+				}else{
+					if(parseInt($('#'+container+' img').css('width')) > parseInt($('.fancybox-inner').css('width'))){
+						$('#'+container+' img').removeClass('fullImgHeight').addClass('fullImgWidth');
+					}else if(parseInt($('.'+container+' img').css('height')) > parseInt($('.fancybox-inner').css('height'))){
+						$('#'+container+' img').removeClass('fullImgWidth').addClass('fullImgHeight');
+					}
+					$('#'+container).css('width','auto');
+				}
+			}
+			
+			var heightForImg = parseInt($('.fancybox-inner').css('height')) - parseInt($('.imageFilterContainer').css('height')) - parseInt($('.lightboxImgContentContainer').css('height'))-45;
+			console.log('heightForImg: '+heightForImg);
+			$('.lightBoxImg').css({"height":heightForImg+'px'});
+			
+			
+			setImgClass(container1);
+			setImgClass(container2);
+		}
+		
+		function setNBIfilter(id,nImageSrc){
+			if(!nbiFlag){return;}
+			var native_width = 0;
+			var native_height = 0;
+			var nbiImageSrc = nImageSrc;
+			$("#"+id+" .large").css({"background": "url('"+nbiImageSrc+"') no-repeat"});
+		
+			$("#"+id).mousemove(function(e){
+				if(!native_width && !native_height)
+				{
+					var image_object = new Image();
+					image_object.src = $("#"+id+" .small").attr("src");
+					
+					native_width = $("#"+id+" .small").width();
+					native_height = $("#"+id+" .small").height();
+					//$(this).css({"width":native_width});
+					//console.log(native_width+' '+native_height);
+				}
+				else
+				{
+					var magnify_offset = $(this).offset();
+					var mx = e.pageX - magnify_offset.left;
+					var my = e.pageY - magnify_offset.top;
+					
+					if(mx < $(this).width() && my < $(this).height() && mx > 0 && my > 0)
+					{
+						$("#"+id+" .large").fadeIn(100);
+					}
+					else
+					{
+						$("#"+id+" .large").fadeOut(100);
+					}
+					if($("#"+id+" .large").is(":visible"))
+					{
+						$("#"+id+" .large").css({"background-size":native_width+'px '+native_height+'px'});
+						var rx = Math.round(mx/$("#"+id+" .small").width()*native_width - $("#"+id+" .large").width()/2)*-1;
+						var ry = Math.round(my/$("#"+id+" .small").height()*native_height - $("#"+id+" .large").height()/2)*-1;
+						var bgp = rx + "px " + ry + "px";
+						
+						var px = mx - $("#"+id+" .large").width()/2;
+						var py = my - $("#"+id+" .large").height()/2;
+		
+						$("#"+id+" .large").css({left: px, top: py, backgroundPosition: bgp});
+					}
+				}
+			});
+		}		
+		
+        $(".imgArchievesLink").click(function() {
+			if($(this).attr('nbi_image'))
+			{
+				//console.log('no null');
+				nbiFlag = true;
+			}else{
+				//console.log('null');
+				nbiFlag = false;
+			}
+            $.fancybox({
+                'padding'       : 30,
+                'width'         : '50%',
+                'height'        : 'auto',
+                'href'          : this.href,
+                'autoResize'    : true,
+                'autoSize'      : true,
+				'showCloseButton': true,
+				'autoScale'		: true,
+			    'scrolling'   : 'no',
+                'content'       : "<div class=\"lightboxImgContainer\"><div class=\"lightBoxImg\"><div id=\"original_image\" class=\"originalImgContainer\"><div class=\"large\"></div><img class=\"small fullImgWidth\" src=\""+this.href+"\" data-big=\""+$(this).attr("nbi_image")+"\"/></div><div id=\"nbi_image\" class=\"nbiImgContainer\"><div class=\"large\"></div><img class=\"small fullImgWidth\" src=\""+$(this).attr("nbi_image")+"\" data-big=\""+this.href+"\"/></div></div></div><div class=\"imageFilterContainer\"><a href=\"javascript:;\" class=\"btnOriginalImage\">Original image</a><a href=\"javascript:;\" class=\"btnNBI\">NBI image</a></div><div class=\"lightboxImgContentContainer\"><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p></div>",
+				 afterShow : function() {
+					 $.when(
+					 	$('.lightboxImgContentContainer').each(function()
+						{
+							var settings = {
+								autoReinitialise: true
+							};
+							$(this).jScrollPane(settings);
+							var api = $(this).data('jsp');
+							var throttleTimeout;
+							$(window).bind(
+								'resize',
+								function()
+								{
+									if (!throttleTimeout) {
+										throttleTimeout = setTimeout(
+											function()
+											{
+												api.reinitialise();
+												throttleTimeout = null;
+											},
+											50
+										);
+									}
+								});
+						}),
+						
+						setNBIfilter('original_image', $("#original_image .small").attr("data-big")),
+						setNBIfilter('nbi_image', $("#nbi_image .small").attr("data-big"))
+						//imageResize('original_image', 'nbi_image')
+					).then(setImageFilter());
+				},
+				onUpdate : function(){
+					$('.lightBoxImg').css({"height":'auto'});
+					$('#original_image').css({"width":'auto'});
+					$('#nbi_image').css({"width":'auto'});
+					imageResize('original_image', 'nbi_image');
+					setNBIfilter('original_image', $("#original_image .small").attr("data-big"));
+					setNBIfilter('nbi_image', $("#nbi_image .small").attr("data-big"));					
 				}
                 });
               return false;
@@ -5645,7 +5882,6 @@ var Roots = {
 			    'scrolling'   : 'no',
                 'content'       : "<div class=\"forumlightboxVideoContainer\"><img src=\""+this.href+"\"/></div>",
 				afterShow : function() {
-					//console.log('fancybox: width'+$('.fancybox-inner').css('width')+' height:'+$('.fancybox-inner').css('height')+' image: width'+$('.forumlightboxVideoContainer img').css('width')+' height:'+$('.forumlightboxVideoContainer img').css('height'));
 					if(parseInt($('.forumlightboxVideoContainer img').css('width')) > parseInt($('.fancybox-inner').css('width'))){
 						$(".forumlightboxVideoContainer img").removeClass('fullImgHeight').addClass('fullImgWidth');
 					}else if(parseInt($('.forumlightboxVideoContainer img').css('height')) > parseInt($('.fancybox-inner').css('height'))){
@@ -5653,7 +5889,6 @@ var Roots = {
 					}
 				},
 				onUpdate : function(){
-					//console.log('resized fancybox: width'+$('.fancybox-inner').css('width')+' height:'+$('.fancybox-inner').css('height')+' image: width'+$('.forumlightboxVideoContainer img').css('width')+' height:'+$('.forumlightboxVideoContainer img').css('height'));
 					if(parseInt($('.forumlightboxVideoContainer img').css('width')) > parseInt($('.fancybox-inner').css('width'))){
 						$(".forumlightboxVideoContainer img").removeClass('fullImgHeight').addClass('fullImgWidth');
 					}else if(parseInt($('.forumlightboxVideoContainer img').css('height')) > parseInt($('.fancybox-inner').css('height'))){
