@@ -5706,12 +5706,22 @@ var Roots = {
 			});
 		}
 		
-		function imageResize(container1, container2){			
+		function imageResize(container1, container2){
+			var globalImgContainerWidth = 0;	
 			function setImgClass(container){
-				if(heightForImg < parseInt($('#'+container+' img').css('height'))){
-					console.log('Img width: '+parseInt($('#'+container+' img').css('width'))+' Img height: '+parseInt($('#'+container+' img').css('height')));
-													
-					var containerWidth = Math.ceil(heightForImg*(parseInt($('#'+container+' img').css('width'))/parseInt($('#'+container+' img').css('height'))));
+				console.log('Img Height of '+ container + parseInt($('#'+container+' img').height()));
+				if(heightForImg < parseInt($('#'+container+' img').height())){
+					console.log('setWidth for '+container);
+					
+					var containerWidth = 0;
+					
+					if(globalImgContainerWidth === 0){
+						containerWidth = Math.ceil(heightForImg*(parseInt($('#'+container+' img').css('width'))/parseInt($('#'+container+' img').css('height'))));
+						globalImgContainerWidth = containerWidth;
+					}else{
+						containerWidth = globalImgContainerWidth;
+					}						
+						
 					$('#'+container).css('width',containerWidth);	
 				}else{
 					if(parseInt($('#'+container+' img').css('width')) > parseInt($('.fancybox-inner').css('width'))){
@@ -5719,7 +5729,11 @@ var Roots = {
 					}else if(parseInt($('.'+container+' img').css('height')) > parseInt($('.fancybox-inner').css('height'))){
 						$('#'+container+' img').removeClass('fullImgWidth').addClass('fullImgHeight');
 					}
-					$('#'+container).css('width','auto');
+					if(globalImgContainerWidth === 0){
+						$('#'+container).css('width','auto');
+					}else{
+						$('#'+container).css('width',globalImgContainerWidth);
+					}
 				}
 			}
 			
@@ -5730,6 +5744,8 @@ var Roots = {
 			
 			setImgClass(container1);
 			setImgClass(container2);
+			
+			globalImgContainerWidth = 0;
 		}
 		
 		function setNBIfilter(id,nImageSrc){
