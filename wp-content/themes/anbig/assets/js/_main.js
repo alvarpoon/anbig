@@ -330,9 +330,11 @@ var Roots = {
 					}
 				}
 			}
-			
-			var heightForImg = parseInt($('.fancybox-inner').css('height')) - parseInt($('.imageFilterContainer').css('height')) - parseInt($('.lightboxImgContentContainer').css('height'))-45;
-			console.log('heightForImg: '+heightForImg);
+			if(parseInt($('.fancybox-skin').height()) > $(window).height()*0.9 ){
+				$('.fancybox-skin').css('height',$(window).height()*0.9);	
+				$('.fancybox-inner').css('height',$(window).height()*0.9-60);	
+			}
+			var heightForImg = parseInt($('.fancybox-inner').height()) - parseInt($('.imageFilterContainer').css('height')) - parseInt($('.lightboxImgContentContainer').css('height'))-45;
 			$('.lightBoxImg').css({"height":heightForImg+'px'});
 			
 			
@@ -572,9 +574,11 @@ var Roots = {
 					}
 				}
 			}
-			
-			var heightForImg = parseInt($('.fancybox-inner').css('height')) - parseInt($('.imageFilterContainer').css('height')) - parseInt($('.lightboxImgContentContainer').css('height'))-45;
-			console.log('heightForImg: '+heightForImg);
+			if(parseInt($('.fancybox-skin').height()) > $(window).height()*0.9 ){
+				$('.fancybox-skin').css('height',$(window).height()*0.9);	
+				$('.fancybox-inner').css('height',$(window).height()*0.9-60);	
+			}
+			var heightForImg = parseInt($('.fancybox-inner').height()) - parseInt($('.imageFilterContainer').css('height')) - parseInt($('.lightboxImgContentContainer').css('height'))-45;
 			$('.lightBoxImg').css({"height":heightForImg+'px'});
 			
 			
@@ -685,12 +689,13 @@ var Roots = {
 					).then(setImageFilter());
 				},
 				onUpdate : function(){
+					console.log('update');
 					$('.lightBoxImg').css({"height":'auto'});
 					$('#original_image').css({"width":'auto'});
 					$('#nbi_image').css({"width":'auto'});
 					imageResize('original_image', 'nbi_image');
-					setNBIfilter('original_image', $("#original_image .small").attr("data-big"));
-					setNBIfilter('nbi_image', $("#nbi_image .small").attr("data-big"));					
+					setNBIfilter('original_image', $('#original_image .small').attr('data-big'));
+					setNBIfilter('nbi_image', $('#nbi_image .small').attr('data-big'));
 				}
                 });
               return false;
