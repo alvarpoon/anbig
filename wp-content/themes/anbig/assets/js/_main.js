@@ -314,9 +314,11 @@ var Roots = {
 						globalImgContainerWidth = containerWidth;
 					}else{
 						containerWidth = globalImgContainerWidth;
-					}						
-						
-					$('#'+container).css('width',containerWidth);	
+					}
+					
+					$('.filterImg').each(function(){
+						$(this).css('width',containerWidth);	
+					});
 				}else{
 					if(parseInt($('#'+container+' img').css('width')) > parseInt($('.fancybox-inner').css('width'))){
 						$('#'+container+' img').removeClass('fullImgHeight').addClass('fullImgWidth');
@@ -412,7 +414,7 @@ var Roots = {
 				'autoScale'		: true,
 				'type'        : 'iframe',
 			    'scrolling'   : 'no',
-                'content'       : "<div class=\"lightboxImgContainer\"><div class=\"lightBoxImg\"><div id=\"original_image\" class=\"originalImgContainer\"><div class=\"large\"></div><img class=\"small fullImgWidth\" src=\""+this.href+"\" data-big=\""+$(this).attr("nbi_image")+"\"/></div><div id=\"nbi_image\" class=\"nbiImgContainer\"><div class=\"large\"></div><img class=\"small fullImgWidth\" src=\""+$(this).attr("nbi_image")+"\" data-big=\""+this.href+"\"/></div></div></div><div class=\"imageFilterContainer\"><a href=\"javascript:;\" class=\"btnOriginalImage\">Original image</a><a href=\"javascript:;\" class=\"btnNBI\">NBI image</a></div><div class=\"lightboxImgContentContainer\"><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p></div>",
+                'content'       : "<div class=\"lightboxImgContainer\"><div class=\"lightBoxImg\"><div id=\"original_image\" class=\"originalImgContainer filterImg\"><div class=\"large\"></div><img class=\"small fullImgWidth\" src=\""+this.href+"\" data-big=\""+$(this).attr("nbi_image")+"\"/></div><div id=\"nbi_image\" class=\"nbiImgContainer filterImg\"><div class=\"large\"></div><img class=\"small fullImgWidth\" src=\""+$(this).attr("nbi_image")+"\" data-big=\""+this.href+"\"/></div></div></div><div class=\"imageFilterContainer\"><a href=\"javascript:;\" class=\"btnOriginalImage\">Original image</a><a href=\"javascript:;\" class=\"btnNBI\">NBI image</a></div><div class=\"lightboxImgContentContainer\"><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p></div>",
 				 afterShow : function() {
 					 $.when(
 					 	imageResize(),
@@ -558,9 +560,11 @@ var Roots = {
 						globalImgContainerWidth = containerWidth;
 					}else{
 						containerWidth = globalImgContainerWidth;
-					}						
-						
-					$('#'+container).css('width',containerWidth);	
+					}
+					
+					$('.filterImg').each(function(){
+						$(this).css('width',containerWidth);	
+					});
 				}else{
 					if(parseInt($('#'+container+' img').css('width')) > parseInt($('.fancybox-inner').css('width'))){
 						$('#'+container+' img').removeClass('fullImgHeight').addClass('fullImgWidth');
@@ -655,7 +659,7 @@ var Roots = {
 				'showCloseButton': true,
 				'autoScale'		: true,
 			    'scrolling'   : 'no',
-                'content'       : "<div class=\"lightboxImgContainer\"><div class=\"lightBoxImg\"><div id=\"original_image\" class=\"originalImgContainer\"><div class=\"large\"></div><img class=\"small fullImgWidth\" src=\""+this.href+"\" data-big=\""+$(this).attr("nbi_image")+"\"/></div><div id=\"nbi_image\" class=\"nbiImgContainer\"><div class=\"large\"></div><img class=\"small fullImgWidth\" src=\""+$(this).attr("nbi_image")+"\" data-big=\""+this.href+"\"/></div></div></div><div class=\"imageFilterContainer\"><a href=\"javascript:;\" class=\"btnOriginalImage\">Original image</a><a href=\"javascript:;\" class=\"btnNBI\">NBI image</a></div><div class=\"lightboxImgContentContainer\"><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p></div>",
+                'content'       : "<div class=\"lightboxImgContainer\"><div class=\"lightBoxImg\"><div id=\"original_image\" class=\"originalImgContainer filterImg\"><div class=\"large\"></div><img class=\"small fullImgWidth\" src=\""+this.href+"\" data-big=\""+$(this).attr("nbi_image")+"\"/></div><div id=\"nbi_image\" class=\"nbiImgContainer filterImg\"><div class=\"large\"></div><img class=\"small fullImgWidth\" src=\""+$(this).attr("nbi_image")+"\" data-big=\""+this.href+"\"/></div></div></div><div class=\"imageFilterContainer\"><a href=\"javascript:;\" class=\"btnOriginalImage\">Original image</a><a href=\"javascript:;\" class=\"btnNBI\">NBI image</a></div><div class=\"lightboxImgContentContainer\"><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p></div>",
 				 afterShow : function() {
 					 $.when(
 					 	$('.lightboxImgContentContainer').each(function()
