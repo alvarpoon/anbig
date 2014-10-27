@@ -28,7 +28,7 @@ $queryString = http_build_query($vars);
 
 	<li class="bbp-header">
 		<ul class="forum-titles">
-			<li class="bbp-topic-title"><a class="<? setOrderSign('topic') ?>" href="<?php echo $actual_link = "$queryString?order=$tpOrder&orderby=topic";?>"><?php _e( 'Topic', 'bbpress' ); ?></a></li>
+			<li class="bbp-topic-title"><a class="<? setOrderSign('title') ?>" href="<?php echo $actual_link = "$queryString?order=$tpOrder&orderby=title";?>"><?php _e( 'Topic', 'bbpress' ); ?></a></li>
             <li class="bbp-topic-freshness"><a class="<? setOrderSign('user') ?>" href="<?php echo $actual_link = "$queryString?order=$tpOrder&orderby=user";?>"><?php _e( 'Post By', 'bbpress' ); ?></a></li>
 			<li class="bbp-topic-voice-count"><a class="<? setOrderSign('date') ?>" href="<?php echo $actual_link = "$queryString?order=$tpOrder&orderby=date";?>"><?php _e( 'Post date', 'bbpress' ); ?></a></li>
 		</ul>
