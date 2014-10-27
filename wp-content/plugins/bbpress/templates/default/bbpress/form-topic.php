@@ -128,7 +128,7 @@
 
 						<?php do_action( 'bbp_theme_before_topic_form_type' ); ?>
 
-						<p>
+						<p style="display:none;">
 
 							<label for="bbp_stick_topic"><?php _e( 'Topic Type:', 'bbpress' ); ?></label><br />
 
@@ -140,7 +140,7 @@
 
 						<?php do_action( 'bbp_theme_before_topic_form_status' ); ?>
 
-						<p>
+						<p style="display:none;">
 
 							<label for="bbp_topic_status"><?php _e( 'Topic Status:', 'bbpress' ); ?></label><br />
 
