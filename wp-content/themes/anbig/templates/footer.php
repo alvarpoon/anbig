@@ -26,7 +26,6 @@
                 </div>
                 <div class="col-sm-6">
                     <p class="logo_fax">Fax: <?=$fax?></p>
-                    <p class="logo_map"><a href="#">Map</a></p>
                 </div>
     	</div>
     </div>

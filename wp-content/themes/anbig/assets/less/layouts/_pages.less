@@ -3,11 +3,17 @@
 // mobile
 //===============================================================================
 //===============================================================================
+body{
+	background: #D7D7E3;
+}
 
 .main {
 	float: none;
 	margin-top: 109px;
 	padding:0;
+	background-color: #fff;
+	min-height: 200px;
+
 	
 	.nopaddingHeader-xs{padding-left:0; padding-right:0;}
 }
@@ -110,12 +116,12 @@
 		font-family:'Roboto';
 		color:#000;
 		font-weight:bold;
-		padding:3px 20px;
-		background-color:#FFC926;
+		padding: 3px 30px 3px 20px;
 		-moz-border-radius: 3px;
 		border-radius: 3px;
 		margin-bottom:15px;
 		display:inline-block;
+		background: #ffc926 url(../img/btn_play.png) 90px center no-repeat;
 	}
 }
 
@@ -606,6 +612,7 @@
 @media (min-width: @screen-sm-min) {
 	.main{
 		margin-top:160px;	
+		min-height: 350px;
 		.nopaddingHeader-xs{padding-left:15px; padding-right:15px;}
 	}
 	//Videos and Images listing starts		

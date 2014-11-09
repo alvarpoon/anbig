@@ -26,7 +26,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4 col-xs-6 smallPadding-xs">
-				<h2 class="videoHomeHeader"><a href="<?=site_url()?>/vid/">Videos</a></h2>
+				<h2 class="videoHomeHeader"><a href="<?=site_url()?>/vid/">Videos & Lectures</a></h2>
 			<?
 				$args = array( 'numberposts' => 1, 'post_type' => 'video', 'post_status' => 'publish', 'order' => 'DESC', 'orderby' => 'date');
 				  $results = get_posts( $args );
