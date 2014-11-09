@@ -18,7 +18,7 @@
                       array(
                         'taxonomy' => 'video_category',
                         'field'    => 'slug',
-                        'terms'    => 'nbi-principles',
+                        'terms'    => 'lectures',
                       )
                     ),
     'post_status' => 'publish',

@@ -6501,6 +6501,7 @@ figure.alignnone {
 .content-info {
   background: #D7D7E3;
   padding: 0 20px;
+  padding-bottom: 15px;
 }
 .footerPaddingTop {
   padding-top: 15px;
@@ -6558,9 +6559,13 @@ figure.alignnone {
   line-height: 90%;
   text-align: justify;
 }
-.viewCounter span {
+.viewCounter span,
+.viewCounter p {
   display: block;
   font-size: 12px;
+}
+.viewCounter p {
+  margin-bottom: 2px;
 }
 @media (min-width: 768px) {
   #menu-footer-menu {

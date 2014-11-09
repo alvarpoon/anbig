@@ -38,7 +38,13 @@
 				    $video_id = get_field('video',$id);
 				    $video_url = wp_get_attachment_url( $video_id );
 				    $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'listing-image' );
-				    echo '<div class="videoThumbContainer"><a class="videoLink" href="'.$video_url.'" person="'.get_field("doctor",$id).'" desp="'.apply_filters('the_content', $post->post_content).'"><img class="img-responsive fullwidthImg" src="'.$image_url[0].'" /></a><a class="videoLink btnVideoPlay" href="'.$video_url.'" person="'.get_field("doctor",$id).'" desp="'.apply_filters('the_content', $post->post_content).'"></a></div>';
+				    if(!$image_url){
+				    	$image_url = get_template_directory_uri().'/assets/img/video_dummy.gif';
+				    }
+				    else{
+				    	$image_url = $image_url[0];
+				    }
+				    echo '<div class="videoThumbContainer"><a class="videoLink" href="'.$video_url.'" person="'.get_field("doctor",$id).'" desp="'.apply_filters('the_content', $post->post_content).'"><img class="img-responsive fullwidthImg" src="'.$image_url.'" /></a><a class="videoLink btnVideoPlay" href="'.$video_url.'" person="'.get_field("doctor",$id).'" desp="'.apply_filters('the_content', $post->post_content).'"></a></div>';
 				  //}
 			?>
 			</div>

@@ -30,10 +30,16 @@
     	</div>
     </div>
     <div class="row">
-    	<p class="pull-right viewCounter">
+<!--     	<p class="pull-right viewCounter">
         	<strong>20 136</strong>
             <span>Total Views</span>
-        </p>
+        </p> -->
+        <div class="pull-right viewCounter">
+        <p>Visitor numbers</p>
+        <?
+        the_widget('counter_free_widget');
+        ?>
+        </div>
     </div>
   </div>
 </footer>
