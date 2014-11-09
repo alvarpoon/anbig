@@ -6550,7 +6550,7 @@ figure.alignnone {
   padding-left: 18px;
 }
 .viewCounter {
-  background: url(../img/logo_viewCounter.png) no-repeat left;
+  background: url(../img/logo_viewCounter.png) no-repeat top left;
   padding-left: 40px;
   margin-right: 10px;
   font-family: 'Roboto Condensed';
@@ -6586,15 +6586,15 @@ figure.alignnone {
   }
   #menu-footer-menu li {
     width: 50%;
+    margin-bottom: 8px;
   }
   #menu-footer-menu li a {
     color: #000;
-    padding-top: 5px;
+    padding-top: 0;
     padding-bottom: 0;
     font-family: 'Roboto Condensed';
     font-weight: bold;
     font-size: 15px;
-    padding-top: 8px;
     line-height: 110%;
   }
 }
