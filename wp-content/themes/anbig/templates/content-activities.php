@@ -25,6 +25,21 @@
           <dt>Organizer:</dt>
           <dd><?=get_field("organizer",$id)?></dd>
         </dl>
+        <?
+          $pdf_id = get_field('pdf',$id);
+          if($pdf_id){
+            $pdf_url = wp_get_attachment_url( $pdf_id );
+        ?>
+          <a class="btnReadMore" href="<?=$pdf_url?>" target="_blank">Download PDF</a>
+        <?
+          }
+
+          if(get_field('show_details_link',$id)){
+        ?>
+          <a class="btnReadMore" href="<?=get_permalink($id)?>">Read more</a>
+        <?
+          }
+        ?>
       </div>
       <div class="col-sm-4">
       <?

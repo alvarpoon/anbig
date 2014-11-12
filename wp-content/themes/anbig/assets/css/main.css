@@ -6993,7 +6993,7 @@ body {
   color: #535353;
   font-size: 18px;
   font-weight: normal;
-  padding-bottom: 10px;
+  padding-bottom: 0;
 }
 .page-template-template-activities-php dd {
   font-size: 18px;
@@ -7285,7 +7285,7 @@ body {
     margin-bottom: 20px;
   }
   .page-template-template-activities-php .dl-horizontal {
-    margin-bottom: 0px;
+    margin-bottom: 10px;
   }
   .page-template-template-activities-php .dl-horizontal dt {
     width: 100px;
