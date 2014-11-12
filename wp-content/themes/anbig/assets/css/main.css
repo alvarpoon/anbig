@@ -6501,6 +6501,7 @@ figure.alignnone {
 .content-info {
   background: #D7D7E3;
   padding: 0 20px;
+  padding-bottom: 15px;
 }
 .footerPaddingTop {
   padding-top: 15px;
@@ -6549,7 +6550,7 @@ figure.alignnone {
   padding-left: 18px;
 }
 .viewCounter {
-  background: url(../img/logo_viewCounter.png) no-repeat left;
+  background: url(../img/logo_viewCounter.png) no-repeat top left;
   padding-left: 40px;
   margin-right: 10px;
   font-family: 'Roboto Condensed';
@@ -6558,9 +6559,13 @@ figure.alignnone {
   line-height: 90%;
   text-align: justify;
 }
-.viewCounter span {
+.viewCounter span,
+.viewCounter p {
   display: block;
   font-size: 12px;
+}
+.viewCounter p {
+  margin-bottom: 2px;
 }
 @media (min-width: 768px) {
   #menu-footer-menu {
@@ -6581,20 +6586,27 @@ figure.alignnone {
   }
   #menu-footer-menu li {
     width: 50%;
+    margin-bottom: 8px;
   }
   #menu-footer-menu li a {
     color: #000;
-    padding-top: 5px;
+    padding-top: 0;
     padding-bottom: 0;
     font-family: 'Roboto Condensed';
     font-weight: bold;
     font-size: 15px;
+    line-height: 110%;
   }
+}
+body {
+  background: #D7D7E3;
 }
 .main {
   float: none;
   margin-top: 109px;
   padding: 0;
+  background-color: #fff;
+  min-height: 200px;
 }
 .main .nopaddingHeader-xs {
   padding-left: 0;
@@ -6689,11 +6701,11 @@ figure.alignnone {
   font-family: 'Roboto';
   color: #000;
   font-weight: bold;
-  padding: 3px 20px;
-  background-color: #FFC926;
+  padding: 3px 30px 3px 20px;
   border-radius: 3px;
   margin-bottom: 15px;
   display: inline-block;
+  background: #ffc926 url(../img/btn_play.png) 90px center no-repeat;
 }
 .page-template-template-listing-img-php .page-header,
 .page-template-template-video-listing-image-php .page-header,
@@ -7118,9 +7130,13 @@ figure.alignnone {
   font-weight: normal;
   margin-left: 10px;
 }
+.bbp-login-form input {
+  width: 100%;
+}
 @media (min-width: 768px) {
   .main {
     margin-top: 160px;
+    min-height: 350px;
   }
   .main .nopaddingHeader-xs {
     padding-left: 15px;
