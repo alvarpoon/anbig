@@ -32,6 +32,14 @@ switch ($_SERVER['SERVER_NAME']) {
 		define('DB_USER', 'nowwhat');
 		define('DB_PASSWORD', '20273214');
 		define('DB_HOST', 'localhost');
+
+	case "www.anbig.org":
+		define('DB_NAME', 'anbig_wp');
+		define('WP_SITEURL',  'http://www.anbig.org' );
+    	define('WP_HOME', 'http://www.anbig.org' );
+		define('DB_USER', 'anbig');
+		define('DB_PASSWORD', ']#poyS4yo_6T');
+		define('DB_HOST', 'localhost');
 }
 
 
