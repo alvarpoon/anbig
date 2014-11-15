@@ -37,8 +37,8 @@ switch ($_SERVER['SERVER_NAME']) {
 		define('DB_NAME', 'anbig_wp');
 		define('WP_SITEURL',  'http://www.anbig.org' );
     	define('WP_HOME', 'http://www.anbig.org' );
-		define('DB_USER', 'anbig');
-		define('DB_PASSWORD', ']#poyS4yo_6T');
+		define('DB_USER', 'anbig_wp');
+		define('DB_PASSWORD', 'P@ssw0rd');
 		define('DB_HOST', 'localhost');
 }
 
