@@ -37,8 +37,7 @@
  ?><div class="container row">
  		<div class="col-sm-2"><p class="date"><?=get_the_date("M j",$id)?></p></div>
 	    <div class="col-sm-8">
-			<p class="title"><?=$post->post_title?></p>
-			<a class="btnVideoDetail hidden-xs" href="<?=$video_url?>" person="<?=get_field("doctor")?>" desp="<?=$post->post_title?>">Play video</a>
+			<a class="title btnVideoDetail" href="<?=$video_url?>" person="<?=get_field("doctor")?>" desp="<?=$post->post_title?>"><?=$post->post_title?></a>
 		</div>
     	<div class="col-sm-2">
         	<p class="person"><?=get_field("doctor")?></p>

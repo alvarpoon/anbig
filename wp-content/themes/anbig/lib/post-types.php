@@ -26,7 +26,7 @@ function activity_register() {
       'capability_type' => 'post',
       'hierarchical' => false,
       'menu_position' => 6,
-      'supports' => array('title')
+      'supports' => array('title','editor')
   );
   register_post_type( 'activity' , $args );
 }

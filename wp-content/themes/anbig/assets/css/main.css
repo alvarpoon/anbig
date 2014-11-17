@@ -6701,11 +6701,16 @@ body {
   font-family: 'Roboto';
   color: #000;
   font-weight: bold;
-  padding: 3px 30px 3px 20px;
-  border-radius: 3px;
+  /*padding: 3px 30px 3px 20px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;*/
+  padding: 0;
+  border-radius: 0;
   margin-bottom: 15px;
   display: inline-block;
-  background: #ffc926 url(../img/btn_play.png) 90px center no-repeat;
+  min-height: 26px;
+  background: url(../img/btn_video.png) right center no-repeat;
+  padding-right: 35px;
 }
 .page-template-template-listing-img-php .page-header,
 .page-template-template-video-listing-image-php .page-header,
@@ -6984,18 +6989,22 @@ body {
   margin-left: 5px;
 }
 .page-template-template-activities-php h2,
-.page-template-template-activities-php .h2 {
+.single-activity h2,
+.page-template-template-activities-php .h2,
+.single-activity .h2 {
   font-size: 20px;
   font-family: 'Roboto';
   font-weight: bold;
 }
-.page-template-template-activities-php dt {
+.page-template-template-activities-php dt,
+.single-activity dt {
   color: #535353;
   font-size: 18px;
   font-weight: normal;
   padding-bottom: 0;
 }
-.page-template-template-activities-php dd {
+.page-template-template-activities-php dd,
+.single-activity dd {
   font-size: 18px;
 }
 .page-template-template-news-php .newsItem {
@@ -7133,6 +7142,12 @@ body {
 .bbp-login-form input {
   width: 100%;
 }
+.gallery .thumbnail,
+.gallery .wp-caption {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
 @media (min-width: 768px) {
   .main {
     margin-top: 160px;
@@ -7151,7 +7166,7 @@ body {
   .page-header .h1 {
     background-image: none;
     font-size: 30px!important;
-    margin: 15px 0 0 0;
+    margin: 15px 0 20px 0;
     padding: 5px 10px;
     font-family: 'Roboto Condensed';
     padding-left: 0;
@@ -7284,17 +7299,21 @@ body {
     display: inline-block;
     margin-bottom: 20px;
   }
-  .page-template-template-activities-php .dl-horizontal {
+  .page-template-template-activities-php .dl-horizontal,
+  .single-activity .dl-horizontal {
     margin-bottom: 10px;
   }
-  .page-template-template-activities-php .dl-horizontal dt {
+  .page-template-template-activities-php .dl-horizontal dt,
+  .single-activity .dl-horizontal dt {
     width: 100px;
     text-align: left;
   }
-  .page-template-template-activities-php .dl-horizontal dd {
+  .page-template-template-activities-php .dl-horizontal dd,
+  .single-activity .dl-horizontal dd {
     margin-left: 120px;
   }
-  .page-template-template-activities-php .activitiesItem {
+  .page-template-template-activities-php .activitiesItem,
+  .single-activity .activitiesItem {
     margin-bottom: 30px;
   }
   .page-template-template-news-php .newsItem .newsContent {

@@ -116,12 +116,17 @@ body{
 		font-family:'Roboto';
 		color:#000;
 		font-weight:bold;
-		padding: 3px 30px 3px 20px;
+		/*padding: 3px 30px 3px 20px;
 		-moz-border-radius: 3px;
-		border-radius: 3px;
+		border-radius: 3px;*/
+		padding: 0;
+		-moz-border-radius: 0;
+		border-radius: 0;
 		margin-bottom:15px;
-		display:inline-block;
-		background: #ffc926 url(../img/btn_play.png) 90px center no-repeat;
+		display: inline-block;
+		min-height: 26px;
+		background: url(../img/btn_video.png) right center no-repeat;
+		padding-right: 35px;
 	}
 }
 
@@ -443,7 +448,8 @@ body{
 //Videos and image listing page ends
 
 //Activities starts
-.page-template-template-activities-php{
+.page-template-template-activities-php,
+.single-activity{
 	h2, .h2{
 		font-size:20px;
 		font-family:'Roboto';
@@ -603,6 +609,13 @@ body{
 	width:100%;
 }
 
+.gallery{
+	.thumbnail{
+		background-color: transparent;
+		border: none;
+		border-radius: 0;
+	}
+}
 
 //===============================================================================
 //===============================================================================
@@ -625,7 +638,7 @@ body{
 		h1, .h1{
 			background-image:none;
 			font-size:30px!important;
-			margin:15px 0 0 0;
+			margin:15px 0 20px 0;
 			padding:5px 10px;
 			font-family:'Roboto Condensed';
 			padding-left: 0;
@@ -778,7 +791,8 @@ body{
 	}
 	
 	//Activities starts
-	.page-template-template-activities-php{
+	.page-template-template-activities-php,
+	.single-activity{
 		.dl-horizontal{
 			margin-bottom:10px;
 			dt{
