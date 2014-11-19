@@ -5295,7 +5295,8 @@ var Roots = {
 			'autoScale'   : true,
 			'type'        : 'iframe',
 			'scrolling'   : 'no',
-			'content'       : "<div class=\"lightboxVideoContainer\"><video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" width=\"auto\" height=\"auto\" controls preload=\"none\" data-setup='{'autoplay': true, 'enterFullScreen':true}'><source src=\""+this.href+"\" type='video/mp4' /></video></div><div class=\"lightboxContentContainer\"><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p></div>",
+			/*'content'       : "<div class=\"lightboxVideoContainer\"><video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" width=\"auto\" height=\"auto\" style=\"width:auto; height:auto;\" controls preload=\"none\" data-setup='{'autoplay': true, 'enterFullScreen':true}'><source src=\""+this.href+"\" type='video/mp4' /></video></div><div class=\"lightboxContentContainer\"><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p></div>",*/
+			'content'       : "<div class=\"lightboxVideoContainer\"><video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" width=\"100%\" height=\"auto\" style=\"width:100%;\" controls preload=\"none\" data-setup='{'autoplay': true, 'enterFullScreen':true}'><source src=\""+this.href+"\" type='video/mp4' /></video></div><div class=\"lightboxContentContainer\"><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p></div>",
 			afterShow : function() {	
 					$('.lightboxContentContainer').each(
 						function()
@@ -5322,6 +5323,8 @@ var Roots = {
 									}
 								});
 						});
+						console.log('afterShow');
+						$('.lightboxVideoContainer video').attr('style',' ');
 						if(parseInt($('.lightboxVideoContainer video').css('width')) > parseInt($('.fancybox-inner').css('width'))){
 							$(".lightboxVideoContainer video").removeClass('fullImgHeight').addClass('fullImgWidth');
 						}else if(parseInt($('.lightboxVideoContainer video').css('height')) > parseInt($('.fancybox-inner').css('height'))){
@@ -5441,9 +5444,11 @@ var Roots = {
 		
 		$("a.btnVideoDetail").click(function() {
 		$.fancybox({
-			'padding'       : 30,
-			'width'         : '50%',
-			'height'        : '50%',
+			'padding'       : 30,/*
+			'width'         : 'auto',
+			'height'        : 'auto',*/
+			'maxwidth'		: '90%',
+			'fitToView'		: true,
 			'href'          : this.href,
 			'autoResize'    : true,
 			'autoSize'      : true,
@@ -5451,7 +5456,7 @@ var Roots = {
 			'autoScale'   : true,
 			'type'        : 'iframe',
 			'scrolling'   : 'no',
-			'content'       : "<div class=\"lightboxVideoContainer\"><video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" width=\"auto\" height=\"auto\" controls preload=\"none\" data-setup='{'autoplay': true, 'enterFullScreen':true}'><source src=\""+this.href+"\" type='video/mp4' /></video></div><div class=\"lightboxContentContainer\"><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p></div>",
+			'content'       : "<div class=\"lightboxVideoContainer\"><video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" width=\"100%\" height=\"auto\" style=\"width:100%;\" controls preload=\"none\" data-setup='{'autoplay': true, 'enterFullScreen':true}'><source src=\""+this.href+"\" type='video/mp4' /></video></div><div class=\"lightboxContentContainer\"><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p></div>",
 			afterShow : function() {	
 					$('.lightboxContentContainer').each(
 						function()
@@ -5478,6 +5483,7 @@ var Roots = {
 									}
 								});
 						});
+						$('.lightboxVideoContainer video').attr('style',' ');
 						if(parseInt($('.lightboxVideoContainer video').css('width')) > parseInt($('.fancybox-inner').css('width'))){
 							$(".lightboxVideoContainer video").removeClass('fullImgHeight').addClass('fullImgWidth');
 						}else if(parseInt($('.lightboxVideoContainer video').css('height')) > parseInt($('.fancybox-inner').css('height'))){
