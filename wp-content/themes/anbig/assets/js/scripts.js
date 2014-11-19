@@ -5283,6 +5283,63 @@ var Roots = {
 		  return false;
 	  });
 	  
+	  $("a.videoLink").click(function() {
+		$.fancybox({
+			'padding'       : 30,
+			'width'         : '50%',
+			'height'        : '50%',
+			'href'          : this.href,
+			'autoResize'    : true,
+			'autoSize'      : true,
+			'showCloseButton': true,
+			'autoScale'   : true,
+			'type'        : 'iframe',
+			'scrolling'   : 'no',
+			'content'       : "<div class=\"lightboxVideoContainer\"><video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" width=\"auto\" height=\"auto\" controls preload=\"none\" data-setup='{'autoplay': true, 'enterFullScreen':true}'><source src=\""+this.href+"\" type='video/mp4' /></video></div><div class=\"lightboxContentContainer\"><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p></div>",
+			afterShow : function() {	
+					$('.lightboxContentContainer').each(
+						function()
+						{
+							var settings = {
+								autoReinitialise: true
+							};
+							$(this).jScrollPane(settings);
+							var api = $(this).data('jsp');
+							var throttleTimeout;
+							$(window).bind(
+								'resize',
+								function()
+								{
+									if (!throttleTimeout) {
+										throttleTimeout = setTimeout(
+											function()
+											{
+												api.reinitialise();
+												throttleTimeout = null;
+											},
+											50
+										);
+									}
+								});
+						});
+						if(parseInt($('.lightboxVideoContainer video').css('width')) > parseInt($('.fancybox-inner').css('width'))){
+							$(".lightboxVideoContainer video").removeClass('fullImgHeight').addClass('fullImgWidth');
+						}else if(parseInt($('.lightboxVideoContainer video').css('height')) > parseInt($('.fancybox-inner').css('height'))){
+							$(".lightboxVideoContainer video").removeClass('fullImgWidth').addClass('fullImgHeight');
+						}					
+					},
+           	  
+			  onUpdate : function(){
+					if(parseInt($('.lightboxVideoContainer video').css('width')) > parseInt($('.fancybox-inner').css('width'))){
+						$(".lightboxVideoContainer video").removeClass('fullImgHeight').addClass('fullImgWidth');
+					}else if(parseInt($('.lightboxVideoContainer video').css('height')) > parseInt($('.fancybox-inner').css('height'))){
+						$(".lightboxVideoContainer video").removeClass('fullImgWidth').addClass('fullImgHeight');
+					}
+				}
+			});
+              return false;
+		});
+	  
 	  	  
       //fix the mobile menu scrolling problem
       $(document).ready(setMobileMenu);
@@ -5290,6 +5347,7 @@ var Roots = {
 	  $(document).ready(setPagination());
 	  $(document).ready(setbbpressSearch());
       $(window).resize(setMobileMenu);
+	  //$(document).ready(testShow);
     }
   },
   // Home page
@@ -5313,7 +5371,7 @@ var Roots = {
           adaptiveHeight: false
         });
 
-        $(".videoLink").click(function() {
+        /*$(".videoLink").click(function() {
             $.fancybox({
                 'padding'       : 30,
                 'width'         : '50%',
@@ -5328,7 +5386,7 @@ var Roots = {
                 'content'       : "<div class=\"lightboxVideoContainer\"><video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" width=\"auto\" height=\"auto\" style=\"width:auto !important; height:100% !important\" controls preload=\"none\" data-setup='{'autoplay': true, 'enterFullScreen':true}'><source src=\""+this.href+"\" type='video/mp4' /></video></div><div class=\"lightboxContentContainer\"><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p></div>"
                 });
               return false;
-            });
+            });*/
       });
     }
   },
@@ -5336,7 +5394,7 @@ var Roots = {
     init: function() {
       // JavaScript to be fired on the about us page
       $(document).ready(function(){
-        $(".btnVideoDetail").click(function() {
+        /*$(".btnVideoDetail").click(function() {
 			
             $.fancybox({
                 'padding'       : 30,
@@ -5379,7 +5437,64 @@ var Roots = {
 					}
            	  });
               return false;
-        });
+        });*/
+		
+		$("a.btnVideoDetail").click(function() {
+		$.fancybox({
+			'padding'       : 30,
+			'width'         : '50%',
+			'height'        : '50%',
+			'href'          : this.href,
+			'autoResize'    : true,
+			'autoSize'      : true,
+			'showCloseButton': true,
+			'autoScale'   : true,
+			'type'        : 'iframe',
+			'scrolling'   : 'no',
+			'content'       : "<div class=\"lightboxVideoContainer\"><video autoplay id=\"example_video_1\" class=\"video-js vjs-default-skin\" width=\"auto\" height=\"auto\" controls preload=\"none\" data-setup='{'autoplay': true, 'enterFullScreen':true}'><source src=\""+this.href+"\" type='video/mp4' /></video></div><div class=\"lightboxContentContainer\"><p>"+$(this).attr("person")+"</p><p>Description:"+$(this).attr("desp")+"</p></div>",
+			afterShow : function() {	
+					$('.lightboxContentContainer').each(
+						function()
+						{
+							var settings = {
+								autoReinitialise: true
+							};
+							$(this).jScrollPane(settings);
+							var api = $(this).data('jsp');
+							var throttleTimeout;
+							$(window).bind(
+								'resize',
+								function()
+								{
+									if (!throttleTimeout) {
+										throttleTimeout = setTimeout(
+											function()
+											{
+												api.reinitialise();
+												throttleTimeout = null;
+											},
+											50
+										);
+									}
+								});
+						});
+						if(parseInt($('.lightboxVideoContainer video').css('width')) > parseInt($('.fancybox-inner').css('width'))){
+							$(".lightboxVideoContainer video").removeClass('fullImgHeight').addClass('fullImgWidth');
+						}else if(parseInt($('.lightboxVideoContainer video').css('height')) > parseInt($('.fancybox-inner').css('height'))){
+							$(".lightboxVideoContainer video").removeClass('fullImgWidth').addClass('fullImgHeight');
+						}					
+					},
+           	  
+			  onUpdate : function(){
+					if(parseInt($('.lightboxVideoContainer video').css('width')) > parseInt($('.fancybox-inner').css('width'))){
+						$(".lightboxVideoContainer video").removeClass('fullImgHeight').addClass('fullImgWidth');
+					}else if(parseInt($('.lightboxVideoContainer video').css('height')) > parseInt($('.fancybox-inner').css('height'))){
+						$(".lightboxVideoContainer video").removeClass('fullImgWidth').addClass('fullImgHeight');
+					}
+				}
+			});
+              return false;
+		});
 			
       });
     }
@@ -5388,7 +5503,7 @@ var Roots = {
     init: function() {
       // JavaScript to be fired on the about us page
       $(document).ready(function(){
-        $(".videoLink").click(function() {
+        /*$(".videoLink").click(function() {
             $.fancybox({
                 'padding'       : 30,
                 'width'         : '50%',
@@ -5430,7 +5545,7 @@ var Roots = {
 					}
            	  });
               return false;
-        });
+        });*/
 			
       });
     }
@@ -5635,7 +5750,7 @@ var Roots = {
         });
 		
 		  
-        $(".videoLink").click(function() {
+        /*$(".videoLink").click(function() {
             $.fancybox({
                 'padding'       : 30,
                 'width'         : '50%',
@@ -5678,7 +5793,7 @@ var Roots = {
            	  });
               return false;
 			
-      });
+      });*/
     }
   },
   page_template_template_listing_img_php:  {
