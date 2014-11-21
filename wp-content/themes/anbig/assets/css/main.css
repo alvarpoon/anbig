@@ -6847,6 +6847,10 @@ body {
   width: 95%;
   height: auto;
 }
+.lightboxVideoContainer .fullImgHeight {
+  width: auto;
+  height: 100%!important;
+}
 .lightboxContentContainer {
   max-width: 640px;
   height: 30%;
