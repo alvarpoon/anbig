@@ -27,20 +27,27 @@
                 <div class="col-sm-6">
                     <p class="logo_fax">Fax: <?=$fax?></p>
                 </div>
-    	</div>
+    	   </div>
+        </div>
     </div>
-    <div class="row">
+    <div class="row copyright-outer-container">
 <!--     	<p class="pull-right viewCounter">
         	<strong>20 136</strong>
             <span>Total Views</span>
         </p> -->
-        <div class="pull-right viewCounter">
-        <p>Visitor numbers</p>
-        <?
-        the_widget('counter_free_widget');
-        ?>
+        <div class="col-sm-3 col-sm-push-9">
+            <div class="viewCounter">
+                <p>Visitor numbers</p>
+                <?
+                the_widget('counter_free_widget');
+                ?>
+            </div>
+        </div>
+        <div class="col-sm-9 col-sm-pull-3 copyright-container">
+            <p>All content included on this site, such as text, graphics, logos, images, audio clips, video clips, and data compilations is the property of The Asian NBI Group Limited or its content suppliers and protected by international copyright laws.</p>
         </div>
     </div>
+    
   </div>
 </footer>
 

@@ -9,7 +9,7 @@
         </form>
     </div>
  
-	<div class="row">
+	<div class="row video-text-listing">
 <?
   $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
   $args= array(
@@ -35,13 +35,12 @@
     $video_id = get_field('video');
     $video_url = wp_get_attachment_url( $video_id );
  ?><div class="container row">
- 		<div class="col-sm-2"><p class="date"><?=get_the_date("M j",$id)?></p></div>
-	    <div class="col-sm-8">
-			<a class="title btnVideoDetail" href="<?=$video_url?>" person="<?=get_field("doctor")?>" desp="<?=$post->post_title?>"><?=$post->post_title?></a>
+ 		<div class="col-sm-3"><p class="date"><?=get_field("date")?></p></div>
+	    <div class="col-sm-6">
+			<a class="title btnVideoDetail" href="<?=$video_url?>" person="<?=get_field("doctor")?>" desp="<?=$post->post_title?>"><?=$post->post_title?></a><a href="<?=$video_url?>" class="btnVideoDetail btn-video"></a>
 		</div>
-    	<div class="col-sm-2">
+    	<div class="col-sm-3">
         	<p class="person"><?=get_field("doctor")?></p>
-            <a class="btnVideoDetail hidden-sm hidden-md hidden-lg" href="<?=$video_url?>" person="<?=get_field("doctor")?>" desp="<?=$post->post_title?>">Play video</a>
         </div>
 	</div>
  <?

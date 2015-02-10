@@ -6552,7 +6552,7 @@ figure.alignnone {
 .viewCounter {
   background: url(../img/logo_viewCounter.png) no-repeat top left;
   padding-left: 40px;
-  margin-right: 10px;
+  /*margin-right:10px;*/
   font-family: 'Roboto Condensed';
   color: #000;
   font-size: 18px;
@@ -6567,7 +6567,19 @@ figure.alignnone {
 .viewCounter p {
   margin-bottom: 2px;
 }
+.copyright-outer-container {
+  padding-top: 20px;
+}
+.copyright-outer-container .copyright-container {
+  margin-top: 10px;
+}
+.copyright-outer-container .copyright-container p {
+  font-size: 8px;
+}
 @media (min-width: 768px) {
+  .copyright-outer-container .copyright-container {
+    margin-top: 0;
+  }
   #menu-footer-menu {
     width: 70%;
     height: 140px;
@@ -6607,6 +6619,7 @@ body {
   padding: 0;
   background-color: #fff;
   min-height: 200px;
+  padding-bottom: 20px;
 }
 .main .nopaddingHeader-xs {
   padding-left: 0;
@@ -6687,6 +6700,9 @@ body {
 .videoTitle a {
   color: #000;
 }
+.page-template-template-video-listing-text-php .video-text-listing .row {
+  margin-bottom: 15px;
+}
 .page-template-template-video-listing-text-php .date,
 .page-template-template-video-listing-text-php .title,
 .page-template-template-video-listing-text-php .person {
@@ -6707,10 +6723,17 @@ body {
   padding: 0;
   border-radius: 0;
   margin-bottom: 15px;
-  display: inline-block;
   min-height: 26px;
+}
+.page-template-template-video-listing-text-php .btn-video {
   background: url(../img/btn_video.png) right center no-repeat;
   padding-right: 35px;
+  display: inline-block;
+  width: 27px;
+  height: 26px;
+  position: relative;
+  top: 6px;
+  margin: 0;
 }
 .page-template-template-listing-img-php .page-header,
 .page-template-template-video-listing-image-php .page-header,

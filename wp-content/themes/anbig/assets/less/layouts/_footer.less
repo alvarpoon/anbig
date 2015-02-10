@@ -27,7 +27,7 @@
 .viewCounter{
 	background:url(../img/logo_viewCounter.png) no-repeat top left;
 	padding-left:40px;
-	margin-right:10px;
+	/*margin-right:10px;*/
 	font-family:'Roboto Condensed';
 	color:#000;
 	font-size:18px;
@@ -41,6 +41,16 @@
 		margin-bottom: 2px;
 	}
 }
+.copyright-outer-container{
+	padding-top: 20px;
+	.copyright-container{
+		margin-top: 10px;
+		p{
+			font-size: 8px;
+		}
+	}
+}
+
 
 //===============================================================================
 //===============================================================================
@@ -48,6 +58,12 @@
 //===============================================================================
 //===============================================================================
 @media (min-width: @screen-sm-min) {
+	.copyright-outer-container{
+		.copyright-container{
+			margin-top: 0;
+		}
+	}
+
 	#menu-footer-menu{
 		width:70%;
 		height:140px;
