@@ -12,7 +12,8 @@
 			'hide_empty'               => 0,
 			'hierarchical'             => 0,
 			'taxonomy'                 => 'video_category',
-			'parent'                   => $catid
+			'parent'                   => $catid,
+			'pad_counts'			   => true
 		);
 		$categories = get_categories( $args );
 		
@@ -35,7 +36,7 @@
 			  $class="";
 			}
 			?>
-			  <a class="<?=$class?>" href="<?=get_permalink($post->ID)?>?cat=<?=$category->term_id?>"><?=$category->name;?></a>
+			  <a class="<?=$class?>" href="<?=get_permalink($post->ID)?>?cat=<?=$category->term_id?>"><?=$category->name;?> <span>(<?=$category->count?>)</span></a>
 			<?
 			$i++;
 			}
